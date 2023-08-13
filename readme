@@ -1,0 +1,7 @@
+
+Problems
+
+-> serveur prenant pas en contre les modifications de code lorsque le serveur est en cours
+-> les messages d'erreur tels que Data not Found, ID unexist (404 Page not found) ne sont pas gerées correctement
+->
+->
