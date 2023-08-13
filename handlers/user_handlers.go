@@ -13,7 +13,8 @@ import (
 )
 
 
-func CreateUser(w http.ResponseWriter, r *http.Request){
+// CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
+func CreateUser(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
@@ -21,35 +22,39 @@ func CreateUser(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
+	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
 	result, err := database.DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", user.Username, user.Email)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	
-	userID, err := result.LastInsertId()
-    if err != nil {
-        http.Error(w, err.Error(),http.StatusInternalServerError)
-        return
-    }
 
-    user.ID = int(userID) // Mettre à jour l'ID dans l'objet User
+	// Obtient l'ID généré lors de l'insertion
+	userID, err := result.LastInsertId()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Met à jour l'ID dans l'objet User
+	user.ID = int(userID)
 
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(user)
 }
 
-
-func GetUserByID(w http.ResponseWriter, r *http.Request){
+// GetUserByID récupère un utilisateur par son ID.
+func GetUserByID(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
 
 	var user models.User
 
+	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
 	err := database.DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", userID).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
-		if err == sql.ErrNoRows{
-			http.NotFound(w,r)
+		if err == sql.ErrNoRows {
+			http.NotFound(w, r)
 			return
 		}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -58,35 +63,35 @@ func GetUserByID(w http.ResponseWriter, r *http.Request){
 	json.NewEncoder(w).Encode(user)
 }
 
-
+// GetAllUsers récupère tous les utilisateurs de la base de données.
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
-    rows, err := database.DB.Query("SELECT id, username, email FROM users")
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-        return
-    }
-    defer rows.Close()
+	rows, err := database.DB.Query("SELECT id, username, email FROM users")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer rows.Close()
 
-    var users []models.User
-    for rows.Next() {
-        var user models.User
-        err := rows.Scan(&user.ID, &user.Username, &user.Email)
-        if err != nil {
-            http.Error(w, err.Error(), http.StatusInternalServerError)
-            return
-        }
-        users = append(users, user)
-    }
+	var users []models.User
+	for rows.Next() {
+		var user models.User
+		err := rows.Scan(&user.ID, &user.Username, &user.Email)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		users = append(users, user)
+	}
 
-    w.Header().Set("Content-Type", "application/json")
-    err = json.NewEncoder(w).Encode(users)
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-    }
+	w.Header().Set("Content-Type", "application/json")
+	err = json.NewEncoder(w).Encode(users)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
 
-
-func UpdateUser(w http.ResponseWriter, r *http.Request){
+// UpdateUser met à jour les informations d'un utilisateur par son ID.
+func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
 
@@ -97,20 +102,21 @@ func UpdateUser(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
+	// Exécute la requête pour mettre à jour les informations de l'utilisateur dans la base de données
 	_, err = database.DB.Exec("UPDATE users SET username = ?, email = ? WHERE id = ?", updatedUser.Username, updatedUser.Email, userID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	// Convert userID to an int
+	// Convertit l'ID en entier
 	userIDInt, err := strconv.Atoi(userID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	// Update the ID in the updatedUser object
+	// Met à jour l'ID dans l'objet updatedUser
 	updatedUser.ID = userIDInt
 
 	w.Header().Set("Content-Type", "application/json")
@@ -118,10 +124,12 @@ func UpdateUser(w http.ResponseWriter, r *http.Request){
 	json.NewEncoder(w).Encode(updatedUser)
 }
 
-
-func DeleteUser(w http.ResponseWriter, r *http.Request){
+// DeleteUser supprime un utilisateur par son ID.
+func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
+
+	// Exécute la requête pour supprimer l'utilisateur de la base de données
 	_, err := database.DB.Exec("DELETE FROM users WHERE id = ?", userID)
 
 	if err != nil {
