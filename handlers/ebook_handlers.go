@@ -1,35 +1,44 @@
 package handlers
 
 import (
-	"example/api/models"
-	"example/api/database"
-	"encoding/json"
-	"net/http"
-	"github.com/gorilla/mux"
 	"database/sql"
+	"encoding/json"
+	"example/api/database"
+	"example/api/models"
 	"fmt"
+	"net/http"
+	"strconv"
+
+	"github.com/gorilla/mux"
 )
 
-func CreateEbook(w http.ResponseWriter, r *http.Request){
+func CreateEbook(w http.ResponseWriter, r *http.Request) {
 	var ebook models.Ebook
-    err := json.NewDecoder(r.Body).Decode(&ebook)
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusBadRequest)
-        return
-    }
+	err := json.NewDecoder(r.Body).Decode(&ebook)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
 
-    _, err = database.DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", ebook.Title, ebook.Author, ebook.CategoryID)
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-        return
-    }
+	result, err := database.DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", ebook.Title, ebook.Author, ebook.CategoryID)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
-    w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(ebook)
+	ebookID, err := result.LastInsertId()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	ebook.ID = int(ebookID) // Mettre à jour l'ID dans l'objet User
+
+	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(ebook)
 }
 
-
-func GetEbookByID(w http.ResponseWriter, r *http.Request){
+func GetEbookByID(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	ebookID := vars["id"]
 
@@ -37,8 +46,8 @@ func GetEbookByID(w http.ResponseWriter, r *http.Request){
 
 	err := database.DB.QueryRow("SELECT id, title, author, category_id FROM ebooks WHERE id = ?", ebookID).Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)
 	if err != nil {
-		if err == sql.ErrNoRows{
-			http.NotFound(w,r)
+		if err == sql.ErrNoRows {
+			http.NotFound(w, r)
 			return
 		}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -76,8 +85,7 @@ func GetEbooksByCategory(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-
-func GetAllEbooks(w http.ResponseWriter, r *http.Request){
+func GetAllEbooks(w http.ResponseWriter, r *http.Request) {
 	rows, err := database.DB.Query("SELECT id, title, author, category_id FROM ebooks")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -103,8 +111,7 @@ func GetAllEbooks(w http.ResponseWriter, r *http.Request){
 	}
 }
 
-
-func UpdateEbook(w http.ResponseWriter, r *http.Request){
+func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	ebookID := vars["id"]
 
@@ -121,11 +128,21 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
+	ebookIDInt, err := strconv.Atoi(ebookID)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	
+	updatedEbook.ID = ebookIDInt
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(updatedEbook)
 }
 
-
-func DeleteEbook(w http.ResponseWriter, r *http.Request){
+func DeleteEbook(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	ebookID := vars["id"]
 	_, err := database.DB.Exec("DELETE FROM ebooks WHERE id = ?", ebookID)

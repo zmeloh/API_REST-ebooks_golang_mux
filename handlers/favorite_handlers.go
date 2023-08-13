@@ -1,13 +1,15 @@
 package handlers
 
 import (
-	"example/api/models"
-	"example/api/database"
-	"encoding/json"
-	"net/http"
-	"github.com/gorilla/mux"
 	"database/sql"
+	"encoding/json"
+	"example/api/database"
+	"example/api/models"
 	"fmt"
+	"net/http"
+	"strconv"
+
+	"github.com/gorilla/mux"
 )
 
 func CreateFavorite(w http.ResponseWriter, r *http.Request) {
@@ -18,12 +20,19 @@ func CreateFavorite(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err = database.DB.Exec("INSERT INTO favorites (user_id, ebook_id) VALUES (?, ?)", favorite.UserID, favorite.EbookID)
+	result, err := database.DB.Exec("INSERT INTO favorites (user_id, ebook_id) VALUES (?, ?)", favorite.UserID, favorite.EbookID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
+	favoriteID, err := result.LastInsertId()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	favorite.ID = int(favoriteID)
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(favorite)
 }
@@ -150,6 +159,17 @@ func UpdateFavorite(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	favoriteIDInt, err := strconv.Atoi(favoriteID)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+
+	updatedFavorite.ID = favoriteIDInt
+	
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(updatedFavorite)
 }
 
