@@ -4,7 +4,7 @@ import (
     "database/sql"
     "log"
     "fmt"
-    //"os"
+    "os"
     _ "github.com/go-sql-driver/mysql"
     "github.com/joho/godotenv"
 )
@@ -17,12 +17,12 @@ func InitDB() {
         log.Fatal("Error loading .env file")
     }
 
-    dbDriver := "mysql" //os.Getenv("DB_DRIVER")
-    dbUser := "root" //os.Getenv("DB_USER")
-    dbPassword := "" //os.Getenv("DB_PASSWORD")
-    dbHost := "localhost" //os.Getenv("DB_HOST")
-    dbPort := "3306"  //os.Getenv("DB_PORT")
-    dbName := "ebooks_db" //os.Getenv("DB_NAME")
+    dbDriver := os.Getenv("DB_DRIVER")
+    dbUser := os.Getenv("DB_USER")
+    dbPassword := os.Getenv("DB_PASSWORD")
+    dbHost := os.Getenv("DB_HOST")
+    dbPort := os.Getenv("DB_PORT")
+    dbName := os.Getenv("DB_NAME")
 
     connectionString := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPassword, dbHost, dbPort, dbName)
 
