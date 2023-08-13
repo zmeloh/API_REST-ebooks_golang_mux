@@ -12,13 +12,23 @@ import (
 	"github.com/gorilla/mux"
 )
 
-
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	// Créez la table "users" si elle n'existe pas
+	_, err = database.DB.Exec(`CREATE TABLE IF NOT EXISTS users (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		username VARCHAR(255),
+		email VARCHAR(255)
+	)`)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
@@ -54,7 +64,7 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 	err := database.DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", userID).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			http.NotFound(w, r)
+			http.Error(w, "User not found", http.StatusNotFound)
 			return
 		}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -102,6 +112,18 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Vérifie si l'utilisateur avec l'ID donné existe
+	var existingUserID int
+	err = database.DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			http.Error(w, "User not found", http.StatusNotFound)
+			return
+		}
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	// Exécute la requête pour mettre à jour les informations de l'utilisateur dans la base de données
 	_, err = database.DB.Exec("UPDATE users SET username = ?, email = ? WHERE id = ?", updatedUser.Username, updatedUser.Email, userID)
 	if err != nil {
@@ -129,9 +151,20 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
 
-	// Exécute la requête pour supprimer l'utilisateur de la base de données
-	_, err := database.DB.Exec("DELETE FROM users WHERE id = ?", userID)
+	// Vérifie si l'utilisateur avec l'ID donné existe
+	var existingUserID int
+	err := database.DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			http.Error(w, "User not found", http.StatusNotFound)
+			return
+		}
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
+	// Supprime l'utilisateur de la base de données
+	_, err = database.DB.Exec("DELETE FROM users WHERE id = ?", userID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
