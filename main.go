@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"example/api/routers"
-	"example/api/database"
+	"example/api/dao"
 )
 
 func main() {
-	database.InitDB()
+	dao.InitDB()
 
 	router := routers.SetupRouter()
 
