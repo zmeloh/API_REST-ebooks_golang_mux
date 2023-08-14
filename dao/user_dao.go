@@ -1,17 +1,17 @@
-package handlers
+package dao
 
 import (
 	"database/sql"
 	"encoding/json"
-	"example/api/database"
 	"example/api/models"
-	"fmt"
+	//"fmt"
 	"net/http"
 	"strconv"
 
 	"github.com/gorilla/mux"
 )
 
+<<<<<<< HEAD:handlers/user_handlers.go
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 	var user models.User
@@ -32,8 +32,12 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+=======
+func insertUser(w http.ResponseWriter, r *http.Request) {
+	var user models.User
+>>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
 	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
-	result, err := database.DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", user.Username, user.Email)
+	result, err := DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", user.Username, user.Email)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -48,16 +52,11 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 
 	// Met à jour l'ID dans l'objet User
 	user.ID = int(userID)
-
-	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(user)
 }
 
-// GetUserByID récupère un utilisateur par son ID.
-func GetUserByID(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	userID := vars["id"]
+func selectAllUsers(w http.ResponseWriter, r *http.Request) {
 
+<<<<<<< HEAD:handlers/user_handlers.go
 	var user models.User
 
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
@@ -76,6 +75,10 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 // GetAllUsers récupère tous les utilisateurs de la base de données.
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	rows, err := database.DB.Query("SELECT id, username, email FROM users")
+=======
+	// Get All users
+	rows, err := DB.Query("SELECT id, username, email FROM users")
+>>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -92,16 +95,27 @@ func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 		}
 		users = append(users, user)
 	}
+}
 
-	w.Header().Set("Content-Type", "application/json")
-	err = json.NewEncoder(w).Encode(users)
+func selectUserByID(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	userID := vars["id"]
+
+	var user models.User
+
+	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
+	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", userID).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
+		if err == sql.ErrNoRows {
+			http.NotFound(w, r)
+			return
+		}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 }
 
-// UpdateUser met à jour les informations d'un utilisateur par son ID.
-func UpdateUser(w http.ResponseWriter, r *http.Request) {
+func updateUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
 
@@ -125,7 +139,7 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Exécute la requête pour mettre à jour les informations de l'utilisateur dans la base de données
-	_, err = database.DB.Exec("UPDATE users SET username = ?, email = ? WHERE id = ?", updatedUser.Username, updatedUser.Email, userID)
+	_, err = DB.Exec("UPDATE users SET username = ?, email = ? WHERE id = ?", updatedUser.Username, updatedUser.Email, userID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -140,17 +154,13 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 	// Met à jour l'ID dans l'objet updatedUser
 	updatedUser.ID = userIDInt
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(updatedUser)
 }
 
-// DeleteUser supprime un utilisateur par son ID.
-func DeleteUser(w http.ResponseWriter, r *http.Request) {
+func deleteUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
 
+<<<<<<< HEAD:handlers/user_handlers.go
 	// Vérifie si l'utilisateur avec l'ID donné existe
 	var existingUserID int
 	err := database.DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
@@ -162,6 +172,10 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+=======
+	// Exécute la requête pour supprimer l'utilisateur de la base de données
+	_, err := DB.Exec("DELETE FROM users WHERE id = ?", userID)
+>>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
 
 	// Supprime l'utilisateur de la base de données
 	_, err = database.DB.Exec("DELETE FROM users WHERE id = ?", userID)
@@ -169,6 +183,10 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+<<<<<<< HEAD:handlers/user_handlers.go
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintf(w, "User with ID %s has been deleted", userID)
 }
+=======
+}
+>>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
