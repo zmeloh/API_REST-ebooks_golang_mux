@@ -9,7 +9,7 @@ import (
 func SetupRouter() *mux.Router {
 	router := mux.NewRouter()
 
-	// Server listener 
+	// Serveur listener 
 	router.Use(middleware.LoggingMiddleware)
 	
 	// Users routers
