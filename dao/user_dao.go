@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"encoding/json"
 	"example/api/models"
+	"fmt"
+
 	//"fmt"
 	"net/http"
 	"strconv"
@@ -11,7 +13,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-<<<<<<< HEAD:handlers/user_handlers.go
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 	var user models.User
@@ -22,7 +23,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Créez la table "users" si elle n'existe pas
-	_, err = database.DB.Exec(`CREATE TABLE IF NOT EXISTS users (
+	_, err = DB.Exec(`CREATE TABLE IF NOT EXISTS users (
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		username VARCHAR(255),
 		email VARCHAR(255)
@@ -32,10 +33,6 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-=======
-func insertUser(w http.ResponseWriter, r *http.Request) {
-	var user models.User
->>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
 	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
 	result, err := DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", user.Username, user.Email)
 	if err != nil {
@@ -56,11 +53,10 @@ func insertUser(w http.ResponseWriter, r *http.Request) {
 
 func selectAllUsers(w http.ResponseWriter, r *http.Request) {
 
-<<<<<<< HEAD:handlers/user_handlers.go
 	var user models.User
 
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
-	err := database.DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", userID).Scan(&user.ID, &user.Username, &user.Email)
+	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", userID).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			http.Error(w, "User not found", http.StatusNotFound)
@@ -74,11 +70,7 @@ func selectAllUsers(w http.ResponseWriter, r *http.Request) {
 
 // GetAllUsers récupère tous les utilisateurs de la base de données.
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
-	rows, err := database.DB.Query("SELECT id, username, email FROM users")
-=======
-	// Get All users
 	rows, err := DB.Query("SELECT id, username, email FROM users")
->>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -128,7 +120,7 @@ func updateUser(w http.ResponseWriter, r *http.Request) {
 
 	// Vérifie si l'utilisateur avec l'ID donné existe
 	var existingUserID int
-	err = database.DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
+	err = DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			http.Error(w, "User not found", http.StatusNotFound)
@@ -160,10 +152,9 @@ func deleteUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userID := vars["id"]
 
-<<<<<<< HEAD:handlers/user_handlers.go
 	// Vérifie si l'utilisateur avec l'ID donné existe
 	var existingUserID int
-	err := database.DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
+	err := DB.QueryRow("SELECT id FROM users WHERE id = ?", userID).Scan(&existingUserID)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			http.Error(w, "User not found", http.StatusNotFound)
@@ -172,21 +163,13 @@ func deleteUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-=======
-	// Exécute la requête pour supprimer l'utilisateur de la base de données
-	_, err := DB.Exec("DELETE FROM users WHERE id = ?", userID)
->>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go
 
 	// Supprime l'utilisateur de la base de données
-	_, err = database.DB.Exec("DELETE FROM users WHERE id = ?", userID)
+	_, err = DB.Exec("DELETE FROM users WHERE id = ?", userID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-<<<<<<< HEAD:handlers/user_handlers.go
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintf(w, "User with ID %s has been deleted", userID)
 }
-=======
-}
->>>>>>> 1695c3ae532a9f332b3314a335b671637d63226d:dao/user_dao.go

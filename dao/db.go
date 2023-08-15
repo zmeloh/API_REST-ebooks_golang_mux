@@ -8,53 +8,43 @@ import (
 	"log"
 	"os"
 
-	//"github.com/joho/godotenv"
 	_ "github.com/go-sql-driver/mysql"
-	_ "github.com/lib/pq"
-	_ "github.com/mattn/go-sqlite3"
 )
 
 var DB *sql.DB
 
 func InitDB() {
 	// Lecture du fichier JSON
-	data,err := os.ReadFile("config.json")
+	data, err := os.ReadFile("config.json")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("Erreur lors de la lecture du fichier de configuration:", err)
 	}
 
-	var databaseinfo models.DatabaseInfo
+	var databaseInfo models.DatabaseInfo
 
-	if err = json.Unmarshal(data, &databaseinfo); err != nil {
-		fmt.Println(err)
+	if err = json.Unmarshal(data, &databaseInfo); err != nil {
+		log.Fatal("Erreur lors du décodage de la configuration JSON:", err)
 	}
 
-
-	dbDriver := databaseinfo.DB_DRIVER //os.Getenv("DB_DRIVER")
-	dbUser := databaseinfo.DB_USER //os.Getenv("DB_USER")
-	dbPassword := databaseinfo.DB_PASSWORD //os.Getenv("DB_PASSWORD")
-	dbHost := databaseinfo.DB_HOST //os.Getenv("DB_HOST")
-	dbPort := databaseinfo.DB_PORT //os.Getenv("DB_PORT")
-	dbName := databaseinfo.DB_NAME //os.Getenv("DB_NAME")
-
-	// Fermeture du fichier JSON
-	
+	// Utilisation des valeurs de configuration pour la connexion à la base de données
+	dbDriver := databaseInfo.DBDriver
+	dbUser := databaseInfo.DBUser
+	dbPassword := databaseInfo.DBPassword
+	dbHost := databaseInfo.DBHost
+	dbPort := databaseInfo.DBPort
+	dbName := databaseInfo.DBName
 
 	connectionString := ""
 
 	switch dbDriver {
 	case "mysql":
 		connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPassword, dbHost, dbPort, dbName)
-	case "sqlite":
-		connectionString = dbName + ".db"
-	case "postgres":
-		connectionString = fmt.Sprintf("user=%s password=%s dbname=%s host=%s port=%s sslmode=disable", dbUser, dbPassword, dbName, dbHost, dbPort)
 	default:
-		log.Fatal("Unsupported database driver")
+		log.Fatal("Pilote de base de données non pris en charge")
 	}
 
 	DB, err = sql.Open(dbDriver, connectionString)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Erreur lors de la connexion à la base de données:", err)
 	}
 }

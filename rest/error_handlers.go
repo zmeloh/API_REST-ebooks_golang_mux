@@ -1,16 +1,12 @@
-package handlers
+package rest
 
 import (
-    "github.com/gofiber/fiber/v2"
+	"net/http"
 )
 
-func ErrorHandler(c *fiber.Ctx, err error) error {
-    code := fiber.StatusInternalServerError
-    if e, ok := err.(*fiber.Error); ok {
-        code = e.Code
-    }
-
-    return c.Status(code).JSON(fiber.Map{
-        "error": err.Error(),
-    })
+// HandleError gère les erreurs et renvoie une réponse HTTP appropriée.
+func HandleError(w http.ResponseWriter, err error) {
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
