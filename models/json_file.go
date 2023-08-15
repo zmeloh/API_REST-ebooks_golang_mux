@@ -1,6 +1,6 @@
 package models
 
-type Database struct {
+type DatabaseInfo struct {
 	DB_DRIVER string `json:"db_driver"`
 	DB_USER string `json:"db_user"`
 	DB_PASSWORD string `json:"db_password"`

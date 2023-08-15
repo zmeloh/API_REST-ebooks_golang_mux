@@ -23,7 +23,7 @@ func InitDB() {
 		fmt.Println(err)
 	}
 
-	var databaseinfo models.Database
+	var databaseinfo models.DatabaseInfo
 
 	if err = json.Unmarshal(data, &databaseinfo); err != nil {
 		fmt.Println(err)
