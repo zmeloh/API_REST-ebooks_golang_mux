@@ -62,7 +62,7 @@ func SelectFavoriteByID(id int) (models.Favorite, error) {
 	return favorite, nil
 }
 
-func UpdateFavorite(id int, updatedFavorite models.Favorite)( models.Favorite,error)  {
+func UpdateFavorite(id int, updatedFavorite models.Favorite) (models.Favorite, error) {
 
 	// Met à jour les données du favori dans la base de données
 	_, err := DB.Exec("UPDATE favorites SET user_id = ?, ebook_id = ? WHERE id = ?", updatedFavorite.UserID, updatedFavorite.EbookID, id)
@@ -77,13 +77,13 @@ func UpdateFavorite(id int, updatedFavorite models.Favorite)( models.Favorite,er
 
 }
 
-func DeleteFavorite(id int)error {
+func DeleteFavorite(id int) error {
 	_, err := DB.Exec("DELETE FROM favorites WHERE id = ?", id)
 	return err
 
 }
 
-func SelectFavoriteByUserID(userID int)([]models.Favorite, error) {
+func SelectFavoriteByUserID(userID int) ([]models.Favorite, error) {
 	var favorites []models.Favorite
 	// Interroge la base de données pour obtenir les favoris correspondant à l'ID d'utilisateur
 	rows, err := DB.Query("SELECT id, user_id, ebook_id FROM favorites WHERE user_id = ?", userID)
@@ -104,7 +104,7 @@ func SelectFavoriteByUserID(userID int)([]models.Favorite, error) {
 	return favorites, nil
 }
 
-func SelectFavoriteByEbookID(ebookID int)([]models.Favorite, error) {
+func SelectFavoriteByEbookID(ebookID int) ([]models.Favorite, error) {
 	var favorites []models.Favorite
 	// Interroge la base de données pour obtenir les favoris correspondant à l'ID d'ebook
 	rows, err := DB.Query("SELECT id, user_id, ebook_id FROM favorites WHERE ebook_id = ?", ebookID)
