@@ -5,32 +5,32 @@ import (
 	"example/api/models"
 )
 
-// GetAllCategories 
-func GetAllCategories(){
+// GetAllCategories
+func GetAllCategories() (c []models.Category) {
 	controllers.GetAllCategories()
 	return
 }
 
-// GetCategoryByID 
-func GetCategoryByID(id int){
+// GetCategoryByID
+func GetCategoryByID(id int) (c models.Category) {
 	controllers.GetCategoryByID(id)
 	return
 }
 
-// InsertCategory 
-func InsertCategory(c models.Category){
-	//controllers.CreateEbook(c)
+// InsertCategory
+func InsertCategory(c models.Category) {
+	controllers.InsertCategory(c)
 	return
 }
 
-// UpdateCategory 
-func UpdateCategory(id int, c models.Category){
+// UpdateCategory
+func UpdateCategory(id int, c models.Category) {
 	controllers.UpdateCategory(id, c)
 	return
 }
 
-// DeleteCategory 
-func DeleteCategory(id int){
+// DeleteCategory
+func DeleteCategory(id int) {
 	controllers.DeleteCategory(id)
 	return
 }

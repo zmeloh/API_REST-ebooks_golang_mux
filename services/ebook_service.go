@@ -1,42 +1,42 @@
 package services
 
 import (
-	"example/api/controllers" 
-	"example/api/models"      
+	"example/api/controllers"
+	"example/api/models"
 )
 
-// GetAllEbooks 
-func GetAllEbooks(){
-	controllers.GetAllEbooks() 
+// GetAllEbooks
+func GetAllEbooks() (e []models.Ebook) {
+	controllers.GetAllEbooks()
 	return
 }
 
-// GetEbookByID 
-func GetEbookByID(id int){
-	controllers.GetEbookByID(id) 
+// GetEbookByID
+func GetEbookByID(id int) (e models.Ebook) {
+	controllers.GetEbookByID(id)
 	return
 }
 
-// GetEbookByID 
-func GetEbookByCategoryID(id int){
-	controllers.GetEbooksByCategoryID(id) 
+// GetEbookByID
+func GetEbookByCategoryID(id int) (e models.Ebook) {
+	controllers.GetEbooksByCategoryID(id)
 	return
 }
 
 // InsertEbook
 func InsertEbook(e models.Ebook) {
-	controllers.InsertEbook(e) 
+	controllers.InsertEbook(e)
 	return
 }
 
-// UpdateEbook 
+// UpdateEbook
 func UpdateEbook(id int, e models.Ebook) {
-	controllers.UpdateEbook(id, e) 
+	controllers.UpdateEbook(id, e)
 	return
 }
 
-// DeleteEbook 
+// DeleteEbook
 func DeleteEbook(id int) {
-	controllers.DeleteEbook(id) 
+	controllers.DeleteEbook(id)
 	return
 }

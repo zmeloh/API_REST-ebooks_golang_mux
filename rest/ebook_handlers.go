@@ -3,9 +3,10 @@ package rest
 import (
 	"encoding/json"
 	"example/api/models"
+	"example/api/services"
 	"net/http"
 	"strconv"
-	"example/api/services"
+
 	"github.com/gorilla/mux"
 )
 
@@ -25,17 +26,14 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(newEbook)
 }
 
-
 // GetAllEbook récupère la liste de tous les livres électroniques.
 func GetAllEbooks(w http.ResponseWriter, r *http.Request) {
 	// Appeler le service pour récupérer tous les livres électroniques
 	ebooks := services.GetAllEbooks()
-
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(ebooks)
 }
-
 
 // GetEbookByID récupère un livre électronique par son ID.
 func GetEbookByID(w http.ResponseWriter, r *http.Request) {
@@ -56,7 +54,6 @@ func GetEbookByID(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(ebook)
 }
 
-
 // GetEbookByCategoryID récupère la liste de tous les livres électroniques d'une catégorie.
 func GetEbookByCategoryID(w http.ResponseWriter, r *http.Request) {
 	// Récupérer l'ID de la catégorie depuis les paramètres de la requête
@@ -75,7 +72,6 @@ func GetEbookByCategoryID(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(ebooks)
 }
-
 
 // UpdateEbook met à jour un livre électronique par son ID.
 func UpdateEbook(w http.ResponseWriter, r *http.Request) {
@@ -108,7 +104,6 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(updatedEbook)
 }
 
-
 // DeleteEbook supprime un livre électronique par son ID.
 func DeleteEbook(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
@@ -126,4 +121,3 @@ func DeleteEbook(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusNoContent)
 }
-

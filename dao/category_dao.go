@@ -2,111 +2,77 @@ package dao
 
 import (
 	"database/sql"
-	"encoding/json"
 	"example/api/models"
-	//"fmt"
-	"net/http"
-	"strconv"
-
-	"github.com/gorilla/mux"
+	"example/api/utils"
+	"fmt"
 )
 
-func insertCategory(w http.ResponseWriter, r *http.Request) {
+func InsertCategory(c models.Category) error {
 	var category models.Category
 	// Insère la catégorie dans la base de données
 	result, err := DB.Exec("INSERT INTO categories (name) VALUES(?)", category.Name)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return err
 	}
-
-	// Récupère l'ID généré par la base de données
+	// Obtient l'ID généré lors de l'insertion
 	categoryID, err := result.LastInsertId()
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return err
 	}
 
-	// Met à jour l'ID dans l'objet Category
-	category.ID = int(categoryID)
+	// Met à jour l'ID dans l'objet User
+	c.ID = int(categoryID)
+	utils.Logger()
+	return err
 }
 
-func selectAllCategories(w http.ResponseWriter, r *http.Request) {
+func SelectAllCategories() ([]models.Category, error) {
+	var categories []models.Category
 	// Récupère toutes les catégories depuis la base de données
 	rows, err := DB.Query("SELECT id, name FROM categories")
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 	defer rows.Close()
 
-	var categories []models.Category
 	for rows.Next() {
 		var category models.Category
 		err := rows.Scan(&category.ID, &category.Name)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
+			return nil, err
 		}
 		categories = append(categories, category)
 	}
 
+	return categories, nil
 }
 
-func selectCategoryByID(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	categoryID := vars["id"]
-
+func SelectCategoryByID(id int) (models.Category, error) {
 	var category models.Category
-
 	// Récupère la catégorie depuis la base de données par son ID
-	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = ?", categoryID).Scan(&category.ID, &category.Name)
+	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = ?", id).Scan(&category.ID, &category.Name)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			http.NotFound(w, r)
-			return
+			return models.Category{}, fmt.Errorf("No category found with ID %d", id)
 		}
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return models.Category{}, err
 	}
+	return category, nil
 }
 
-func updateCategory(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	categoryID := vars["id"]
-
-	var updatedCategory models.Category
-	err := json.NewDecoder(r.Body).Decode(&updatedCategory)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-
+func UpdateCategory(id int, updatedCategory models.Category) (models.Category, error) {
 	// Met à jour la catégorie dans la base de données par son ID
-	_, err = DB.Exec("UPDATE categories SET name = ?  WHERE id = ?", updatedCategory.Name, categoryID)
+	_, err := DB.Exec("UPDATE categories SET name = ?  WHERE id = ?", updatedCategory.Name, id)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	// Convertit l'ID de string à int
-	categoryIDInt, err := strconv.Atoi(categoryID)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return models.Category{}, err
 	}
 
 	// Met à jour l'ID dans l'objet updatedCategory
-	updatedCategory.ID = categoryIDInt
+	updatedCategory.ID = id
+	return updatedCategory, nil
 }
 
-func deleteCategory(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	categoryID := vars["id"]
-	_, err := DB.Exec("DELETE FROM categories WHERE id = ?", categoryID)
-
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
+func DeleteCategory(id int) error {
+	_, err := DB.Exec("DELETE FROM categories WHERE id = ?", id)
+	return err
 }

@@ -6,7 +6,7 @@ import (
 
 // GetAllUsers récupère tous les utilisateurs.
 func GetAllUsers(){
-	// controllers.GetAllUsers()
+	//controllers.GetAllUsers()
 }
 
 // GetUserByID récupère un utilisateur par son ID.

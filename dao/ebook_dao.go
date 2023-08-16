@@ -3,18 +3,30 @@ package dao
 import (
 	"database/sql"
 	"example/api/models"
+	"example/api/utils"
 	"fmt"
 )
 
-// Create Ebook 
+// Create Ebook
 func InsertEbook(e models.Ebook) error {
 	// Requête pour insérer un nouvel ebook dans la base de données
-	_, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", e.Title, e.Author, e.CategoryID)
+	result, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", e.Title, e.Author, e.CategoryID)
+	if err != nil {
+		return err
+	}
+	// Obtient l'ID généré lors de l'insertion
+	ebookID, err := result.LastInsertId()
+	if err != nil {
+		return err
+	}
+
+	// Met à jour l'ID dans l'objet User
+	e.ID = int(ebookID)
+	utils.Logger()
 	return err
 }
 
-
-// Select Ebooks 
+// Select Ebooks
 func SelectAllEbooks() ([]models.Ebook, error) {
 	var ebooks []models.Ebook
 
@@ -37,7 +49,6 @@ func SelectAllEbooks() ([]models.Ebook, error) {
 	return ebooks, nil
 }
 
-
 // Select Ebooks with ID
 func SelectEbookByID(id int) (models.Ebook, error) {
 	var ebook models.Ebook
@@ -53,7 +64,6 @@ func SelectEbookByID(id int) (models.Ebook, error) {
 	return ebook, nil
 }
 
-
 // Update Ebook
 func UpdateEbook(id int, updatedEbook models.Ebook) (models.Ebook, error) {
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
@@ -68,14 +78,12 @@ func UpdateEbook(id int, updatedEbook models.Ebook) (models.Ebook, error) {
 	return updatedEbook, nil
 }
 
-
 // Delete Ebook
 func DeleteEbook(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
 	_, err := DB.Exec("DELETE FROM ebooks WHERE id = ?", id)
 	return err
 }
-
 
 // Select Ebooks with category_id
 func SelectEbooksByCategoryID(categoryID int) ([]models.Ebook, error) {
