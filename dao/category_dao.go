@@ -12,6 +12,7 @@ func InsertCategory(c models.Category) error {
 	// Insère la catégorie dans la base de données
 	result, err := DB.Exec("INSERT INTO categories (name) VALUES(?)", category.Name)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 	// Obtient l'ID généré lors de l'insertion
@@ -22,7 +23,7 @@ func InsertCategory(c models.Category) error {
 
 	// Met à jour l'ID dans l'objet User
 	c.ID = int(categoryID)
-	utils.Logger()
+
 	return err
 }
 

@@ -7,7 +7,7 @@ import (
 )
 
 // Log fonction
-func Logger() error {
+func Logger(e error) error {
 	// Ouverture du fichier
 	f, err := os.Open("log")
 	if err != nil {
@@ -18,6 +18,6 @@ func Logger() error {
 	defer f.Close()
 
 	logger := log.New(f, "error: ", log.Lmsgprefix)
-	logger.Println(err.Error())
+	logger.Println(e.Error())
 	return err
 }

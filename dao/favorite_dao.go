@@ -12,6 +12,7 @@ func InsertFavorite(f models.Favorite) error {
 	// Insère le favori dans la base de données
 	result, err := DB.Exec("INSERT INTO favorites (user_id, ebook_id) VALUES (?, ?)", favorite.UserID, favorite.EbookID)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 	// Obtient l'ID généré lors de l'insertion
@@ -22,7 +23,7 @@ func InsertFavorite(f models.Favorite) error {
 
 	// Met à jour l'ID dans l'objet User
 	f.ID = int(favoriteID)
-	utils.Logger()
+
 	return err
 }
 

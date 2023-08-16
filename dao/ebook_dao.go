@@ -12,6 +12,7 @@ func InsertEbook(e models.Ebook) error {
 	// Requête pour insérer un nouvel ebook dans la base de données
 	result, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES ($1, $2, $3)", e.Title, e.Author, e.CategoryID)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 	// Obtient l'ID généré lors de l'insertion
@@ -22,7 +23,7 @@ func InsertEbook(e models.Ebook) error {
 
 	// Met à jour l'ID dans l'objet User
 	e.ID = int(ebookID)
-	utils.Logger()
+	
 	return err
 }
 

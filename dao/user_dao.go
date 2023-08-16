@@ -13,6 +13,7 @@ func InsertUser(u models.User) error {
 	// result, err := DB.QueryRow(`INSERT INTO users (username, email) VALUES ($1, $2)`).Scan(&u.Username, &u.Email)
 	result, err := DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", u.Username, u.Email)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 	// Obtient l'ID généré lors de l'insertion
@@ -23,11 +24,11 @@ func InsertUser(u models.User) error {
 
 	// Met à jour l'ID dans l'objet User
 	u.ID = int(userID)
-	utils.Logger()
+
 	return err
 }
 
-func SelectAllUsers()([]models.User, error) {
+func SelectAllUsers() ([]models.User, error) {
 
 	var users []models.User
 
@@ -50,7 +51,7 @@ func SelectAllUsers()([]models.User, error) {
 	return users, nil
 }
 
-func SelectUserByID(id int)(models.User, error) {
+func SelectUserByID(id int) (models.User, error) {
 	var user models.User
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
 	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", id).Scan(&user.ID, &user.Username, &user.Email)
@@ -63,7 +64,7 @@ func SelectUserByID(id int)(models.User, error) {
 	return user, nil
 }
 
-func UpdateUser(id int, updatedUser models.User) (models.User, error){
+func UpdateUser(id int, updatedUser models.User) (models.User, error) {
 
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
 	_, err := DB.Exec("UPDATE users SET username = ?, email= ? WHERE id = ?", updatedUser.Username, updatedUser.Email, id)
@@ -77,7 +78,7 @@ func UpdateUser(id int, updatedUser models.User) (models.User, error){
 	return updatedUser, nil
 }
 
-func DeleteUser(id int) error{
+func DeleteUser(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
 	_, err := DB.Exec("DELETE FROM users WHERE id = ?", id)
 	return err
