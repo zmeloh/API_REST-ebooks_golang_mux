@@ -53,7 +53,7 @@ func SelectCategoryByID(id int) (models.Category, error) {
 	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = ?", id).Scan(&category.ID, &category.Name)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return models.Category{}, fmt.Errorf("No category found with ID %d", id)
+			return models.Category{}, fmt.Errorf("no category found with ID %d", id)
 		}
 		return models.Category{}, err
 	}

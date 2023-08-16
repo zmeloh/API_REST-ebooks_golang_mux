@@ -10,6 +10,7 @@ import (
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
 func InsertUser(u models.User) error {
 	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
+	// result, err := DB.QueryRow(`INSERT INTO users (username, email) VALUES ($1, $2)`).Scan(&u.Username, &u.Email)
 	result, err := DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", u.Username, u.Email)
 	if err != nil {
 		return err
@@ -55,7 +56,7 @@ func SelectUserByID(id int)(models.User, error) {
 	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", id).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return models.User{}, fmt.Errorf("No user found with ID %d", id)
+			return models.User{}, fmt.Errorf("no user found with ID %d", id)
 		}
 		return models.User{}, err
 	}

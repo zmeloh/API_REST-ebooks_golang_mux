@@ -9,3 +9,7 @@ type DatabaseInfo struct {
 	DBHost     string `json:"db_host"`
 	DBPort     string `json:"db_port"`
 }
+
+type Config struct {
+	DatabaseInfo DatabaseInfo `json:"database_info"`
+}

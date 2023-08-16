@@ -10,7 +10,7 @@ import (
 // Create Ebook
 func InsertEbook(e models.Ebook) error {
 	// Requête pour insérer un nouvel ebook dans la base de données
-	result, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", e.Title, e.Author, e.CategoryID)
+	result, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES ($1, $2, $3)", e.Title, e.Author, e.CategoryID)
 	if err != nil {
 		return err
 	}
@@ -36,7 +36,6 @@ func SelectAllEbooks() ([]models.Ebook, error) {
 		return nil, err
 	}
 	defer rows.Close()
-
 	for rows.Next() {
 		var ebook models.Ebook
 		err := rows.Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)

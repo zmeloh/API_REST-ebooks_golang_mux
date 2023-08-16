@@ -8,7 +8,7 @@ import (
 	"log"
 	"os"
 
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 )
 
 var DB *sql.DB
@@ -20,25 +20,38 @@ func InitDB() {
 		log.Fatal("Erreur lors de la lecture du fichier de configuration:", err)
 	}
 
-	var databaseInfo models.DatabaseInfo
+	var config models.Config
 
-	if err = json.Unmarshal(data, &databaseInfo); err != nil {
+	if err = json.Unmarshal(data, &config); err != nil {
 		log.Fatal("Erreur lors du décodage de la configuration JSON:", err)
 	}
 
 	// Utilisation des valeurs de configuration pour la connexion à la base de données
-	dbDriver := databaseInfo.DBDriver
-	dbUser := databaseInfo.DBUser
-	dbPassword := databaseInfo.DBPassword
-	dbHost := databaseInfo.DBHost
-	dbPort := databaseInfo.DBPort
-	dbName := databaseInfo.DBName
-
+	dbDriver := config.DatabaseInfo.DBDriver
+	dbUser := config.DatabaseInfo.DBUser
+	dbPassword := config.DatabaseInfo.DBPassword
+	dbHost := config.DatabaseInfo.DBHost
+	dbPort := config.DatabaseInfo.DBPort
+	dbName := config.DatabaseInfo.DBName
 	connectionString := ""
+
+	fmt.Println(string(data))
+
+	// if dbDriver == "mysql" {
+	// 	connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPassword, dbHost, dbPort, dbName)
+	// } else if dbDriver == "postgresql" {
+	// 	connectionString = fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", dbUser, dbPassword, dbHost, dbPort, dbName)
+	// } else {
+	// 	log.Fatal("Pilote de base de données non pris en charge")
+
+	// }
 
 	switch dbDriver {
 	case "mysql":
 		connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPassword, dbHost, dbPort, dbName)
+	case "postgres":
+
+		connectionString = fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", dbUser, dbPassword, dbHost, dbPort, dbName)
 	default:
 		log.Fatal("Pilote de base de données non pris en charge")
 	}
@@ -46,5 +59,11 @@ func InitDB() {
 	DB, err = sql.Open(dbDriver, connectionString)
 	if err != nil {
 		log.Fatal("Erreur lors de la connexion à la base de données:", err)
+		return
+	}
+
+	err = DB.Ping()
+	if err != nil {
+		log.Fatal("Erreur:", err)
 	}
 }
