@@ -17,9 +17,15 @@ func GetEbookByID(id int){
 	return
 }
 
+// GetEbookByID 
+func GetEbookByCategoryID(id int){
+	controllers.GetEbooksByCategoryID(id) 
+	return
+}
+
 // InsertEbook
 func InsertEbook(e models.Ebook) {
-	controllers.CreateEbook(e) 
+	controllers.InsertEbook(e) 
 	return
 }
 

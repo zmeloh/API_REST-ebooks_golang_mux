@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gorilla/mux"
-	//"example/api/rest"
+	"example/api/rest"
 	"example/api/middleware"
 )
 
@@ -25,16 +25,16 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/categories", rest.CreateCategory).Methods("POST")
 	router.HandleFunc("/categories/delete/{id}", rest.DeleteCategory).Methods("DELETE")
 	router.HandleFunc("/categories/update/{id}", rest.UpdateCategory).Methods("PUT")
-
+	*/
 
 	// Ebooks routers
-	router.HandleFunc("/ebooks", rest.GetAllEbooks).Methods("GET")
+	router.HandleFunc("/ebooks", rest.GetAllEbooks).Methods("GET", "POST")
 	router.HandleFunc("/ebooks/{id}", rest.GetEbookByID).Methods("GET")
-	router.HandleFunc("/ebooks/category/{id}", rest.GetEbooksByCategory).Methods("GET")
-	router.HandleFunc("/ebooks", rest.CreateEbook).Methods("POST")
+	router.HandleFunc("/ebooks/category/{id}", rest.GetEbookByCategoryID).Methods("GET")
 	router.HandleFunc("/ebooks/delete/{id}", rest.DeleteEbook).Methods("DELETE")
 	router.HandleFunc("/ebooks/update/{id}", rest.UpdateEbook).Methods("PUT")
 
+	/*
 	// Favorites routers
 	router.HandleFunc("/favorites", rest.GetAllFavorites).Methods("GET")
 	router.HandleFunc("/favorites/{id}", rest.GetFavoriteByID).Methods("GET")

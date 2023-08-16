@@ -2,128 +2,100 @@ package dao
 
 import (
 	"database/sql"
-	"encoding/json"
 	"example/api/models"
-	"net/http"
-
-	"github.com/gorilla/mux"
+	"fmt"
 )
 
-func insertEbook(w http.ResponseWriter, r *http.Request) {
-	var ebook models.Ebook
-	err := json.NewDecoder(r.Body).Decode(&ebook)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-
-	// Insérer le livre électronique dans la base de données
-	result, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", ebook.Title, ebook.Author, ebook.CategoryID)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	// Récupérer l'ID généré pour le livre électronique
-	ebookID, err := result.LastInsertId()
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	// Mettre à jour l'ID dans l'objet Ebook
-	ebook.ID = int(ebookID)
+// Create Ebook 
+func InsertEbook(e models.Ebook) error {
+	// Requête pour insérer un nouvel ebook dans la base de données
+	_, err := DB.Exec("INSERT INTO ebooks (title, author, category_id) VALUES (?, ?, ?)", e.Title, e.Author, e.CategoryID)
+	return err
 }
 
-func selectAllEbooks(w http.ResponseWriter, r *http.Request) {
+
+// Select Ebooks 
+func SelectAllEbooks() ([]models.Ebook, error) {
+	var ebooks []models.Ebook
+
 	// Requête pour récupérer tous les livres électroniques depuis la base de données
 	rows, err := DB.Query("SELECT id, title, author, category_id FROM ebooks")
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 	defer rows.Close()
 
-	var ebooks []models.Ebook
 	for rows.Next() {
 		var ebook models.Ebook
 		err := rows.Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
+			return nil, err
 		}
 		ebooks = append(ebooks, ebook)
 	}
 
+	return ebooks, nil
 }
 
-func SelectEbookByID(id int) models.Ebook {
 
+// Select Ebooks with ID
+func SelectEbookByID(id int) (models.Ebook, error) {
 	var ebook models.Ebook
 
 	// Requête pour récupérer le livre électronique par ID depuis la base de données
-	err := DB.QueryRow("SELECT id, title, author, category_id FROM ebooks WHERE id = ?", ebookID).Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)
+	err := DB.QueryRow("SELECT id, title, author, category_id FROM ebooks WHERE id = ?", id).Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return models.Ebook{}
+			return models.Ebook{}, fmt.Errorf("no ebook found with ID %d", id)
 		}
-
+		return models.Ebook{}, err
 	}
-	return ebook
+	return ebook, nil
 }
 
-func updateEbook(e models.Ebook) {
 
-	var updatedEbook models.Ebook
-	err := json.NewDecoder(r.Body).Decode(&updatedEbook)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
+// Update Ebook
+func UpdateEbook(id int, updatedEbook models.Ebook) (models.Ebook, error) {
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
-	_, err = DB.Exec("UPDATE ebooks SET title = ?, author = ?, category_id = ? WHERE id = ?", updatedEbook.Title, updatedEbook.Author, updatedEbook.CategoryID, ebookID)
+	_, err := DB.Exec("UPDATE ebooks SET title = ?, author = ?, category_id = ? WHERE id = ?", updatedEbook.Title, updatedEbook.Author, updatedEbook.CategoryID, id)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return models.Ebook{}, err
 	}
 
 	// Mettre à jour l'ID dans l'objet Ebook
-	//updatedEbook.ID = ebookIDInt
+	updatedEbook.ID = id
+
+	return updatedEbook, nil
 }
 
-func deleteEbook(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	ebookID := vars["id"]
 
-	// Requête pour supprimer le livre électronique depuis la base de données
-	_, err := DB.Exec("DELETE FROM ebooks WHERE id = ?", ebookID)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
+// Delete Ebook
+func DeleteEbook(id int) error {
+	// Requête pour supprimer un livre électronique par ID dans la base de données
+	_, err := DB.Exec("DELETE FROM ebooks WHERE id = ?", id)
+	return err
 }
 
-func selectEbookByCategory(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	categoryID := vars["categoryID"]
 
-	// Requête pour récupérer tous les livres électroniques d'une catégorie depuis la base de données
+// Select Ebooks with category_id
+func SelectEbooksByCategoryID(categoryID int) ([]models.Ebook, error) {
+	var ebooks []models.Ebook
+
+	// Requête pour récupérer les livres électroniques par ID de catégorie depuis la base de données
 	rows, err := DB.Query("SELECT id, title, author, category_id FROM ebooks WHERE category_id = ?", categoryID)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return nil, err
 	}
 	defer rows.Close()
 
-	var ebooks []models.Ebook
 	for rows.Next() {
 		var ebook models.Ebook
 		err := rows.Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
+			return nil, err
 		}
 		ebooks = append(ebooks, ebook)
 	}
+
+	return ebooks, nil
 }
