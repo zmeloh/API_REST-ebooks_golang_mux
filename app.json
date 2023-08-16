@@ -1,0 +1,37 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ebook_api",
+    "dateExported": "2023-08-16T21:00:21.251Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "b94c4dd9-a502-4bba-8b54-0b326c434cf9",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-08-16T20:58:19.285Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "01a82527-e24e-4974-b15e-0a790730dc2a",
+            "name": "categories",
+            "containerId": "",
+            "created": "2023-08-16T20:59:27.012Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "1a92a748-9270-40b9-b9bf-3da7ff6d2fe7",
+            "name": "ebooks",
+            "containerId": "",
+            "created": "2023-08-16T20:59:34.780Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "6159e479-5d98-4103-bbb2-f1168f03dc67",
+            "name": "favorites",
+            "containerId": "",
+            "created": "2023-08-16T21:00:11.076Z",
+            "sortNum": 70000
+        }
+    ],
+    "requests": []
+}
