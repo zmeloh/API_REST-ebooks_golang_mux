@@ -25,10 +25,10 @@ func GetAllCategories() ([]models.Category, error) {
 }
 
 func GetCategoryByID(id int) (models.Category, error) {
-	category, err := dao.SelectCategoryByID(id)
+	category,err:= dao.SelectCategoryByID(id)
 	if err != nil {
 		utils.Logger(err)
-		return models.Category{}, err
+		return models.Category{},err
 	}
 	return category, nil
 }

@@ -2,6 +2,7 @@ package dao
 
 import (
 	"database/sql"
+	"errors"
 	"example/api/models"
 	"example/api/utils"
 	"fmt"
@@ -42,14 +43,15 @@ func SelectAllCategories() ([]models.Category, error) {
 }
 
 func SelectCategoryByID(id int) (models.Category, error) {
-	var category models.Category
 	// Récupère la catégorie depuis la base de données par son ID
-	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = $1",id).Scan(category.ID, category.Name)
+	var category models.Category
+	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = $1", id).Scan(&category.ID, &category.Name)
+
+	if errors.Is(err, sql.ErrNoRows) {
+		return models.Category{}, fmt.Errorf("no category found with ID %d", id)
+	}
 	if err != nil {
 		utils.Logger(err)
-		if err == sql.ErrNoRows {
-			return models.Category{}, fmt.Errorf("no category found with ID %d", category.ID)
-		}
 		return models.Category{}, err
 	}
 	return category, nil

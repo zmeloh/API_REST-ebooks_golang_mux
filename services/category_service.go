@@ -12,9 +12,9 @@ func GetAllCategories() (c []models.Category) {
 }
 
 // GetCategoryByID
-func GetCategoryByID(id int) (c models.Category) {
-	c, _=controllers.GetCategoryByID(id)
-	return
+func GetCategoryByID(id int) (models.Category) {
+	controllers.GetCategoryByID(id)
+	return models.Category{}
 }
 
 // InsertCategory

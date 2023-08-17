@@ -254,3 +254,9 @@ error: sql: no rows in result set
 error: no category found with ID 0
 error: Request: GET /categories/1 127.0.0.1:62277 | Status: 200 | Latency: 4.212ms
 
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:64746 | Status: 200 | Latency: 4.8544ms
+
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56108 | Status: 200 | Latency: 3.2145ms
+
