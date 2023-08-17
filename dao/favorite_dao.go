@@ -32,6 +32,7 @@ func SelectAllFavorites() ([]models.Favorite, error) {
 	// Récupère tous les favoris depuis la base de données
 	rows, err := DB.Query("SELECT id, user_id, ebook_id FROM favorites")
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -55,6 +56,7 @@ func SelectFavoriteByID(id int) (models.Favorite, error) {
 	// Interroge la base de données pour obtenir le favori correspondant à l'ID
 	err := DB.QueryRow("SELECT id, user_id, ebook_id FROM favorites WHERE id = ?", id).Scan(&favorite.ID, &favorite.UserID, &favorite.EbookID)
 	if err != nil {
+		utils.Logger(err)
 		if err == sql.ErrNoRows {
 			return models.Favorite{}, fmt.Errorf("no ebook found with ID %d", id)
 		}
@@ -68,6 +70,8 @@ func UpdateFavorite(id int, updatedFavorite models.Favorite) (models.Favorite, e
 	// Met à jour les données du favori dans la base de données
 	_, err := DB.Exec("UPDATE favorites SET user_id = ?, ebook_id = ? WHERE id = ?", updatedFavorite.UserID, updatedFavorite.EbookID, id)
 	if err != nil {
+		utils.Logger(err)
+
 		return models.Favorite{}, err
 	}
 
@@ -80,6 +84,9 @@ func UpdateFavorite(id int, updatedFavorite models.Favorite) (models.Favorite, e
 
 func DeleteFavorite(id int) error {
 	_, err := DB.Exec("DELETE FROM favorites WHERE id = ?", id)
+	if err != nil {
+		utils.Logger(err)
+	}
 	return err
 
 }
@@ -89,6 +96,7 @@ func SelectFavoriteByUserID(userID int) ([]models.Favorite, error) {
 	// Interroge la base de données pour obtenir les favoris correspondant à l'ID d'utilisateur
 	rows, err := DB.Query("SELECT id, user_id, ebook_id FROM favorites WHERE user_id = ?", userID)
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -110,6 +118,7 @@ func SelectFavoriteByEbookID(ebookID int) ([]models.Favorite, error) {
 	// Interroge la base de données pour obtenir les favoris correspondant à l'ID d'ebook
 	rows, err := DB.Query("SELECT id, user_id, ebook_id FROM favorites WHERE ebook_id = ?", ebookID)
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -118,6 +127,8 @@ func SelectFavoriteByEbookID(ebookID int) ([]models.Favorite, error) {
 		var favorite models.Favorite
 		err := rows.Scan(&favorite.ID, &favorite.UserID, &favorite.EbookID)
 		if err != nil {
+			utils.Logger(err)
+
 			return nil, err
 		}
 		favorites = append(favorites, favorite)

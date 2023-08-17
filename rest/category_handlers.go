@@ -2,10 +2,12 @@ package rest
 
 import (
 	"encoding/json"
+	"example/api/dao"
 	"example/api/models"
+	"example/api/services"
+	"example/api/utils"
 	"fmt"
 	"net/http"
-
 )
 
 // CreateCategory crée une nouvelle catégorie.
@@ -14,11 +16,12 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 	var category models.Category
 	err := json.NewDecoder(r.Body).Decode(&category)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	
+	services.InsertCategory(&category)
 
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(category)
@@ -27,6 +30,7 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 // GetCategoryByID récupère une catégorie par son ID.
 func GetCategoryByID(w http.ResponseWriter, r *http.Request) {
 	var category models.Category
+	dao.SelectCategoryByID(category.ID)
 	json.NewEncoder(w).Encode(category)
 }
 
@@ -36,14 +40,17 @@ func GetAllCategories(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	err := json.NewEncoder(w).Encode(categories)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
+	dao.SelectAllCategories()
 }
 
 // UpdateCategory met à jour une catégorie par son ID.
 func UpdateCategory(w http.ResponseWriter, r *http.Request) {
 	var updatedCategory models.Category
 	w.Header().Set("Content-Type", "application/json")
+	//dao.UpdateCategory(updatedCategory.ID)
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(updatedCategory)
 }

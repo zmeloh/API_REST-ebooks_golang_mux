@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	//"example/api/dao"
 	"example/api/models"
+	"example/api/utils"
 	"fmt"
 	"net/http"
 )
@@ -14,10 +15,10 @@ func CreateFavorite(w http.ResponseWriter, r *http.Request) {
 	var favorite models.Favorite
 	err := json.NewDecoder(r.Body).Decode(&favorite)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-
 
 	// Répond avec le favori créé et le code de statut 201 (Created)
 	w.WriteHeader(http.StatusCreated)
@@ -33,6 +34,7 @@ func GetAllFavorites(w http.ResponseWriter, r *http.Request) {
 	// Encode la slice de favoris en JSON et répond avec les favoris
 	err := json.NewEncoder(w).Encode(favorites)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
@@ -52,6 +54,7 @@ func GetFavoritesByUserID(w http.ResponseWriter, r *http.Request) {
 	// Encode la slice de favoris en JSON et répond avec les favoris
 	err := json.NewEncoder(w).Encode(favorites)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
@@ -64,6 +67,7 @@ func GetFavoritesByEbookID(w http.ResponseWriter, r *http.Request) {
 	// Encode la slice de favoris en JSON et répond avec les favoris
 	err := json.NewEncoder(w).Encode(favorites)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
@@ -80,7 +84,7 @@ func UpdateFavorite(w http.ResponseWriter, r *http.Request) {
 
 // DeleteFavorite supprime un favori par son ID.
 func DeleteFavorite(w http.ResponseWriter, r *http.Request) {
-	
+
 	// Répond avec le statut 200 (OK) et un message indiquant que le favori a été supprimé
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintf(w, "Favorite has been deleted")

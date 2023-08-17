@@ -7,22 +7,13 @@ import (
 	"fmt"
 )
 
-func InsertCategory(c models.Category) error {
-	var category models.Category
+func InsertCategory(c *models.Category) error {
 	// Insère la catégorie dans la base de données
-	result, err := DB.Exec("INSERT INTO categories (name) VALUES(?)", category.Name)
+	err := DB.QueryRow("INSERT INTO categories (name) VALUES($1) RETURNING id", c.Name).Scan(&c.ID)
 	if err != nil {
 		utils.Logger(err)
 		return err
 	}
-	// Obtient l'ID généré lors de l'insertion
-	categoryID, err := result.LastInsertId()
-	if err != nil {
-		return err
-	}
-
-	// Met à jour l'ID dans l'objet User
-	c.ID = int(categoryID)
 
 	return err
 }
@@ -32,6 +23,7 @@ func SelectAllCategories() ([]models.Category, error) {
 	// Récupère toutes les catégories depuis la base de données
 	rows, err := DB.Query("SELECT id, name FROM categories")
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -53,6 +45,7 @@ func SelectCategoryByID(id int) (models.Category, error) {
 	// Récupère la catégorie depuis la base de données par son ID
 	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = ?", id).Scan(&category.ID, &category.Name)
 	if err != nil {
+		utils.Logger(err)
 		if err == sql.ErrNoRows {
 			return models.Category{}, fmt.Errorf("no category found with ID %d", id)
 		}
@@ -65,6 +58,7 @@ func UpdateCategory(id int, updatedCategory models.Category) (models.Category, e
 	// Met à jour la catégorie dans la base de données par son ID
 	_, err := DB.Exec("UPDATE categories SET name = ?  WHERE id = ?", updatedCategory.Name, id)
 	if err != nil {
+		utils.Logger(err)
 		return models.Category{}, err
 	}
 
@@ -75,5 +69,8 @@ func UpdateCategory(id int, updatedCategory models.Category) (models.Category, e
 
 func DeleteCategory(id int) error {
 	_, err := DB.Exec("DELETE FROM categories WHERE id = ?", id)
+	if err != nil {
+		utils.Logger(err)
+	}
 	return err
 }

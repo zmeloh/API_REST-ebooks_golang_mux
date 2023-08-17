@@ -9,7 +9,7 @@ import (
 // Log fonction
 func Logger(e error) error {
 	// Ouverture du fichier
-	f, err := os.Open("log")
+	f, err := os.OpenFile("log.txt", os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
 	if err != nil {
 		fmt.Println(err.Error())
 		return err
@@ -19,5 +19,5 @@ func Logger(e error) error {
 
 	logger := log.New(f, "error: ", log.Lmsgprefix)
 	logger.Println(e.Error())
-	return err
+	return e
 }

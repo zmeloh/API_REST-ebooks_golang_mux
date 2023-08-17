@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"example/api/models"
+	"example/api/utils"
 	"fmt"
 	"log"
 	"os"
@@ -35,8 +36,6 @@ func InitDB() {
 	dbName := config.DatabaseInfo.DBName
 	connectionString := ""
 
-	fmt.Println(string(data))
-
 	// if dbDriver == "mysql" {
 	// 	connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPassword, dbHost, dbPort, dbName)
 	// } else if dbDriver == "postgresql" {
@@ -58,12 +57,14 @@ func InitDB() {
 
 	DB, err = sql.Open(dbDriver, connectionString)
 	if err != nil {
+		utils.Logger(err)
 		log.Fatal("Erreur lors de la connexion à la base de données:", err)
 		return
 	}
 
 	err = DB.Ping()
 	if err != nil {
+		utils.Logger(err)
 		log.Fatal("Erreur:", err)
 	}
 }

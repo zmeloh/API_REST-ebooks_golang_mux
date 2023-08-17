@@ -23,7 +23,7 @@ func InsertEbook(e models.Ebook) error {
 
 	// Met à jour l'ID dans l'objet User
 	e.ID = int(ebookID)
-	
+
 	return err
 }
 
@@ -34,6 +34,7 @@ func SelectAllEbooks() ([]models.Ebook, error) {
 	// Requête pour récupérer tous les livres électroniques depuis la base de données
 	rows, err := DB.Query("SELECT id, title, author, category_id FROM ebooks")
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -56,6 +57,7 @@ func SelectEbookByID(id int) (models.Ebook, error) {
 	// Requête pour récupérer le livre électronique par ID depuis la base de données
 	err := DB.QueryRow("SELECT id, title, author, category_id FROM ebooks WHERE id = ?", id).Scan(&ebook.ID, &ebook.Title, &ebook.Author, &ebook.CategoryID)
 	if err != nil {
+		utils.Logger(err)
 		if err == sql.ErrNoRows {
 			return models.Ebook{}, fmt.Errorf("no ebook found with ID %d", id)
 		}
@@ -69,6 +71,7 @@ func UpdateEbook(id int, updatedEbook models.Ebook) (models.Ebook, error) {
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
 	_, err := DB.Exec("UPDATE ebooks SET title = ?, author = ?, category_id = ? WHERE id = ?", updatedEbook.Title, updatedEbook.Author, updatedEbook.CategoryID, id)
 	if err != nil {
+		utils.Logger(err)
 		return models.Ebook{}, err
 	}
 
@@ -82,6 +85,9 @@ func UpdateEbook(id int, updatedEbook models.Ebook) (models.Ebook, error) {
 func DeleteEbook(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
 	_, err := DB.Exec("DELETE FROM ebooks WHERE id = ?", id)
+	if err != nil {
+		utils.Logger(err)
+	}
 	return err
 }
 
@@ -92,6 +98,7 @@ func SelectEbooksByCategoryID(categoryID int) ([]models.Ebook, error) {
 	// Requête pour récupérer les livres électroniques par ID de catégorie depuis la base de données
 	rows, err := DB.Query("SELECT id, title, author, category_id FROM ebooks WHERE category_id = ?", categoryID)
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()

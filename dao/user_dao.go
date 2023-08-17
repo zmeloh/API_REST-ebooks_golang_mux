@@ -84,6 +84,9 @@ func UpdateUser(id int, updatedUser models.User) (models.User, error) {
 func DeleteUser(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
 	_, err := DB.Exec("DELETE FROM users WHERE id = ?", id)
-	utils.Logger(err)
+	if err != nil {
+		utils.Logger(err)
+	}
+
 	return err
 }

@@ -1,6 +1,8 @@
 package middleware
 
 import (
+	"example/api/utils"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -24,6 +26,12 @@ func LoggingMiddleware(next http.Handler) http.Handler {
 			r.Method, r.URL.Path, r.RemoteAddr,
 			recorder.Status, latency,
 		)
+		msg := fmt.Errorf(
+			"Request: %s %s %s | Status: %d | Latency: %v\n",
+			r.Method, r.URL.Path, r.RemoteAddr,
+			recorder.Status, latency,
+		)
+		utils.Logger(msg)
 	})
 }
 

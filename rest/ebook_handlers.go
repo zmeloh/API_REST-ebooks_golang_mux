@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"example/api/models"
 	"example/api/services"
+	"example/api/utils"
 	"net/http"
 	"strconv"
 
@@ -14,6 +15,7 @@ import (
 func CreateEbook(w http.ResponseWriter, r *http.Request) {
 	var newEbook models.Ebook
 	if err := json.NewDecoder(r.Body).Decode(&newEbook); err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -42,6 +44,7 @@ func GetEbookByID(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(ebookID)
 
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -61,6 +64,7 @@ func GetEbookByCategoryID(w http.ResponseWriter, r *http.Request) {
 	categoryID, err := strconv.Atoi(categoryIDStr)
 
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -82,6 +86,7 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 
 	// Gérer les erreurs liées à la conversion de l'ID
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -91,6 +96,7 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 
 	// Décoder le JSON du corps de la requête pour obtenir les nouvelles données de l'ebook
 	if err := json.NewDecoder(r.Body).Decode(&updatedEbook); err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -111,6 +117,7 @@ func DeleteEbook(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(ebookID)
 
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}

@@ -3,11 +3,13 @@ package controllers
 import (
 	"example/api/dao"
 	"example/api/models"
+	"example/api/utils"
 )
 
-func InsertCategory(c models.Category) error {
+func InsertCategory(c *models.Category) error {
 	err := dao.InsertCategory(c)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 	return nil
@@ -16,6 +18,7 @@ func InsertCategory(c models.Category) error {
 func GetAllCategories() ([]models.Category, error) {
 	categories, err := dao.SelectAllCategories()
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	return categories, nil
@@ -24,6 +27,7 @@ func GetAllCategories() ([]models.Category, error) {
 func GetCategoryByID(id int) (models.Category, error) {
 	category, err := dao.SelectCategoryByID(id)
 	if err != nil {
+		utils.Logger(err)
 		return models.Category{}, err
 	}
 	return category, nil
@@ -33,6 +37,7 @@ func UpdateCategory(id int, updatedCategory models.Category) error {
 
 	existingCategory, err := dao.SelectCategoryByID(id)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 
@@ -41,6 +46,7 @@ func UpdateCategory(id int, updatedCategory models.Category) error {
 
 	_, err = dao.UpdateCategory(id, existingCategory)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 
@@ -50,6 +56,7 @@ func UpdateCategory(id int, updatedCategory models.Category) error {
 func DeleteCategory(id int) error {
 	err := dao.DeleteCategory(id)
 	if err != nil {
+		utils.Logger(err)
 		return err
 	}
 	return err

@@ -23,8 +23,8 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/categories", rest.GetAllCategories).Methods("GET")
 	router.HandleFunc("/categories/{id}", rest.GetCategoryByID).Methods("GET")
 	router.HandleFunc("/categories", rest.CreateCategory).Methods("POST")
-	router.HandleFunc("/categories/delete/{id}", rest.DeleteCategory).Methods("DELETE")
-	router.HandleFunc("/categories/update/{id}", rest.UpdateCategory).Methods("PUT")
+	router.HandleFunc("/categories/{id}", rest.DeleteCategory).Methods("DELETE")
+	router.HandleFunc("/categories/{id}", rest.UpdateCategory).Methods("PUT")
 	
 
 	// Ebooks routers

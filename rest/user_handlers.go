@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	//"example/api/dao"
 	"example/api/models"
+	"example/api/utils"
 	"fmt"
 	"net/http"
 	//"strconv"
-
 	//"github.com/gorilla/mux"
 )
 
@@ -18,6 +18,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -34,10 +35,11 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 
 // GetAllUsers récupère tous les utilisateurs de la base de données.
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
-	var users[]models.User
+	var users []models.User
 	w.Header().Set("Content-Type", "application/json")
-	err:= json.NewEncoder(w).Encode(users)
+	err := json.NewEncoder(w).Encode(users)
 	if err != nil {
+		utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }

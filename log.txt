@@ -1,0 +1,23 @@
+error: pq: syntax error at or near "INSER"
+error: Request: POST /categories 127.0.0.1:55398 | Status: 201 | Latency: 28.2647054s
+
+error: pq: syntax error at or near "INSER"
+error: Request: POST /categories 127.0.0.1:53443 | Status: 201 | Latency: 22.3209922s
+
+error: pq: syntax error at or near "INSER"
+error: pq: syntax error at or near "INSER"
+error: Request: POST /categories 127.0.0.1:57536 | Status: 201 | Latency: 10.0188ms
+
+error: pq: syntax error at or near "INSER"
+error: Request: POST /categories 127.0.0.1:57560 | Status: 201 | Latency: 4.645ms
+
+error: pq: syntax error at or near "INSER"
+error: Request: POST /categories 127.0.0.1:50756 | Status: 201 | Latency: 6.9999ms
+
+error: pq: syntax error at or near "INSER"
+error: Request: POST /categories 127.0.0.1:51774 | Status: 201 | Latency: 11.6031ms
+
+error: Request: POST /categories 127.0.0.1:54669 | Status: 201 | Latency: 3.4646ms
+
+error: Request: GET /categories 127.0.0.1:54219 | Status: 200 | Latency: 4.1551ms
+
