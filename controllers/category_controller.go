@@ -44,7 +44,7 @@ func UpdateCategory(id int, updatedCategory models.Category) error {
 	// Mettre à jour les valeurs de l'ebook existant
 	existingCategory.Name = updatedCategory.Name
 
-	_, err = dao.UpdateCategory(id, existingCategory)
+	updatedCategory, err = dao.UpdateCategory(id, existingCategory)
 	if err != nil {
 		utils.Logger(err)
 		return err

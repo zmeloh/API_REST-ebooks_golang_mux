@@ -50,3 +50,207 @@ error: Request: GET /categories 127.0.0.1:64664 | Status: 200 | Latency: 4.1827m
 
 error: Request: GET /categories 127.0.0.1:64666 | Status: 200 | Latency: 544.2µs
 
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:57280 | Status: 200 | Latency: 3.1678ms
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:57307 | Status: 200 | Latency: 1.082ms
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:57310 | Status: 200 | Latency: 677.9µs
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:52545 | Status: 200 | Latency: 4.4688ms
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:52558 | Status: 200 | Latency: 718.2µs
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:52560 | Status: 200 | Latency: 982.5µs
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:56954 | Status: 200 | Latency: 3.3956ms
+
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:58802 | Status: 200 | Latency: 3.1981ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: DELETE /categories/1 127.0.0.1:53108 | Status: 200 | Latency: 10.4189ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: DELETE /categories/7 127.0.0.1:53132 | Status: 200 | Latency: 6.0217ms
+
+error: Request: DELETE /categories/4 127.0.0.1:51705 | Status: 200 | Latency: 2.6559ms
+
+error: Request: DELETE /categories/4 127.0.0.1:57284 | Status: 200 | Latency: 1.0577ms
+
+error: Request: DELETE /categories/4 127.0.0.1:57286 | Status: 200 | Latency: 507.2µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57288 | Status: 200 | Latency: 506.1µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57290 | Status: 200 | Latency: 516.8µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57292 | Status: 200 | Latency: 2.5156ms
+
+error: Request: DELETE /categories/4 127.0.0.1:57294 | Status: 200 | Latency: 601.2µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57296 | Status: 200 | Latency: 508.2µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57298 | Status: 200 | Latency: 545µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57300 | Status: 200 | Latency: 506.7µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57302 | Status: 200 | Latency: 506.5µs
+
+error: Request: DELETE /categories/4 127.0.0.1:57304 | Status: 200 | Latency: 650.5µs
+
+error: Request: GET /categories 127.0.0.1:62309 | Status: 200 | Latency: 3.4637ms
+
+error: Request: GET /categories 127.0.0.1:54235 | Status: 200 | Latency: 7.5258ms
+
+error: Request: GET /categories 127.0.0.1:56466 | Status: 200 | Latency: 0s
+
+error: Request: GET /categories 127.0.0.1:56342 | Status: 200 | Latency: 2.1493ms
+
+error: Request: GET /categories 127.0.0.1:53372 | Status: 200 | Latency: 2.5201ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51567 | Status: 200 | Latency: 3.8351ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51569 | Status: 200 | Latency: 949.2µs
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51571 | Status: 200 | Latency: 2.2197ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51574 | Status: 200 | Latency: 1.8175ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51576 | Status: 200 | Latency: 1.3617ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51578 | Status: 200 | Latency: 1.2349ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51591 | Status: 200 | Latency: 1.9838ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51605 | Status: 200 | Latency: 8.3083ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51613 | Status: 200 | Latency: 2.3811ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:51617 | Status: 200 | Latency: 1.2446ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56946 | Status: 200 | Latency: 4.0964ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56948 | Status: 200 | Latency: 1.8243ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56950 | Status: 200 | Latency: 2.1081ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56952 | Status: 200 | Latency: 1.7694ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56954 | Status: 200 | Latency: 1.3009ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:53345 | Status: 200 | Latency: 12.6205ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:55406 | Status: 200 | Latency: 1m16.9661579s
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:64970 | Status: 200 | Latency: 11.7218ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65018 | Status: 200 | Latency: 1m58.2789047s
+
+error: Request: GET /categories 127.0.0.1:65449 | Status: 200 | Latency: 2.1114ms
+
+error: Request: GET /categories 127.0.0.1:65451 | Status: 200 | Latency: 511µs
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65487 | Status: 200 | Latency: 12.0431ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65489 | Status: 200 | Latency: 4.7813ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65491 | Status: 200 | Latency: 4.9414ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65493 | Status: 200 | Latency: 6.6602ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65495 | Status: 200 | Latency: 4.6747ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65497 | Status: 200 | Latency: 5.882ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65499 | Status: 200 | Latency: 5.7459ms
+
+error: pq: syntax error at or near "RETURNING"
+error: pq: syntax error at or near "RETURNING"
+error: Request: GET /categories/1 127.0.0.1:65501 | Status: 200 | Latency: 4.7499ms
+
+error: pq: there is no parameter $1
+error: pq: there is no parameter $1
+error: Request: GET /categories/1 127.0.0.1:51360 | Status: 200 | Latency: 13.9702692s
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:61073 | Status: 200 | Latency: 4.7079ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:56641 | Status: 200 | Latency: 4.3764ms
+
+error: Request: GET /categories/1 127.0.0.1:59249 | Status: 200 | Latency: 3.1296ms
+
+error: Request: GET /categories/1 127.0.0.1:59251 | Status: 200 | Latency: 603.6µs
+
+error: Request: GET /categories/1 127.0.0.1:59253 | Status: 200 | Latency: 506µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:60014 | Status: 200 | Latency: 4.1871ms
+
+error: sql: no rows in result set
+error: no category found with ID 0
+error: Request: GET /categories/1 127.0.0.1:62277 | Status: 200 | Latency: 4.212ms
+

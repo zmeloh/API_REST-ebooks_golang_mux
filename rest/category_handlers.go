@@ -2,7 +2,6 @@ package rest
 
 import (
 	"encoding/json"
-	"example/api/dao"
 	"example/api/models"
 	"example/api/services"
 	"example/api/utils"
@@ -30,37 +29,34 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 // GetCategoryByID récupère une catégorie par son ID.
 func GetCategoryByID(w http.ResponseWriter, r *http.Request) {
 	var category models.Category
-	dao.SelectCategoryByID(category.ID)
-	json.NewEncoder(w).Encode(category)
+	c :=services.GetCategoryByID(category.ID)
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(c)
 }
 
 // GetAllCategories récupère toutes les catégories.
 func GetAllCategories(w http.ResponseWriter, r *http.Request) {
-	var categories []models.Category
 	w.Header().Set("Content-Type", "application/json")
-	err := json.NewEncoder(w).Encode(categories)
-	if err != nil {
-		//utils.Logger(err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-	c := services.GetAllCategories()
+
+	category := services.GetAllCategories()
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(c)
-	
+	json.NewEncoder(w).Encode(category)
+
 }
 
 // UpdateCategory met à jour une catégorie par son ID.
 func UpdateCategory(w http.ResponseWriter, r *http.Request) {
 	var updatedCategory models.Category
 	w.Header().Set("Content-Type", "application/json")
-	//dao.UpdateCategory(updatedCategory.ID)
+	services.UpdateCategory(updatedCategory.ID, updatedCategory)
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(updatedCategory)
 }
 
 // DeleteCategory supprime une catégorie par son ID.
 func DeleteCategory(w http.ResponseWriter, r *http.Request) {
-
+	var category models.Category
+	services.DeleteCategory(category.ID)
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintf(w, "Category has been deleted")
 }

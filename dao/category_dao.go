@@ -32,6 +32,7 @@ func SelectAllCategories() ([]models.Category, error) {
 		var category models.Category
 		err := rows.Scan(&category.ID, &category.Name)
 		if err != nil {
+			utils.Logger(err)
 			return nil, err
 		}
 		categories = append(categories, category)
@@ -43,11 +44,11 @@ func SelectAllCategories() ([]models.Category, error) {
 func SelectCategoryByID(id int) (models.Category, error) {
 	var category models.Category
 	// Récupère la catégorie depuis la base de données par son ID
-	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = $1", id).Scan(&category.ID, &category.Name)
+	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = $1",id).Scan(category.ID, category.Name)
 	if err != nil {
 		utils.Logger(err)
 		if err == sql.ErrNoRows {
-			return models.Category{}, fmt.Errorf("no category found with ID %d", id)
+			return models.Category{}, fmt.Errorf("no category found with ID %d", category.ID)
 		}
 		return models.Category{}, err
 	}
@@ -68,7 +69,7 @@ func UpdateCategory(id int, updatedCategory models.Category) (models.Category, e
 }
 
 func DeleteCategory(id int) error {
-	_, err := DB.Exec("DELETE FROM categories WHERE id = ?", id)
+	_, err := DB.Exec("DELETE FROM categories WHERE id = $1", id)
 	if err != nil {
 		utils.Logger(err)
 	}

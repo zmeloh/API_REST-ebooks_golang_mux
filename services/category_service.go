@@ -13,7 +13,7 @@ func GetAllCategories() (c []models.Category) {
 
 // GetCategoryByID
 func GetCategoryByID(id int) (c models.Category) {
-	controllers.GetCategoryByID(id)
+	c, _=controllers.GetCategoryByID(id)
 	return
 }
 
