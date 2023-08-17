@@ -8,7 +8,7 @@ import (
 )
 
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
-func InsertUser(u models.User) error {
+func InsertUser(u *models.User) error {
 	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
 	// result, err := DB.QueryRow(`INSERT INTO users (username, email) VALUES ($1, $2)`).Scan(&u.Username, &u.Email)
 	result, err := DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", u.Username, u.Email)

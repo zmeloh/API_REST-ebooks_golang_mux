@@ -6,7 +6,7 @@ import (
 	"example/api/utils"
 )
 
-func InsertUser(u models.User) error {
+func InsertUser(u *models.User) error {
 	err := dao.InsertUser(u)
 	if err != nil {
 		utils.Logger(err)

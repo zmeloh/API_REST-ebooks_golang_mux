@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-func InsertFavorite(f models.Favorite) error {
+func InsertFavorite(f *models.Favorite) error {
 	var favorite models.Favorite
 	// Insère le favori dans la base de données
 	result, err := DB.Exec("INSERT INTO favorites (user_id, ebook_id) VALUES (?, ?)", favorite.UserID, favorite.EbookID)

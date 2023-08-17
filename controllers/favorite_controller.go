@@ -6,7 +6,7 @@ import (
 	"example/api/utils"
 )
 
-func InsertFavorite(f models.Favorite) error {
+func InsertFavorite(f *models.Favorite) error {
 	err := dao.InsertFavorite(f)
 	if err != nil {
 		utils.Logger(err)
