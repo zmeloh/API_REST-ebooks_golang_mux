@@ -21,3 +21,32 @@ error: Request: POST /categories 127.0.0.1:54669 | Status: 201 | Latency: 3.4646
 
 error: Request: GET /categories 127.0.0.1:54219 | Status: 200 | Latency: 4.1551ms
 
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:65397 | Status: 200 | Latency: 4.5965ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: GET /categories/1 127.0.0.1:50904 | Status: 200 | Latency: 4.1393ms
+
+error: Request: GET /categories 127.0.0.1:50930 | Status: 200 | Latency: 1.1315ms
+
+error: Request: GET /categories 127.0.0.1:63081 | Status: 200 | Latency: 38.7813167s
+
+error: Request: GET /categories 127.0.0.1:63843 | Status: 200 | Latency: 3.8240816s
+
+error: Request: GET /categories 127.0.0.1:61719 | Status: 200 | Latency: 507.4µs
+
+error: Request: GET /categories 127.0.0.1:61800 | Status: 200 | Latency: 35.412321s
+
+error: Request: GET /categories 127.0.0.1:58555 | Status: 200 | Latency: 7.6887136s
+
+error: Request: GET /categories 127.0.0.1:62729 | Status: 200 | Latency: 15.8115455s
+
+error: Request: GET /categories 127.0.0.1:55025 | Status: 200 | Latency: 2.8437ms
+
+error: Request: GET /categories 127.0.0.1:55108 | Status: 200 | Latency: 3.6902ms
+
+error: Request: GET /categories 127.0.0.1:64664 | Status: 200 | Latency: 4.1827ms
+
+error: Request: GET /categories 127.0.0.1:64666 | Status: 200 | Latency: 544.2µs
+

@@ -40,10 +40,13 @@ func GetAllCategories(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	err := json.NewEncoder(w).Encode(categories)
 	if err != nil {
-		utils.Logger(err)
+		//utils.Logger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
-	dao.SelectAllCategories()
+	c := services.GetAllCategories()
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(c)
+	
 }
 
 // UpdateCategory met à jour une catégorie par son ID.

@@ -18,6 +18,7 @@ func Logger(e error) error {
 	defer f.Close()
 
 	logger := log.New(f, "error: ", log.Lmsgprefix)
+
 	logger.Println(e.Error())
 	return e
 }

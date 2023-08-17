@@ -43,7 +43,7 @@ func SelectAllCategories() ([]models.Category, error) {
 func SelectCategoryByID(id int) (models.Category, error) {
 	var category models.Category
 	// Récupère la catégorie depuis la base de données par son ID
-	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = ?", id).Scan(&category.ID, &category.Name)
+	err := DB.QueryRow("SELECT id, name FROM categories WHERE id = $1", id).Scan(&category.ID, &category.Name)
 	if err != nil {
 		utils.Logger(err)
 		if err == sql.ErrNoRows {
