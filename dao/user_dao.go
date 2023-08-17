@@ -35,6 +35,7 @@ func SelectAllUsers() ([]models.User, error) {
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
 	rows, err := DB.Query("SELECT id, username, email FROM users")
 	if err != nil {
+		utils.Logger(err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -56,6 +57,7 @@ func SelectUserByID(id int) (models.User, error) {
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
 	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", id).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
+		utils.Logger(err)
 		if err == sql.ErrNoRows {
 			return models.User{}, fmt.Errorf("no user found with ID %d", id)
 		}
@@ -69,6 +71,7 @@ func UpdateUser(id int, updatedUser models.User) (models.User, error) {
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
 	_, err := DB.Exec("UPDATE users SET username = ?, email= ? WHERE id = ?", updatedUser.Username, updatedUser.Email, id)
 	if err != nil {
+		utils.Logger(err)
 		return models.User{}, err
 	}
 
@@ -81,5 +84,6 @@ func UpdateUser(id int, updatedUser models.User) (models.User, error) {
 func DeleteUser(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
 	_, err := DB.Exec("DELETE FROM users WHERE id = ?", id)
+	utils.Logger(err)
 	return err
 }
