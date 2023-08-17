@@ -260,3 +260,10 @@ error: Request: GET /categories/1 127.0.0.1:64746 | Status: 200 | Latency: 4.854
 error: no category found with ID 0
 error: Request: GET /categories/1 127.0.0.1:56108 | Status: 200 | Latency: 3.2145ms
 
+error: json: cannot unmarshal number into Go struct field Category.name of type string
+error: Request: POST /categories 127.0.0.1:56372 | Status: 400 | Latency: 0s
+
+error: Request: POST /categories 127.0.0.1:56422 | Status: 201 | Latency: 3.4368ms
+
+error: Request: GET /categories/1 127.0.0.1:58086 | Status: 200 | Latency: 6.4205ms
+

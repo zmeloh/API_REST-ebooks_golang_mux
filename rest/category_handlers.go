@@ -7,6 +7,9 @@ import (
 	"example/api/utils"
 	"fmt"
 	"net/http"
+	"strconv"
+
+	"github.com/gorilla/mux"
 )
 
 // CreateCategory crée une nouvelle catégorie.
@@ -28,8 +31,14 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 
 // GetCategoryByID récupère une catégorie par son ID.
 func GetCategoryByID(w http.ResponseWriter, r *http.Request) {
-	var category models.Category
-	c :=services.GetCategoryByID(category.ID)
+	params := mux.Vars(r)
+	id := params["id"]
+	result, err := strconv.Atoi(id)
+	if err != nil {
+		utils.Logger(err)
+		return
+	}
+	c := services.GetCategoryByID(result)
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(c)
 }
