@@ -268,3 +268,134 @@ error: Request: POST /categories 127.0.0.1:56422 | Status: 201 | Latency: 3.4368
 error: Request: GET /categories/1 127.0.0.1:58086 | Status: 200 | Latency: 6.4205ms
 
 error: pq: la base de donn�es � ebook_apiDB � n'existe pas
+error: Request: POST /categories 127.0.0.1:56381 | Status: 201 | Latency: 171.739ms
+
+error: Request: POST /categories 127.0.0.1:56408 | Status: 201 | Latency: 38.3406ms
+
+error: Request: POST /categories 127.0.0.1:56452 | Status: 400 | Latency: 0s
+
+error: Request: GET /categories/1 127.0.0.1:49834 | Status: 404 | Latency: 2.8909ms
+
+error: Request: GET /categories 127.0.0.1:64073 | Status: 200 | Latency: 2.5357ms
+
+error: Request: GET /categories/1 127.0.0.1:64259 | Status: 404 | Latency: 794.2µs
+
+error: Request: GET /categories/1 127.0.0.1:64261 | Status: 404 | Latency: 507.6µs
+
+error: Request: GET /categories/2 127.0.0.1:64299 | Status: 404 | Latency: 535.7µs
+
+error: strconv.Atoi: parsing "s": invalid syntax
+error: Request: GET /categories/s 127.0.0.1:64301 | Status: 400 | Latency: 562.4µs
+
+error: Request: GET /categories/7 127.0.0.1:64350 | Status: 404 | Latency: 661.5µs
+
+error: Request: GET /categories/7 127.0.0.1:64486 | Status: 404 | Latency: 2.9311ms
+
+error: Request: GET /categories/7 127.0.0.1:63918 | Status: 404 | Latency: 2.5458ms
+
+error: Request: GET /categories/7 127.0.0.1:63920 | Status: 404 | Latency: 589.3µs
+
+error: Request: GET /categories/7 127.0.0.1:53695 | Status: 200 | Latency: 3.3493ms
+
+error: Request: GET /categories/9 127.0.0.1:53713 | Status: 200 | Latency: 690µs
+
+error: no category found with ID 90
+error: Request: GET /categories/90 127.0.0.1:53748 | Status: 404 | Latency: 1.2665ms
+
+error: Request: GET /categories 127.0.0.1:63033 | Status: 200 | Latency: 5.9131ms
+
+error: Request: DELETE /categories/4 127.0.0.1:63111 | Status: 200 | Latency: 601.7µs
+
+error: Request: GET /categories 127.0.0.1:63153 | Status: 200 | Latency: 592.6µs
+
+error: pq: syntax error at or near "WHERE"
+error: pq: syntax error at or near "WHERE"
+error: Request: PUT /categories/4 127.0.0.1:63297 | Status: 200 | Latency: 13.8884ms
+
+error: Request: PUT /categories/4 127.0.0.1:57347 | Status: 200 | Latency: 6.8485ms
+
+error: Request: GET /categories 127.0.0.1:57452 | Status: 200 | Latency: 505.9µs
+
+error: Request: PUT /categories/4 127.0.0.1:57545 | Status: 200 | Latency: 2.9276ms
+
+error: Request: GET /categories 127.0.0.1:57547 | Status: 200 | Latency: 616.6µs
+
+error: Request: PUT /categories/5 127.0.0.1:54666 | Status: 200 | Latency: 2.4264ms
+
+error: Request: GET /categories 127.0.0.1:54692 | Status: 200 | Latency: 548.5µs
+
+error: Request: PUT /categories/6 127.0.0.1:54764 | Status: 200 | Latency: 4.6471ms
+
+error: Request: GET /categories 127.0.0.1:54796 | Status: 200 | Latency: 529.2µs
+
+error: Request: PUT /categories/6 127.0.0.1:56714 | Status: 200 | Latency: 54.200528s
+
+error: Request: GET /categories 127.0.0.1:63665 | Status: 200 | Latency: 509.6µs
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:57425 | Status: 200 | Latency: 1m6.4333314s
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:60290 | Status: 200 | Latency: 5.886ms
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:60292 | Status: 200 | Latency: 1.9111ms
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:60294 | Status: 200 | Latency: 1.3392ms
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:60296 | Status: 200 | Latency: 2.0411ms
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:60308 | Status: 200 | Latency: 1.3485ms
+
+error: Request: GET /categories 127.0.0.1:60322 | Status: 200 | Latency: 509.7µs
+
+error: no category found with ID 66666
+error: no category found with ID 66666
+error: Request: PUT /categories/66666 127.0.0.1:50509 | Status: 200 | Latency: 5.9644938s
+
+error: Request: PUT /categories/6 127.0.0.1:50569 | Status: 200 | Latency: 34.8998129s
+
+error: Request: GET /categories 127.0.0.1:51149 | Status: 200 | Latency: 3.2254ms
+
+error: Request: DELETE /categories/6 127.0.0.1:51193 | Status: 204 | Latency: 7.3185ms
+
+error: Request: GET /categories 127.0.0.1:51229 | Status: 200 | Latency: 507.5µs
+
+error: Request: DELETE /categories/5 127.0.0.1:51268 | Status: 204 | Latency: 1.2635ms
+
+error: Request: GET /categories 127.0.0.1:51302 | Status: 200 | Latency: 507µs
+
+error: Request: DELETE /categories/50 127.0.0.1:51474 | Status: 204 | Latency: 4.478ms
+
+error: Request: DELETE /categories/4 127.0.0.1:51476 | Status: 204 | Latency: 3.5756ms
+
+error: Request: GET /categories 127.0.0.1:51509 | Status: 200 | Latency: 1.0561ms
+
+error: strconv.Atoi: parsing "4w": invalid syntax
+error: Request: DELETE /categories/4w 127.0.0.1:62936 | Status: 400 | Latency: 536.3µs
+
+error: Request: DELETE /categories/4000 127.0.0.1:62938 | Status: 204 | Latency: 2.8116ms
+
+error: no category found with ID 6
+error: no category found with ID 6
+error: Request: PUT /categories/6 127.0.0.1:50845 | Status: 200 | Latency: 5.4635ms
+
+error: Request: GET /categories 127.0.0.1:50847 | Status: 200 | Latency: 537.1µs
+
+error: Request: PUT /categories/7 127.0.0.1:50888 | Status: 200 | Latency: 2.0137ms
+
+error: Request: GET /categories 127.0.0.1:50914 | Status: 200 | Latency: 544.3µs
+
+error: Request: GET /categories 127.0.0.1:51327 | Status: 200 | Latency: 3.1785ms
+
+error: Request: DELETE /categories/4000 127.0.0.1:51357 | Status: 200 | Latency: 682.1µs
+

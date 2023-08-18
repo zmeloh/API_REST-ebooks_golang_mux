@@ -7,14 +7,14 @@ import (
 
 // GetAllCategories
 func GetAllCategories() (c []models.Category) {
-	c, _ =controllers.GetAllCategories()
+	c, _ = controllers.GetAllCategories()
 	return
 }
 
 // GetCategoryByID
-func GetCategoryByID(id int) (models.Category) {
-	controllers.GetCategoryByID(id)
-	return models.Category{}
+func GetCategoryByID(id int)(c models.Category) {
+	c,_=controllers.GetCategoryByID(id)
+	return 
 }
 
 // InsertCategory

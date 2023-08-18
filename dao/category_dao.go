@@ -22,7 +22,7 @@ func InsertCategory(c *models.Category) error {
 func SelectAllCategories() ([]models.Category, error) {
 	var categories []models.Category
 	// Récupère toutes les catégories depuis la base de données
-	rows, err := DB.Query("SELECT id, name FROM categories")
+	rows, err := DB.Query("SELECT id, name FROM categories ORDER BY id")
 	if err != nil {
 		utils.Logger(err)
 		return nil, err
@@ -57,16 +57,16 @@ func SelectCategoryByID(id int) (models.Category, error) {
 	return category, nil
 }
 
-func UpdateCategory(id int, updatedCategory models.Category) (models.Category, error) {
+func UpdateCategory(updatedCategory models.Category) (models.Category, error) {
 	// Met à jour la catégorie dans la base de données par son ID
-	_, err := DB.Exec("UPDATE categories SET name = ?  WHERE id = ?", updatedCategory.Name, id)
+	_, err := DB.Exec("UPDATE categories SET name = $1  WHERE id = $2", updatedCategory.Name, updatedCategory.ID)
 	if err != nil {
 		utils.Logger(err)
 		return models.Category{}, err
 	}
 
 	// Met à jour l'ID dans l'objet updatedCategory
-	updatedCategory.ID = id
+	
 	return updatedCategory, nil
 }
 
