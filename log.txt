@@ -797,3 +797,29 @@ error: pq: column "category_id" does not exist
 error: pq: column "category_id" does not exist
 error: Request: GET /ebooks 127.0.0.1:60291 | Status: 404 | Latency: 5.9616ms
 
+error: Request: GET /categories 127.0.0.1:61084 | Status: 200 | Latency: 3.058ms
+
+error: strconv.Atoi: parsing "12g": invalid syntax
+error: Request: DELETE /categories/12g 127.0.0.1:61117 | Status: 500 | Latency: 0s
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /categories/1499459595 127.0.0.1:61134 | Status: 200 | Latency: 2.6331ms
+
+error: Request: DELETE /categories/12 127.0.0.1:61136 | Status: 200 | Latency: 3.068ms
+
+error: Request: GET /categories 127.0.0.1:61150 | Status: 200 | Latency: 0s
+
+error: Request: GET /categories 127.0.0.1:57618 | Status: 200 | Latency: 3.0404ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /categories/1276767 127.0.0.1:57624 | Status: 404 | Latency: 1.9508ms
+
+error: strconv.Atoi: parsing "1276767g": invalid syntax
+error: Request: DELETE /categories/1276767g 127.0.0.1:57658 | Status: 500 | Latency: 1.1804ms
+
+error: Request: DELETE /categories/10 127.0.0.1:57695 | Status: 200 | Latency: 3.514ms
+

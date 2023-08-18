@@ -69,7 +69,7 @@ func UpdateCategory(updatedCategory models.Category) (models.Category, error) {
 }
 
 func DeleteCategory(id int) error {
-	_, err := DB.Exec("DELETE FROM categories WHERE id = $1", id)
+	err := DB.QueryRow("DELETE FROM categories WHERE id = $1 RETURNING id", id).Scan(&id)
 	if err != nil {
 		utils.Logger(err)
 	}

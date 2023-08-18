@@ -94,15 +94,25 @@ func DeleteCategory(w http.ResponseWriter, r *http.Request) {
 	categoryID, err := strconv.Atoi(id)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invalid id", http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(models.ErrorReponse{Message: "invalid id"})
 		return
 	}
 	err = services.DeleteCategory(categoryID)
 	if err != nil {
-		utils.Logger(err)
+
 		http.Error(w, "category not found", http.StatusNotFound)
+		return
 	}
 
-	w.WriteHeader(http.StatusOK)
+	Answer(w, http.StatusOK, "category deleted")
 	//json.NewEncoder(w).Encode()
+}
+
+func Answer(w http.ResponseWriter, httpCode int, res any) {
+	w.WriteHeader(httpCode)
+	if e, ok := res.(error); ok {
+		json.NewEncoder(w).Encode(map[string]string{"message": e.Error()})
+		return
+	}
+	json.NewEncoder(w).Encode(map[string]interface{}{"message": res})
 }
