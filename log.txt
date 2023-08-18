@@ -267,3 +267,4 @@ error: Request: POST /categories 127.0.0.1:56422 | Status: 201 | Latency: 3.4368
 
 error: Request: GET /categories/1 127.0.0.1:58086 | Status: 200 | Latency: 6.4205ms
 
+error: pq: la base de données « ebook_apiDB » n'existe pas

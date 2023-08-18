@@ -31,16 +31,23 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 
 // GetCategoryByID récupère une catégorie par son ID.
 func GetCategoryByID(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-	id := params["id"]
-	result, err := strconv.Atoi(id)
-	if err != nil {
-		utils.Logger(err)
-		return
-	}
-	c := services.GetCategoryByID(result)
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(c)
+    params := mux.Vars(r)
+    id := params["id"]
+    result, err := strconv.Atoi(id)
+    if err != nil {
+        utils.Logger(err)
+        http.Error(w, "Invalid ID", http.StatusBadRequest)
+        return
+    }
+
+    c := services.GetCategoryByID(result)
+    if c.ID == 0 { // Remplacez cette condition par celle qui indique que la catégorie n'a pas été trouvée
+        http.Error(w, "Category not found", http.StatusNotFound)
+        return
+    }
+
+    w.WriteHeader(http.StatusOK)
+    json.NewEncoder(w).Encode(c)
 }
 
 // GetAllCategories récupère toutes les catégories.
