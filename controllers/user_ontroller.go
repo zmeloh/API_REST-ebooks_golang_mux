@@ -33,7 +33,7 @@ func GetUserByID(id int) (models.User, error) {
 	return user, nil
 }
 
-func UpdateUser(id int, updatedUser models.User) error {
+func UpdateUser(id int, updatedUser *models.User) error {
 	existingUser, err := dao.SelectUserByID(id)
 	if err != nil {
 		utils.Logger(err)
@@ -41,12 +41,13 @@ func UpdateUser(id int, updatedUser models.User) error {
 	}
 	existingUser.Username = updatedUser.Username
 	existingUser.Email = updatedUser.Email
-	_, err = dao.UpdateUser(id, updatedUser)
+	updatedUser.ID = existingUser.ID
+	_, err = dao.UpdateUser(existingUser)
 	if err != nil {
 		utils.Logger(err)
 		return err
 	}
-	return nil
+	return err
 }
 
 func DeleteUser(id int) error {

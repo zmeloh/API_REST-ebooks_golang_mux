@@ -667,3 +667,41 @@ error: Request: GET /categories 127.0.0.1:61315 | Status: 200 | Latency: 509.2µ
 
 error: Request: POST /categories 127.0.0.1:52353 | Status: 400 | Latency: 0s
 
+error: Request: GET /users 127.0.0.1:57776 | Status: 200 | Latency: 0s
+
+error: Request: GET /users/B 127.0.0.1:57813 | Status: 200 | Latency: 0s
+
+error: Request: GET /users/4 127.0.0.1:57855 | Status: 200 | Latency: 0s
+
+error: Request: GET /users 127.0.0.1:51907 | Status: 200 | Latency: 3.5068ms
+
+error: Request: GET /users 127.0.0.1:60150 | Status: 200 | Latency: 4.9586ms
+
+error: Request: GET /users 127.0.0.1:60172 | Status: 200 | Latency: 506.7µs
+
+error: Request: GET /users 127.0.0.1:60174 | Status: 200 | Latency: 0s
+
+error: Request: GET /users 127.0.0.1:60176 | Status: 200 | Latency: 504.3µs
+
+error: Request: GET /users 127.0.0.1:60178 | Status: 200 | Latency: 693µs
+
+error: Request: GET /users 127.0.0.1:60180 | Status: 200 | Latency: 509µs
+
+error: Request: GET /users 127.0.0.1:60182 | Status: 200 | Latency: 625.1µs
+
+error: Request: GET /users 127.0.0.1:60475 | Status: 200 | Latency: 3.5182ms
+
+error: Request: POST /users 127.0.0.1:60522 | Status: 201 | Latency: 4.3224ms
+
+error: Request: POST /users 127.0.0.1:60550 | Status: 201 | Latency: 1.0169ms
+
+error: Request: POST /users 127.0.0.1:60552 | Status: 201 | Latency: 910.7µs
+
+error: Request: POST /users 127.0.0.1:60554 | Status: 201 | Latency: 520µs
+
+error: Request: GET /users 127.0.0.1:60587 | Status: 200 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:62928 | Status: 201 | Latency: 1.4254ms
+
+error: Request: POST /users 127.0.0.1:55980 | Status: 201 | Latency: 3.4938ms
+

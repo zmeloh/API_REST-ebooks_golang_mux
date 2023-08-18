@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	//"example/api/dao"
 	"example/api/models"
+	"example/api/services"
 	"example/api/utils"
 	"fmt"
 	"net/http"
@@ -15,16 +16,16 @@ import (
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 	// Decodage des Headers
-	var user models.User
-	err := json.NewDecoder(r.Body).Decode(&user)
+	var newUser models.User
+	err := json.NewDecoder(r.Body).Decode(&newUser)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		http.Error(w, "Invalid request", http.StatusBadRequest)
 		return
 	}
-
+	services.InsertUser(&newUser)
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(user)
+	json.NewEncoder(w).Encode(newUser)
 }
 
 // GetUserByID récupère un utilisateur par son ID.
@@ -35,13 +36,13 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 
 // GetAllUsers récupère tous les utilisateurs de la base de données.
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
-	var users []models.User
-	w.Header().Set("Content-Type", "application/json")
-	err := json.NewEncoder(w).Encode(users)
-	if err != nil {
-		utils.Logger(err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+	users :=services.GetAllUsers()
+	if users ==nil {
+		http.Error(w, "No data found ", http.StatusNotFound)
+	return
 	}
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(users)
 }
 
 // UpdateUser met à jour les informations d'un utilisateur par son ID.

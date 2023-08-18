@@ -65,8 +65,6 @@ func UpdateCategory(updatedCategory models.Category) (models.Category, error) {
 		return models.Category{}, err
 	}
 
-	// Met à jour l'ID dans l'objet updatedCategory
-	
 	return updatedCategory, nil
 }
 

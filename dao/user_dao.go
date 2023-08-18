@@ -11,19 +11,11 @@ import (
 func InsertUser(u *models.User) error {
 	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
 	// result, err := DB.QueryRow(`INSERT INTO users (username, email) VALUES ($1, $2)`).Scan(&u.Username, &u.Email)
-	result, err := DB.Exec("INSERT INTO users (username, email) VALUES (?, ?)", u.Username, u.Email)
+	err := DB.QueryRow("INSERT INTO users (username, email) VALUES ($1, $2) RETURNING 1", u.Username, u.Email).Scan(&u.ID)
 	if err != nil {
 		utils.Logger(err)
 		return err
 	}
-	// Obtient l'ID généré lors de l'insertion
-	userID, err := result.LastInsertId()
-	if err != nil {
-		return err
-	}
-
-	// Met à jour l'ID dans l'objet User
-	u.ID = int(userID)
 
 	return err
 }
@@ -33,7 +25,7 @@ func SelectAllUsers() ([]models.User, error) {
 	var users []models.User
 
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
-	rows, err := DB.Query("SELECT id, username, email FROM users")
+	rows, err := DB.Query("SELECT id, username, email FROM users ORDER BY id")
 	if err != nil {
 		utils.Logger(err)
 		return nil, err
@@ -55,7 +47,7 @@ func SelectAllUsers() ([]models.User, error) {
 func SelectUserByID(id int) (models.User, error) {
 	var user models.User
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
-	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = ?", id).Scan(&user.ID, &user.Username, &user.Email)
+	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = $1", id).Scan(&user.ID, &user.Username, &user.Email)
 	if err != nil {
 		utils.Logger(err)
 		if err == sql.ErrNoRows {
@@ -66,24 +58,21 @@ func SelectUserByID(id int) (models.User, error) {
 	return user, nil
 }
 
-func UpdateUser(id int, updatedUser models.User) (models.User, error) {
+func UpdateUser(updatedUser models.User) (models.User, error) {
 
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
-	_, err := DB.Exec("UPDATE users SET username = ?, email= ? WHERE id = ?", updatedUser.Username, updatedUser.Email, id)
+	_, err := DB.Exec("UPDATE users SET username = $1, email= $2 WHERE id = $3", updatedUser.Username, updatedUser.Email, updatedUser.ID)
 	if err != nil {
 		utils.Logger(err)
 		return models.User{}, err
 	}
-
-	// Mettre à jour l'ID dans l'objet Ebook
-	updatedUser.ID = id
 
 	return updatedUser, nil
 }
 
 func DeleteUser(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
-	_, err := DB.Exec("DELETE FROM users WHERE id = ?", id)
+	_, err := DB.Exec("DELETE FROM users WHERE id = $1", id)
 	if err != nil {
 		utils.Logger(err)
 	}
