@@ -37,14 +37,14 @@ func GetCategoryByID(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	c := services.GetCategoryByID(result)
-	if c.ID == 0 {
+	category := services.GetCategoryByID(result)
+	if category.ID == 0 {
 		http.Error(w, "Category not found", http.StatusNotFound)
 		return
 	}
 
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(c)
+	json.NewEncoder(w).Encode(category)
 }
 
 // GetAllCategories récupère toutes les catégories.
@@ -79,7 +79,7 @@ func UpdateCategory(w http.ResponseWriter, r *http.Request) {
 
 	err = services.UpdateCategory(categoryID, &updatedCategory)
 	if err != nil {
-		http.Error(w, "category not found", http.StatusNotFound)
+		http.Error(w, "Category not found", http.StatusNotFound)
 		return
 	}
 

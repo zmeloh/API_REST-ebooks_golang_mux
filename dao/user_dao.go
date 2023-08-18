@@ -2,6 +2,7 @@ package dao
 
 import (
 	"database/sql"
+	"errors"
 	"example/api/models"
 	"example/api/utils"
 	"fmt"
@@ -9,14 +10,13 @@ import (
 
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.
 func InsertUser(u *models.User) error {
-	// Exécute la requête pour insérer un nouvel utilisateur dans la base de données
 	// result, err := DB.QueryRow(`INSERT INTO users (username, email) VALUES ($1, $2)`).Scan(&u.Username, &u.Email)
-	err := DB.QueryRow("INSERT INTO users (username, email) VALUES ($1, $2) RETURNING 1", u.Username, u.Email).Scan(&u.ID)
+	err := DB.QueryRow("INSERT INTO users (username, email) VALUES ($1, $2) RETURNING id", u.Username, u.Email).Scan(&u.ID)
 	if err != nil {
 		utils.Logger(err)
 		return err
 	}
-
+	fmt.Print(u.ID)
 	return err
 }
 
@@ -48,11 +48,11 @@ func SelectUserByID(id int) (models.User, error) {
 	var user models.User
 	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
 	err := DB.QueryRow("SELECT id, username, email FROM users WHERE id = $1", id).Scan(&user.ID, &user.Username, &user.Email)
+	if errors.Is(err, sql.ErrNoRows) {
+		return models.User{}, fmt.Errorf("no user found with ID %d", id)
+	}
 	if err != nil {
 		utils.Logger(err)
-		if err == sql.ErrNoRows {
-			return models.User{}, fmt.Errorf("no user found with ID %d", id)
-		}
 		return models.User{}, err
 	}
 	return user, nil

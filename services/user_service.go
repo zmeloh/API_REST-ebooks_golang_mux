@@ -12,8 +12,8 @@ func GetAllUsers() (u []models.User) {
 }
 
 // GetUserByID récupère un utilisateur par son ID.
-func GetUserByID(id int) (u models.Favorite) {
-	controllers.GetUserByID(id)
+func GetUserByID(id int) (u models.User) {
+	u,_=controllers.GetUserByID(id)
 	return
 }
 

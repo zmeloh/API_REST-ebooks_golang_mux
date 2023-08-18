@@ -7,8 +7,8 @@ import (
 )
 
 // Create Ebook controller
-func InsertEbook(ebook models.Ebook) error {
-	err := dao.InsertEbook(ebook)
+func InsertEbook(e *models.Ebook) error {
+	err := dao.InsertEbook(e)
 	if err != nil {
 		utils.Logger(err)
 		return err
@@ -47,7 +47,7 @@ func GetEbooksByCategoryID(categoryID int) ([]models.Ebook, error) {
 	return ebooks, nil
 }
 
-func UpdateEbook(id int, updatedEbook models.Ebook) error {
+func UpdateEbook(id int, updatedEbook *models.Ebook) error {
 	// Récupérer l'ebook existant par ID
 	existingEbook, err := dao.SelectEbookByID(id)
 	if err != nil {
@@ -59,9 +59,10 @@ func UpdateEbook(id int, updatedEbook models.Ebook) error {
 	existingEbook.Title = updatedEbook.Title
 	existingEbook.Author = updatedEbook.Author
 	existingEbook.CategoryID = updatedEbook.CategoryID
+	updatedEbook.ID = existingEbook.ID
 
 	// Mettre à jour l'ebook dans la base de données
-	_, err = dao.UpdateEbook(id, existingEbook)
+	_, err = dao.UpdateEbook(existingEbook)
 	if err != nil {
 		utils.Logger(err)
 		return err
