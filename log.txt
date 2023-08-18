@@ -665,3 +665,5 @@ error: Request: DELETE /categories/9 127.0.0.1:61279 | Status: 200 | Latency: 2.
 
 error: Request: GET /categories 127.0.0.1:61315 | Status: 200 | Latency: 509.2µs
 
+error: Request: POST /categories 127.0.0.1:52353 | Status: 400 | Latency: 0s
+
