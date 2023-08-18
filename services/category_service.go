@@ -12,9 +12,9 @@ func GetAllCategories() (c []models.Category) {
 }
 
 // GetCategoryByID
-func GetCategoryByID(id int)(c models.Category) {
-	c,_=controllers.GetCategoryByID(id)
-	return 
+func GetCategoryByID(id int) (c models.Category) {
+	c, _ = controllers.GetCategoryByID(id)
+	return
 }
 
 // InsertCategory
@@ -24,13 +24,13 @@ func InsertCategory(c *models.Category) {
 }
 
 // UpdateCategory
-func UpdateCategory(id int, c models.Category) {
-	controllers.UpdateCategory(id, c)
-	return
+func UpdateCategory(id int, c *models.Category) error {
+	err := controllers.UpdateCategory(id, c)
+	return err
 }
 
 // DeleteCategory
-func DeleteCategory(id int) {
-	controllers.DeleteCategory(id)
-	return
+func DeleteCategory(id int) error {
+	err := controllers.DeleteCategory(id)
+	return err
 }

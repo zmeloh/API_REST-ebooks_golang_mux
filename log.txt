@@ -399,3 +399,269 @@ error: Request: GET /categories 127.0.0.1:51327 | Status: 200 | Latency: 3.1785m
 
 error: Request: DELETE /categories/4000 127.0.0.1:51357 | Status: 200 | Latency: 682.1µs
 
+error: Request: PUT /categories/7 127.0.0.1:61904 | Status: 200 | Latency: 5.6097ms
+
+error: Request: PUT /categories/7 127.0.0.1:61990 | Status: 200 | Latency: 4.8121ms
+
+error: Request: PUT /categories/7 127.0.0.1:62123 | Status: 200 | Latency: 6.313ms
+
+error: no category found with ID 4000
+error: Request: DELETE /categories/4000 127.0.0.1:62473 | Status: 200 | Latency: 4.9114ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62601 | Status: 200 | Latency: 1.2407ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62603 | Status: 200 | Latency: 1.3669ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62605 | Status: 200 | Latency: 1.2398ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62607 | Status: 200 | Latency: 765.2µs
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62609 | Status: 200 | Latency: 1.3765ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62611 | Status: 200 | Latency: 1.2866ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62613 | Status: 200 | Latency: 1.3326ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62615 | Status: 200 | Latency: 1.3398ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62617 | Status: 200 | Latency: 1.1792ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62619 | Status: 200 | Latency: 1.2112ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62621 | Status: 200 | Latency: 1.5106ms
+
+error: no category found with ID 0
+error: Request: DELETE /categories/0 127.0.0.1:62623 | Status: 200 | Latency: 1.2153ms
+
+error: strconv.Atoi: parsing "7s": invalid syntax
+error: Request: PUT /categories/7s 127.0.0.1:52836 | Status: 400 | Latency: 645.6µs
+
+error: no category found with ID 788
+error: no category found with ID 788
+error: Request: PUT /categories/788 127.0.0.1:52866 | Status: 200 | Latency: 4.2641ms
+
+error: Request: GET /categories 127.0.0.1:52897 | Status: 200 | Latency: 537.9µs
+
+error: no category found with ID 0
+error: strconv.Atoi: parsing "0g": invalid syntax
+error: Request: DELETE /categories/0g 127.0.0.1:53017 | Status: 500 | Latency: 1.6327ms
+
+error: no category found with ID 0
+error: strconv.Atoi: parsing "0g": invalid syntax
+error: Request: DELETE /categories/0g 127.0.0.1:57448 | Status: 500 | Latency: 2.4298ms
+
+error: Request: GET /categories 127.0.0.1:57670 | Status: 200 | Latency: 3.2008ms
+
+error: strconv.Atoi: parsing "90w": invalid syntax
+error: Request: GET /categories/90w 127.0.0.1:57693 | Status: 400 | Latency: 519.8µs
+
+error: no category found with ID 90
+error: Request: GET /categories/90 127.0.0.1:57726 | Status: 404 | Latency: 1.387ms
+
+error: pq: value "788888888888888" is out of range for type integer
+error: pq: value "788888888888888" is out of range for type integer
+error: pq: value "788888888888888" is out of range for type integer
+error: pq: value "788888888888888" is out of range for type integer
+error: Request: PUT /categories/788888888888888 127.0.0.1:49782 | Status: 200 | Latency: 32.065ms
+
+error: strconv.Atoi: parsing "0g": invalid syntax
+error: Request: DELETE /categories/0g 127.0.0.1:65199 | Status: 500 | Latency: 3.7729ms
+
+error: no category found with ID 10000
+error: Request: DELETE /categories/10000 127.0.0.1:65229 | Status: 200 | Latency: 1.3427ms
+
+error: pq: value "788888888888888" is out of range for type integer
+error: pq: value "788888888888888" is out of range for type integer
+error: Request: PUT /categories/788888888888888 127.0.0.1:61120 | Status: 200 | Latency: 10.1195ms
+
+error: Request: PUT /categories/7 127.0.0.1:61123 | Status: 200 | Latency: 4.5298ms
+
+error: Request: PUT /categories/7 127.0.0.1:59958 | Status: 200 | Latency: 3.886ms
+
+error: Request: GET /categories 127.0.0.1:59960 | Status: 200 | Latency: 533.9µs
+
+error: no category found with ID 79
+error: Request: PUT /categories/79 127.0.0.1:60132 | Status: 500 | Latency: 891.2µs
+
+error: no category found with ID 790
+error: Request: PUT /categories/790 127.0.0.1:60157 | Status: 500 | Latency: 1.0972ms
+
+error: Request: PUT /categories/9 127.0.0.1:60160 | Status: 200 | Latency: 970µs
+
+error: Request: GET /categories 127.0.0.1:52393 | Status: 200 | Latency: 3.2412ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:52426 | Status: 200 | Latency: 814.4µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64122 | Status: 200 | Latency: 2.4904ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:64124 | Status: 200 | Latency: 649µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64126 | Status: 200 | Latency: 506.6µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64128 | Status: 200 | Latency: 599.1µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64130 | Status: 200 | Latency: 506.8µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64132 | Status: 200 | Latency: 507.7µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64134 | Status: 200 | Latency: 717.4µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64136 | Status: 200 | Latency: 523.1µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64138 | Status: 200 | Latency: 1.0015ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:64153 | Status: 200 | Latency: 1.0015ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:64172 | Status: 200 | Latency: 1.1446ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:64178 | Status: 200 | Latency: 506.9µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64180 | Status: 200 | Latency: 510.7µs
+
+error: strconv.Atoi: parsing "10000a": invalid syntax
+error: Request: DELETE /categories/10000a 127.0.0.1:64203 | Status: 500 | Latency: 509.8µs
+
+error: strconv.Atoi: parsing "10000a": invalid syntax
+error: Request: DELETE /categories/10000a 127.0.0.1:64411 | Status: 400 | Latency: 545.9µs
+
+error: Request: DELETE /categories/10000 127.0.0.1:64440 | Status: 200 | Latency: 3.2001ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:64239 | Status: 200 | Latency: 2.9656ms
+
+error: strconv.Atoi: parsing "10000r": invalid syntax
+error: Request: DELETE /categories/10000r 127.0.0.1:53845 | Status: 400 | Latency: 1.077ms
+
+error: Request: DELETE /categories/10000 127.0.0.1:53847 | Status: 200 | Latency: 2.4091ms
+
+error: strconv.Atoi: parsing "10000w": invalid syntax
+error: Request: DELETE /categories/10000w 127.0.0.1:62598 | Status: 400 | Latency: 506.6µs
+
+error: EOF
+error: Request: DELETE /categories/10000 127.0.0.1:62605 | Status: 400 | Latency: 837µs
+
+error: Request: GET /categories 127.0.0.1:62635 | Status: 200 | Latency: 2.5131ms
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:62639 | Status: 400 | Latency: 629.7µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:62663 | Status: 400 | Latency: 556.1µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:62665 | Status: 400 | Latency: 536.9µs
+
+error: Request: GET /categories 127.0.0.1:62667 | Status: 200 | Latency: 593.3µs
+
+error: EOF
+error: Request: DELETE /categories/1 127.0.0.1:62966 | Status: 400 | Latency: 599.4µs
+
+error: EOF
+error: Request: DELETE /categories/1 127.0.0.1:62968 | Status: 400 | Latency: 0s
+
+error: Request: GET /categories 127.0.0.1:51939 | Status: 200 | Latency: 3.0833ms
+
+error: strconv.Atoi: parsing "1q": invalid syntax
+error: Request: DELETE /categories/1q 127.0.0.1:52000 | Status: 400 | Latency: 0s
+
+error: EOF
+error: Request: DELETE /categories/15555555555555555 127.0.0.1:52008 | Status: 400 | Latency: 552.2µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64632 | Status: 400 | Latency: 638.6µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64634 | Status: 400 | Latency: 571.2µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64636 | Status: 400 | Latency: 0s
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64638 | Status: 400 | Latency: 509.2µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64640 | Status: 400 | Latency: 0s
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64642 | Status: 400 | Latency: 0s
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64644 | Status: 400 | Latency: 571.4µs
+
+error: EOF
+error: Request: DELETE /categories/11 127.0.0.1:64646 | Status: 400 | Latency: 0s
+
+error: strconv.Atoi: parsing "11w": invalid syntax
+error: Request: DELETE /categories/11w 127.0.0.1:64672 | Status: 500 | Latency: 579µs
+
+error: Request: DELETE /categories/110000000 127.0.0.1:64692 | Status: 200 | Latency: 3.8072ms
+
+error: Request: DELETE /categories/11 127.0.0.1:64721 | Status: 200 | Latency: 3.5467ms
+
+error: Request: GET /categories 127.0.0.1:64728 | Status: 200 | Latency: 1.165ms
+
+error: strconv.Atoi: parsing "11q": invalid syntax
+error: Request: DELETE /categories/11q 127.0.0.1:64978 | Status: 500 | Latency: 0s
+
+error: strconv.Atoi: parsing "11q": invalid syntax
+error: Request: DELETE /categories/11q 127.0.0.1:64997 | Status: 500 | Latency: 1.0014ms
+
+error: strconv.Atoi: parsing "11q": invalid syntax
+error: Request: DELETE /categories/11q 127.0.0.1:64999 | Status: 500 | Latency: 0s
+
+error: Request: DELETE /categories/11000 127.0.0.1:65023 | Status: 200 | Latency: 2.3841ms
+
+error: Request: GET /categories 127.0.0.1:51575 | Status: 200 | Latency: 4.1951ms
+
+error: strconv.Atoi: parsing "11000w": invalid syntax
+error: Request: DELETE /categories/11000w 127.0.0.1:51610 | Status: 500 | Latency: 571.7µs
+
+error: Request: DELETE /categories/11000 127.0.0.1:51612 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52116 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52118 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52120 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52122 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52124 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52126 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52128 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52130 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52132 | Status: 400 | Latency: 0s
+
+error: Request: DELETE /categories/11 127.0.0.1:52134 | Status: 400 | Latency: 0s
+
+error: Request: PUT /categories/9 127.0.0.1:57537 | Status: 200 | Latency: 4.0064ms
+
+error: Request: GET /categories 127.0.0.1:57539 | Status: 200 | Latency: 504.2µs
+
+error: strconv.Atoi: parsing "11w": invalid syntax
+error: Request: DELETE /categories/11w 127.0.0.1:57557 | Status: 500 | Latency: 535.8µs
+
+error: Request: DELETE /categories/110 127.0.0.1:57562 | Status: 200 | Latency: 506.5µs
+
+error: Request: DELETE /categories/11 127.0.0.1:61268 | Status: 200 | Latency: 541.7µs
+
+error: Request: GET /categories 127.0.0.1:61270 | Status: 200 | Latency: 507.1µs
+
+error: Request: DELETE /categories/9 127.0.0.1:61279 | Status: 200 | Latency: 2.9425ms
+
+error: Request: GET /categories 127.0.0.1:61315 | Status: 200 | Latency: 509.2µs
+

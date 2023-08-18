@@ -126,17 +126,15 @@ func GetAllCategories(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(categories)
 }
 
-
 func UpdateCategory(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id := params["id"]
 	categoryID, err := strconv.Atoi(id)
-	// if err != nil {
-	// 	utils.Logger(err)
-	// 	http.Error(w, "Invalid ID", http.StatusBadRequest)
-	// 	return
-	// }
-	services.GetCategoryByID(categoryID)
+	if err != nil {
+		utils.Logger(err)
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		return
+	}
 
 	var updatedCategory models.Category
 	err = json.NewDecoder(r.Body).Decode(&updatedCategory)
@@ -145,13 +143,12 @@ func UpdateCategory(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	services.UpdateCategory(categoryID, updatedCategory)
-	// if err != nil {
-	// 	utils.Logger(err)
-	// 	http.Error(w, "Error updating category", http.StatusInternalServerError)
-	// 	return
-	// }
-	
+	err = services.UpdateCategory(categoryID, &updatedCategory)
+	if err != nil {
+		http.Error(w, "category not found", http.StatusNotFound)
+		return
+	}
+
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(updatedCategory)
 }
@@ -162,18 +159,15 @@ func DeleteCategory(w http.ResponseWriter, r *http.Request) {
 	categoryID, err := strconv.Atoi(id)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		http.Error(w, "Invalid id", http.StatusInternalServerError)
 		return
 	}
-
-	services.DeleteCategory(categoryID)
+	err = services.DeleteCategory(categoryID)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Error deleting category", http.StatusInternalServerError)
-		return
+		http.Error(w, "category not found", http.StatusNotFound)
 	}
 
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode()
+	//json.NewEncoder(w).Encode()
 }
-

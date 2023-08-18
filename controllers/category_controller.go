@@ -33,23 +33,24 @@ func GetCategoryByID(id int) (models.Category, error) {
 	return category, nil
 }
 
-func UpdateCategory(id int, updatedCategory models.Category) error {
+func UpdateCategory(id int, updatedCategory *models.Category) ( error) {
 
 	existingCategory, err := dao.SelectCategoryByID(id)
 	if err != nil {
 		utils.Logger(err)
-		return err
+		return  err
 	}
 
 	// Mettre à jour les valeurs de l'ebook existant
 	existingCategory.Name = updatedCategory.Name
+	updatedCategory.ID = existingCategory.ID
 	_, err = dao.UpdateCategory(existingCategory)
 	if err != nil {
 		utils.Logger(err)
-		return err
+		return  err
 	}
 
-	return err
+	return  err
 }
 
 func DeleteCategory(id int) error {
