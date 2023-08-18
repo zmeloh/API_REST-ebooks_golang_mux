@@ -56,5 +56,5 @@ func DeleteUser(id int) error {
 		utils.Logger(err)
 		return err
 	}
-	return nil
+	return err
 }

@@ -1,14 +1,15 @@
 package rest
 
 import (
-	"example/api/utils"
+	"encoding/json"
 	"net/http"
 )
 
-// HandleError gère les erreurs et renvoie une réponse HTTP appropriée.
-func HandleError(w http.ResponseWriter, err error) {
-	if err != nil {
-		utils.Logger(err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+func ServerResponse(w http.ResponseWriter, httpCode int, res any) {
+	w.WriteHeader(httpCode)
+	if e, ok := res.(error); ok {
+		json.NewEncoder(w).Encode(map[string]string{"message": e.Error()})
+		return
 	}
+	json.NewEncoder(w).Encode(map[string]interface{}{"message": res})
 }

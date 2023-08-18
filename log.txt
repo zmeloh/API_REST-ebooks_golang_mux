@@ -823,3 +823,110 @@ error: Request: DELETE /categories/1276767g 127.0.0.1:57658 | Status: 500 | Late
 
 error: Request: DELETE /categories/10 127.0.0.1:57695 | Status: 200 | Latency: 3.514ms
 
+error: Request: GET /users 127.0.0.1:54707 | Status: 200 | Latency: 3.0888ms
+
+error: Request: GET /categories 127.0.0.1:54712 | Status: 200 | Latency: 1.5417ms
+
+error: Request: GET /categories/8 127.0.0.1:54728 | Status: 200 | Latency: 837.9µs
+
+error: strconv.Atoi: parsing "8w": invalid syntax
+error: Request: GET /categories/8w 127.0.0.1:54730 | Status: 400 | Latency: 563.9µs
+
+error: no category found with ID 8000
+error: Request: GET /categories/8000 127.0.0.1:54757 | Status: 404 | Latency: 1.1071ms
+
+error: Request: GET /users/17 127.0.0.1:60809 | Status: 200 | Latency: 506.6µs
+
+error: Request: GET /users/15 127.0.0.1:60835 | Status: 200 | Latency: 642.4µs
+
+error: no user found with ID 156
+error: Request: GET /users/156 127.0.0.1:60837 | Status: 404 | Latency: 954.9µs
+
+error: no user found with ID 157
+error: Request: GET /users/157 127.0.0.1:60839 | Status: 404 | Latency: 1.37ms
+
+error: strconv.Atoi: parsing "15w": invalid syntax
+error: Request: GET /users/15w 127.0.0.1:60867 | Status: 400 | Latency: 622.9µs
+
+error: strconv.Atoi: parsing "17q": invalid syntax
+error: Request: PUT /users/17q 127.0.0.1:60932 | Status: 400 | Latency: 0s
+
+error: no user found with ID 175
+error: Request: PUT /users/175 127.0.0.1:60955 | Status: 404 | Latency: 1.2107ms
+
+error: Request: PUT /users/17 127.0.0.1:60957 | Status: 200 | Latency: 2.4042ms
+
+error: Request: GET /users 127.0.0.1:60991 | Status: 200 | Latency: 537.8µs
+
+error: no category found with ID 97
+error: Request: PUT /categories/97 127.0.0.1:61033 | Status: 404 | Latency: 1.1725ms
+
+error: strconv.Atoi: parsing "9g": invalid syntax
+error: Request: PUT /categories/9g 127.0.0.1:61057 | Status: 400 | Latency: 548.7µs
+
+error: no category found with ID 9
+error: Request: PUT /categories/9 127.0.0.1:61086 | Status: 404 | Latency: 1.0657ms
+
+error: no category found with ID 9
+error: Request: PUT /categories/9 127.0.0.1:61089 | Status: 404 | Latency: 1.3705ms
+
+error: strconv.Atoi: parsing "10w": invalid syntax
+error: Request: DELETE /categories/10w 127.0.0.1:61122 | Status: 400 | Latency: 613µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /categories/1099 127.0.0.1:61152 | Status: 404 | Latency: 1.2405ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /categories/10 127.0.0.1:61155 | Status: 404 | Latency: 1.2885ms
+
+error: Request: GET /categories 127.0.0.1:61157 | Status: 200 | Latency: 553.4µs
+
+error: Request: DELETE /categories/8 127.0.0.1:61166 | Status: 200 | Latency: 2.5383ms
+
+error: Request: GET /categories 127.0.0.1:61194 | Status: 200 | Latency: 1.2742ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /users/1777 127.0.0.1:61202 | Status: 404 | Latency: 1.3537ms
+
+error: strconv.Atoi: parsing "1777g": invalid syntax
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /users/1777g 127.0.0.1:61230 | Status: 404 | Latency: 3.9969ms
+
+error: strconv.Atoi: parsing "1777g": invalid syntax
+error: Request: DELETE /users/1777g 127.0.0.1:61443 | Status: 400 | Latency: 1.0431ms
+
+error: Request: DELETE /users/17 127.0.0.1:52982 | Status: 200 | Latency: 6.0009ms
+
+error: Request: GET /users 127.0.0.1:53015 | Status: 200 | Latency: 538.3µs
+
+error: Request: POST /users 127.0.0.1:53066 | Status: 201 | Latency: 6.1092ms
+
+error: Request: POST /categories 127.0.0.1:53080 | Status: 201 | Latency: 2.2236ms
+
+error: no category found with ID 9
+error: Request: PUT /categories/9 127.0.0.1:53087 | Status: 404 | Latency: 1.676ms
+
+error: Request: GET /categories 127.0.0.1:53110 | Status: 200 | Latency: 677.6µs
+
+error: Request: PUT /categories/13 127.0.0.1:53145 | Status: 200 | Latency: 1.2153ms
+
+error: Request: PUT /categories/13 127.0.0.1:53164 | Status: 200 | Latency: 2.3102ms
+
+error: strconv.Atoi: parsing "13w": invalid syntax
+error: Request: PUT /categories/13w 127.0.0.1:53175 | Status: 400 | Latency: 604.4µs
+
+error: no category found with ID 13000
+error: Request: PUT /categories/13000 127.0.0.1:53177 | Status: 404 | Latency: 1.2691ms
+
+error: strconv.Atoi: parsing "17r": invalid syntax
+error: Request: PUT /users/17r 127.0.0.1:53210 | Status: 400 | Latency: 531.3µs
+
+error: no user found with ID 179
+error: Request: PUT /users/179 127.0.0.1:53213 | Status: 404 | Latency: 762.8µs
+
+error: Request: PUT /users/1 127.0.0.1:53241 | Status: 200 | Latency: 1.6677ms
+

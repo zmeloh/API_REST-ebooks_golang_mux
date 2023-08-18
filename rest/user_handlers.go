@@ -9,7 +9,6 @@ import (
 	"example/api/models"
 	"example/api/services"
 	"example/api/utils"
-	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -23,7 +22,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	err := json.NewDecoder(r.Body).Decode(&newUser)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invalid request", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid reqquest")
 		return
 	}
 	services.InsertUser(&newUser)
@@ -38,13 +37,13 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 	result, err := strconv.Atoi(id)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid id")
 		return
 	}
 
 	user := services.GetUserByID(result)
 	if user.ID == 0 {
-		http.Error(w, "User not found", http.StatusNotFound)
+		ServerResponse(w, http.StatusNotFound, "User not found")
 		return
 	}
 	w.WriteHeader(http.StatusOK)
@@ -55,7 +54,7 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	users := services.GetAllUsers()
 	if users == nil {
-		http.Error(w, "No data found ", http.StatusNotFound)
+		ServerResponse(w, http.StatusNotFound, "No data found")
 		return
 	}
 	w.WriteHeader(http.StatusOK)
@@ -69,19 +68,19 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	userID, err := strconv.Atoi(id)
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid id")
 		return
 	}
 	var updatedUser models.User
 	err = json.NewDecoder(r.Body).Decode(&updatedUser)
 	if err != nil {
-		http.Error(w, "Invalid request", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid reqeust")
 		return
 	}
 
 	err = services.UpdateUser(userID, &updatedUser)
 	if err != nil {
-		http.Error(w, "User not found", http.StatusNotFound)
+		ServerResponse(w, http.StatusNotFound, "Ueer not found")
 		return
 	}
 
@@ -91,7 +90,20 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 // DeleteUser supprime un utilisateur par son ID.
 func DeleteUser(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	id := params["id"]
 
-	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "User with has been deleted")
+	userID, err := strconv.Atoi(id)
+	if err != nil {
+		utils.Logger(err)
+		ServerResponse(w, http.StatusBadRequest, "Invalid id")
+		return
+	}
+
+	err = services.DeleteUser(userID)
+	if err != nil {
+		ServerResponse(w, http.StatusNotFound, "User not found")
+		return
+	}
+	ServerResponse(w, http.StatusOK, "User has been deleted")
 }
