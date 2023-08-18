@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "ebook_api",
-    "dateExported": "2023-08-17T15:38:22.473Z",
+    "dateExported": "2023-08-18T18:26:06.509Z",
     "version": "1.1",
     "folders": [
         {
@@ -67,11 +67,11 @@
             "colId": "f5ee7a20-e5f7-41bb-9d13-ffffca840fb9",
             "containerId": "b94c4dd9-a502-4bba-8b54-0b326c434cf9",
             "name": "get user by id",
-            "url": "{{url}}/users/B",
+            "url": "{{url}}/users/17",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-08-17T12:02:43.803Z",
-            "modified": "2023-08-17T13:40:20.149Z",
+            "modified": "2023-08-18T16:56:59.177Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -81,13 +81,18 @@
             "colId": "f5ee7a20-e5f7-41bb-9d13-ffffca840fb9",
             "containerId": "b94c4dd9-a502-4bba-8b54-0b326c434cf9",
             "name": "update user",
-            "url": "{{url}}/users/1",
+            "url": "{{url}}/users/17",
             "method": "PUT",
             "sortNum": 25000,
             "created": "2023-08-17T12:03:17.212Z",
-            "modified": "2023-08-17T13:40:33.196Z",
+            "modified": "2023-08-18T17:04:27.419Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"moi\",\n  \"email\":\"e\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -99,12 +104,12 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2023-08-17T12:03:04.931Z",
-            "modified": "2023-08-17T13:38:05.945Z",
+            "modified": "2023-08-18T16:18:36.344Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"username\":\"Jude\",\n  \"email\":\"jude@g.com\"\n}",
+                "raw": "{\n  \"username\":\"Jd\",\n  \"email\":\"jude@g.com\"\n}",
                 "form": []
             },
             "tests": []
@@ -114,11 +119,11 @@
             "colId": "f5ee7a20-e5f7-41bb-9d13-ffffca840fb9",
             "containerId": "b94c4dd9-a502-4bba-8b54-0b326c434cf9",
             "name": "delete user",
-            "url": "",
+            "url": "{{url}}/users/1",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2023-08-17T12:03:39.212Z",
-            "modified": "2023-08-17T12:06:25.864Z",
+            "modified": "2023-08-18T16:21:59.164Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -128,11 +133,11 @@
             "colId": "f5ee7a20-e5f7-41bb-9d13-ffffca840fb9",
             "containerId": "01a82527-e24e-4974-b15e-0a790730dc2a",
             "name": "get category by id",
-            "url": "{{url}}/categories/1",
+            "url": "{{url}}/categories/8",
             "method": "GET",
             "sortNum": 60000,
             "created": "2023-08-17T12:04:30.588Z",
-            "modified": "2023-08-17T13:42:54.896Z",
+            "modified": "2023-08-18T16:47:06.046Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -146,12 +151,12 @@
             "method": "POST",
             "sortNum": 70000,
             "created": "2023-08-17T12:04:50.363Z",
-            "modified": "2023-08-17T15:29:05.711Z",
+            "modified": "2023-08-18T16:18:13.846Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\":\"Documentaire\"\n}",
+                "raw": "{\n  \"name\":\"x\"\n}",
                 "form": []
             },
             "tests": []
@@ -161,13 +166,18 @@
             "colId": "f5ee7a20-e5f7-41bb-9d13-ffffca840fb9",
             "containerId": "01a82527-e24e-4974-b15e-0a790730dc2a",
             "name": "update category",
-            "url": "{{url}}/categories/1",
-            "method": "DELETE",
+            "url": "{{url}}/categories/9",
+            "method": "PUT",
             "sortNum": 80000,
             "created": "2023-08-17T12:05:02.860Z",
-            "modified": "2023-08-17T13:43:05.571Z",
+            "modified": "2023-08-18T15:23:42.703Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Threr\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -175,11 +185,11 @@
             "colId": "f5ee7a20-e5f7-41bb-9d13-ffffca840fb9",
             "containerId": "01a82527-e24e-4974-b15e-0a790730dc2a",
             "name": "delete category",
-            "url": "{{url}}/categories/1",
-            "method": "GET",
+            "url": "{{url}}/categories/10",
+            "method": "DELETE",
             "sortNum": 100000,
             "created": "2023-08-17T12:05:26.571Z",
-            "modified": "2023-08-17T13:43:02.693Z",
+            "modified": "2023-08-18T18:03:12.960Z",
             "headers": [],
             "params": [],
             "tests": []
