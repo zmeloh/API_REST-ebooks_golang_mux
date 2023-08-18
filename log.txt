@@ -267,7 +267,7 @@ error: Request: POST /categories 127.0.0.1:56422 | Status: 201 | Latency: 3.4368
 
 error: Request: GET /categories/1 127.0.0.1:58086 | Status: 200 | Latency: 6.4205ms
 
-error: pq: la base de données « ebook_apiDB » n'existe pas
+error: pq: la base de donnï¿½es ï¿½ ebook_apiDB ï¿½ n'existe pas
 error: Request: POST /categories 127.0.0.1:56381 | Status: 201 | Latency: 171.739ms
 
 error: Request: POST /categories 127.0.0.1:56408 | Status: 201 | Latency: 38.3406ms
@@ -997,5 +997,4 @@ error: Request: GET /ebooks 127.0.0.1:60169 | Status: 404 | Latency: 6.682ms
 
 error: pq: column "category_id" of relation "ebooks" does not exist
 error: pq: column "category_id" of relation "ebooks" does not exist
-error: Request: POST /ebooks 127.0.0.1:65027 | Status: 201 | Latency: 11.8994ms
-
+// https://scriptable.com/how-to-create-a-go-package-golang/
