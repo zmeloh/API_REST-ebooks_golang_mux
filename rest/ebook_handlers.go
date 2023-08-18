@@ -22,8 +22,6 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 
 	// Appeler le service pour insérer le nouvel ebook
 	services.InsertEbook(&newEbook)
-
-	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(newEbook)
 }

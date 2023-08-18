@@ -75,7 +75,7 @@ func UpdateEbook(updatedEbook models.Ebook) (models.Ebook, error) {
 // Delete Ebook
 func DeleteEbook(id int) error {
 	// Requête pour supprimer un livre électronique par ID dans la base de données
-	_, err := DB.Exec("DELETE FROM ebooks WHERE id = ?", id)
+	err := DB.QueryRow("DELETE FROM ebooks WHERE id = $1 RETURNING ID", id).Scan(&id)
 	if err != nil {
 		utils.Logger(err)
 	}

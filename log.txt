@@ -930,3 +930,72 @@ error: Request: PUT /users/179 127.0.0.1:53213 | Status: 404 | Latency: 762.8µs
 
 error: Request: PUT /users/1 127.0.0.1:53241 | Status: 200 | Latency: 1.6677ms
 
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:52909 | Status: 404 | Latency: 17.2734ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:52911 | Status: 404 | Latency: 7.4536ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:52913 | Status: 404 | Latency: 7.3655ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks/1 127.0.0.1:52915 | Status: 404 | Latency: 6.1252ms
+
+error: Request: PUT /ebooks/2 127.0.0.1:52917 | Status: 400 | Latency: 0s
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1 127.0.0.1:52949 | Status: 400 | Latency: 0s
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60149 | Status: 404 | Latency: 12.5615ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60151 | Status: 404 | Latency: 6.2877ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60153 | Status: 404 | Latency: 5.4269ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60155 | Status: 404 | Latency: 6.8849ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60157 | Status: 404 | Latency: 5.4727ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60159 | Status: 404 | Latency: 7.89ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60161 | Status: 404 | Latency: 5.7797ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60163 | Status: 404 | Latency: 6.5806ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60165 | Status: 404 | Latency: 5.4529ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60167 | Status: 404 | Latency: 6.6189ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:60169 | Status: 404 | Latency: 6.682ms
+
+error: pq: column "category_id" of relation "ebooks" does not exist
+error: pq: column "category_id" of relation "ebooks" does not exist
+error: Request: POST /ebooks 127.0.0.1:65027 | Status: 201 | Latency: 11.8994ms
+

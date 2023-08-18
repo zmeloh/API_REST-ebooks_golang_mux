@@ -16,7 +16,6 @@ func InsertUser(u *models.User) error {
 		utils.Logger(err)
 		return err
 	}
-	fmt.Print(u.ID)
 	return err
 }
 
