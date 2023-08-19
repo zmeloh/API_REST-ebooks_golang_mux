@@ -87,7 +87,7 @@ func SelectEbooksByCategoryID(categoryID int) ([]models.Ebook, error) {
 	var ebooks []models.Ebook
 
 	// Requête pour récupérer les livres électroniques par ID de catégorie depuis la base de données
-	rows, err := DB.Query("SELECT id, title, author, category_id FROM ebooks WHERE category_id = ?", categoryID)
+	rows, err := DB.Query("SELECT id, title, author, category_id FROM ebooks WHERE category_id = $1", categoryID)
 	if err != nil {
 		utils.Logger(err)
 		return nil, err

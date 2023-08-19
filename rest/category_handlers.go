@@ -19,7 +19,6 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
-
 	services.InsertCategory(&newCategory)
 
 	w.WriteHeader(http.StatusCreated)

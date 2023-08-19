@@ -16,12 +16,12 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 	var newEbook models.Ebook
 	err := json.NewDecoder(r.Body).Decode(&newEbook)
 	if err != nil {
-		http.Error(w, "Invalid request", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
-
 	// Appeler le service pour insérer le nouvel ebook
 	services.InsertEbook(&newEbook)
+
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(newEbook)
 }
@@ -30,7 +30,7 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 func GetAllEbooks(w http.ResponseWriter, r *http.Request) {
 	ebooks := services.GetAllEbooks()
 	if ebooks == nil {
-		http.Error(w, "No data found", http.StatusNotFound)
+		ServerResponse(w, http.StatusNotFound, "No data found")
 		return
 	}
 	w.WriteHeader(http.StatusOK)
@@ -45,14 +45,14 @@ func GetEbookByID(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invald request", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
 
 	// Appeler le service pour récupérer un livre électronique par son ID
 	ebook := services.GetEbookByID(result)
 	if ebook.ID == 0 {
-		http.Error(w, "Ebook not found", http.StatusNotFound)
+		ServerResponse(w, http.StatusNotFound, "Ebook not found")
 		return
 	}
 	w.WriteHeader(http.StatusOK)
@@ -62,19 +62,22 @@ func GetEbookByID(w http.ResponseWriter, r *http.Request) {
 // GetEbookByCategoryID récupère la liste de tous les livres électroniques d'une catégorie.
 func GetEbookByCategoryID(w http.ResponseWriter, r *http.Request) {
 	// Récupérer l'ID de la catégorie depuis les paramètres de la requête
-	categoryIDStr := r.URL.Query().Get("category_id")
-	categoryID, err := strconv.Atoi(categoryIDStr)
+	params := mux.Vars(r)
+	id := params["id"]
+	categoryID, err := strconv.Atoi(id)
 
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
 
 	// Appeler le service pour récupérer les livres électroniques de la catégorie
 	ebooks := services.GetEbookByCategoryID(categoryID)
-
-	w.Header().Set("Content-Type", "application/json")
+	if  len(ebooks)==0{
+		ServerResponse(w, http.StatusNotFound, "Category ID not found")
+		return
+	}
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(ebooks)
 }
@@ -88,20 +91,20 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
 
 	var updatedEbook models.Ebook
 	err = json.NewDecoder(r.Body).Decode(&updatedEbook)
 	if err != nil {
-		http.Error(w, "Invalid request", http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
 
 	err = services.UpdateEbook(ebookID, &updatedEbook)
 	if err != nil {
-		http.Error(w, "Ebook not found", http.StatusNotFound)
+		ServerResponse(w, http.StatusNotFound, "Ebook not found")
 		return
 	}
 	w.WriteHeader(http.StatusOK)
@@ -111,18 +114,20 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 // DeleteEbook supprime un livre électronique par son ID.
 func DeleteEbook(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	ebookID := vars["id"]
-	id, err := strconv.Atoi(ebookID)
+	id := vars["id"]
+	ebookID, err := strconv.Atoi(id)
 
 	if err != nil {
 		utils.Logger(err)
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		ServerResponse(w, http.StatusBadRequest, "Invalid id")
 		return
 	}
 
 	// Appeler le service pour supprimer l'ebook
-	services.DeleteEbook(id)
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusNoContent)
+	err = services.DeleteEbook(ebookID)
+	if err != nil {
+		ServerResponse(w, http.StatusNotFound, "Ebook not found")
+		return
+	}
+	ServerResponse(w, http.StatusOK, "Ebook has been deleted")
 }

@@ -32,7 +32,7 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/ebooks", rest.CreateEbook).Methods("POST")
 	router.HandleFunc("/ebooks/{id}", rest.GetEbookByID).Methods("GET")
 	router.HandleFunc("/ebooks/category/{id}", rest.GetEbookByCategoryID).Methods("GET")
-	router.HandleFunc("/ebooks/id}", rest.DeleteEbook).Methods("DELETE")
+	router.HandleFunc("/ebooks/{id}", rest.DeleteEbook).Methods("DELETE")
 	router.HandleFunc("/ebooks/{id}", rest.UpdateEbook).Methods("PUT")
 
 	
