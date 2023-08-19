@@ -34,3 +34,15 @@ func DeleteFavorite(id int) error {
 	err := controllers.DeleteFavorite(id)
 	return err
 }
+
+// GetFavoriteByUserID
+func GetFavoriteByUserID(id int) (e []models.Favorite) {
+	e, _ = controllers.GetFavoritesByUserID(id)
+	return
+}
+
+// GetFavoriteByEbookID
+func GetFavoriteByEbookID(id int) (e []models.Favorite) {
+	e, _ = controllers.GetFavoritesByUserID(id)
+	return
+}

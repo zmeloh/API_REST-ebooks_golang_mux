@@ -1391,3 +1391,11 @@ error: Request: GET /ebooks/category/200 127.0.0.1:57232 | Status: 404 | Latency
 error: strconv.Atoi: parsing "200u": invalid syntax
 error: Request: GET /ebooks/category/200u 127.0.0.1:57235 | Status: 400 | Latency: 506.2µs
 
+error: Request: GET /categories 127.0.0.1:50623 | Status: 404 | Latency: 313.9317ms
+
+error: Request: GET /ebooks 127.0.0.1:51088 | Status: 404 | Latency: 4.2955ms
+
+error: Request: GET /ebooks 127.0.0.1:59686 | Status: 404 | Latency: 642.8µs
+
+error: Request: GET /ebooks 127.0.0.1:49947 | Status: 404 | Latency: 1.0668ms
+

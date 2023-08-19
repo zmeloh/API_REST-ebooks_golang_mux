@@ -70,7 +70,7 @@ func GetFavoritesByUserID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Appeler le service pour récupérer les livres électroniques de la catégorie
-	favorites := services.GetFavoritesByUserID(favoriteID)
+	favorites := services.GetFavoriteByUserID(favoriteID)
 	if len(favorites) == 0 {
 		ServerResponse(w, http.StatusNotFound, "Favorite ID not found")
 		return
@@ -92,7 +92,7 @@ func GetFavoritesByEbookID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Appeler le service pour récupérer les livres électroniques de la catégorie
-	favorites := services.GetFavoritesByEbookID(favoriteID)
+	favorites := services.GetFavoriteByEbookID(favoriteID)
 	if len(favorites) == 0 {
 		ServerResponse(w, http.StatusNotFound, "Favorite ID not found")
 		return
