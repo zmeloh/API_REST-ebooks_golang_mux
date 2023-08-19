@@ -13,7 +13,7 @@ func GetAllFavorites() (f []models.Favorite) {
 
 // GetFavoriteByID
 func GetFavoriteByID(id int) (f models.Favorite) {
-	controllers.GetFavoriteByID(id)
+	f, _ = controllers.GetFavoriteByID(id)
 	return
 }
 
@@ -24,13 +24,13 @@ func InsertFavorite(f *models.Favorite) {
 }
 
 // UpdateFavorite
-func UpdateFavorite(id int, f models.Favorite) {
-	controllers.UpdateFavorite(id, f)
-	return
+func UpdateFavorite(id int, f *models.Favorite) error {
+	err := controllers.UpdateFavorite(id, f)
+	return err
 }
 
 // DeleteFavorite
-func DeleteFavorite(id int) {
-	controllers.DeleteFavorite(id)
-	return
+func DeleteFavorite(id int) error {
+	err := controllers.DeleteFavorite(id)
+	return err
 }
