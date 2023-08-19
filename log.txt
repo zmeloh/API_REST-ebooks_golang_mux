@@ -998,3 +998,4 @@ error: Request: GET /ebooks 127.0.0.1:60169 | Status: 404 | Latency: 6.682ms
 error: pq: column "category_id" of relation "ebooks" does not exist
 error: pq: column "category_id" of relation "ebooks" does not exist
 // https://scriptable.com/how-to-create-a-go-package-golang/
+error: dial tcp [::1]:5432: connectex: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
