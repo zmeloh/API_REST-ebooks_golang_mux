@@ -51,7 +51,7 @@ func GetFavoritesByEbookID(ebookID int) ([]models.Favorite, error) {
 	return favorites, nil
 }
 
-func UpdateFavorite(id int, updatedFavorite models.Favorite) error {
+func UpdateFavorite(id int, updatedFavorite *models.Favorite) error {
 	existingFavorite, err := dao.SelectFavoriteByID(id)
 	if err != nil {
 		utils.Logger(err)
@@ -59,7 +59,9 @@ func UpdateFavorite(id int, updatedFavorite models.Favorite) error {
 	}
 	existingFavorite.UserID = updatedFavorite.UserID
 	existingFavorite.EbookID = updatedFavorite.EbookID
+	updatedFavorite.ID = existingFavorite.ID
 	_, err = dao.UpdateFavorite(id, existingFavorite)
+
 	if err != nil {
 		utils.Logger(err)
 		return err

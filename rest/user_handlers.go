@@ -1,19 +1,15 @@
 package rest
 
 import (
-	//"database/sql"
 	"encoding/json"
 	"strconv"
 
-	//"example/api/dao"
 	"example/api/models"
 	"example/api/services"
 	"example/api/utils"
 	"net/http"
 
 	"github.com/gorilla/mux"
-	//"strconv"
-	//"github.com/gorilla/mux"
 )
 
 // CreateUser crée un nouvel utilisateur en utilisant les données du corps de la requête.

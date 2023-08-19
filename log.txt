@@ -998,4 +998,396 @@ error: Request: GET /ebooks 127.0.0.1:60169 | Status: 404 | Latency: 6.682ms
 error: pq: column "category_id" of relation "ebooks" does not exist
 error: pq: column "category_id" of relation "ebooks" does not exist
 // https://scriptable.com/how-to-create-a-go-package-golang/
-error: dial tcp [::1]:5432: connectex: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:64391 | Status: 404 | Latency: 19.3604ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks 127.0.0.1:64896 | Status: 404 | Latency: 15.0914ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: GET /ebooks/1 127.0.0.1:64898 | Status: 404 | Latency: 7.1156ms
+
+error: pq: column "category_id" of relation "ebooks" does not exist
+error: pq: column "category_id" of relation "ebooks" does not exist
+error: Request: POST /ebooks 127.0.0.1:64921 | Status: 201 | Latency: 5.1159ms
+
+error: pq: column "category_id" does not exist
+error: pq: column "category_id" does not exist
+error: Request: PUT /ebooks/2 127.0.0.1:64981 | Status: 404 | Latency: 6.4499ms
+
+error: sql: Scan error on column index 2, name "author": converting NULL to string is unsupported
+error: Request: GET /ebooks 127.0.0.1:53161 | Status: 404 | Latency: 3.5352ms
+
+error: sql: Scan error on column index 2, name "author": converting NULL to string is unsupported
+error: Request: GET /ebooks 127.0.0.1:53163 | Status: 404 | Latency: 1.1283ms
+
+error: Request: GET /ebooks 127.0.0.1:53885 | Status: 200 | Latency: 2.2405ms
+
+error: Request: GET /ebooks/1 127.0.0.1:64897 | Status: 200 | Latency: 747.2µs
+
+error: strconv.Atoi: parsing "1w": invalid syntax
+error: Request: GET /ebooks/1w 127.0.0.1:58380 | Status: 400 | Latency: 598.4µs
+
+error: no ebook found with ID 10
+error: Request: GET /ebooks/10 127.0.0.1:49953 | Status: 404 | Latency: 1.0984ms
+
+error: Request: GET /ebooks/2 127.0.0.1:52487 | Status: 200 | Latency: 666.3µs
+
+error: Request: POST /ebooks 127.0.0.1:58491 | Status: 201 | Latency: 6.1262ms
+
+error: Request: GET /ebooks 127.0.0.1:50236 | Status: 200 | Latency: 504.7µs
+
+error: Request: GET /categories 127.0.0.1:52693 | Status: 200 | Latency: 507.7µs
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:58927 | Status: 201 | Latency: 16.1733ms
+
+error: Request: PUT /ebooks/2 127.0.0.1:54286 | Status: 200 | Latency: 1.5216ms
+
+error: Request: GET /ebooks 127.0.0.1:54288 | Status: 200 | Latency: 84.9µs
+
+error: strconv.Atoi: parsing "2e": invalid syntax
+error: Request: PUT /ebooks/2e 127.0.0.1:54127 | Status: 400 | Latency: 0s
+
+error: no ebook found with ID 20
+error: Request: PUT /ebooks/20 127.0.0.1:54129 | Status: 404 | Latency: 727.6µs
+
+error: no ebook found with ID 20
+error: Request: PUT /ebooks/20 127.0.0.1:54172 | Status: 404 | Latency: 1.1531ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: Request: PUT /ebooks/2 127.0.0.1:54202 | Status: 404 | Latency: 5.7418ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: Request: PUT /ebooks/2 127.0.0.1:54204 | Status: 404 | Latency: 5.7375ms
+
+error: Request: PUT /ebooks/2 127.0.0.1:54224 | Status: 200 | Latency: 1.2891ms
+
+error: Request: GET /ebooks 127.0.0.1:58451 | Status: 200 | Latency: 510.2µs
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: Request: PUT /ebooks/2 127.0.0.1:58507 | Status: 404 | Latency: 5.7599ms
+
+error: Request: PUT /ebooks/2 127.0.0.1:58524 | Status: 200 | Latency: 1.817ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:62924 | Status: 201 | Latency: 6.4772ms
+
+error: Request: GET /ebooks 127.0.0.1:56824 | Status: 200 | Latency: 2.9019ms
+
+error: Request: POST /ebooks 127.0.0.1:54134 | Status: 400 | Latency: 0s
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_categorie_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:54201 | Status: 201 | Latency: 14.2758ms
+
+error: Request: GET /ebooks 127.0.0.1:59844 | Status: 200 | Latency: 513µs
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:65122 | Status: 201 | Latency: 6.4427ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:63865 | Status: 201 | Latency: 6.7518ms
+
+error: Request: GET /ebooks 127.0.0.1:63291 | Status: 200 | Latency: 505µs
+
+error: Request: POST /ebooks 127.0.0.1:57914 | Status: 201 | Latency: 1.5216ms
+
+error: Request: GET /ebooks 127.0.0.1:53958 | Status: 200 | Latency: 0s
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:61484 | Status: 201 | Latency: 8.3935ms
+
+error: Request: GET /ebooks 127.0.0.1:54884 | Status: 200 | Latency: 506.2µs
+
+error: Request: PUT /ebooks/10 127.0.0.1:57326 | Status: 200 | Latency: 5.0223ms
+
+error: Request: GET /ebooks 127.0.0.1:51097 | Status: 200 | Latency: 519.7µs
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/10 127.0.0.1:58530 | Status: 404 | Latency: 7.1789ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/10 127.0.0.1:55466 | Status: 404 | Latency: 7.0424ms
+
+error: Request: POST /ebooks 127.0.0.1:63166 | Status: 201 | Latency: 21.8852ms
+
+error: Request: POST /ebooks 127.0.0.1:63180 | Status: 201 | Latency: 20.9424ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:63449 | Status: 201 | Latency: 38.7084ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:63451 | Status: 201 | Latency: 7.0515ms
+
+error: no category found with ID 299
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:58395 | Status: 201 | Latency: 20.3694ms
+
+error: no category found with ID 299
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:58437 | Status: 201 | Latency: 8.1194ms
+
+error: no category found with ID 299
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:58439 | Status: 201 | Latency: 7.7914ms
+
+error: no category found with ID 299
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:58441 | Status: 201 | Latency: 8.217ms
+
+error: no category found with ID 299
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:58494 | Status: 201 | Latency: 8.6457ms
+
+error: Request: GET /ebooks 127.0.0.1:61229 | Status: 200 | Latency: 3.0478ms
+
+error: Request: GET /categories 127.0.0.1:61255 | Status: 200 | Latency: 1.5146ms
+
+error: no category found with ID 29944444
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:61289 | Status: 201 | Latency: 15.234ms
+
+error: no category found with ID 29944444
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:61291 | Status: 201 | Latency: 8.5456ms
+
+error: no category found with ID 29944444
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:61308 | Status: 201 | Latency: 9.5155ms
+
+error: Request: POST /ebooks 127.0.0.1:61315 | Status: 201 | Latency: 2.6158ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:54464 | Status: 201 | Latency: 21.0972ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:54466 | Status: 201 | Latency: 4.0704ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52959 | Status: 201 | Latency: 13.153ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52160 | Status: 201 | Latency: 19.192ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52176 | Status: 201 | Latency: 10.6019ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52184 | Status: 201 | Latency: 18.3727ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52197 | Status: 201 | Latency: 8.4616ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52236 | Status: 201 | Latency: 18.8554ms
+
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: pq: value "24444444444" is out of range for type integer
+error: Request: POST /ebooks 127.0.0.1:52238 | Status: 201 | Latency: 9.595ms
+
+error: Request: POST /ebooks 127.0.0.1:52241 | Status: 201 | Latency: 5.434ms
+
+error: no category found with ID 24
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: POST /ebooks 127.0.0.1:52270 | Status: 201 | Latency: 7.2673ms
+
+error: no category found with ID 24
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51216 | Status: 201 | Latency: 8.2944238s
+
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51297 | Status: 201 | Latency: 3.8463ms
+
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51518 | Status: 201 | Latency: 3.8537ms
+
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51520 | Status: 201 | Latency: 724.8µs
+
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51546 | Status: 201 | Latency: 1.1935ms
+
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51548 | Status: 201 | Latency: 1.1337ms
+
+error: no category found with ID 24
+error: Request: POST /ebooks 127.0.0.1:51550 | Status: 201 | Latency: 1.3314ms
+
+error: Request: POST /ebooks 127.0.0.1:56590 | Status: 201 | Latency: 3.3731ms
+
+error: Request: GET /categories 127.0.0.1:56593 | Status: 200 | Latency: 507.2µs
+
+error: Request: GET /ebooks 127.0.0.1:56622 | Status: 200 | Latency: 1.5348ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/14 127.0.0.1:56780 | Status: 200 | Latency: 5.1639ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/1 127.0.0.1:56790 | Status: 200 | Latency: 1.0908ms
+
+error: Request: GET /ebooks 127.0.0.1:56822 | Status: 200 | Latency: 1.0583ms
+
+error: strconv.Atoi: parsing "1q": invalid syntax
+error: Request: DELETE /ebooks/1q 127.0.0.1:56862 | Status: 400 | Latency: 599.4µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/100 127.0.0.1:57028 | Status: 200 | Latency: 5.175ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/100 127.0.0.1:63351 | Status: 404 | Latency: 3.5627ms
+
+error: strconv.Atoi: parsing "100g": invalid syntax
+error: Request: DELETE /ebooks/100g 127.0.0.1:52646 | Status: 400 | Latency: 533µs
+
+error: Request: DELETE /ebooks/10 127.0.0.1:52666 | Status: 200 | Latency: 3.3097ms
+
+error: Request: GET /ebooks 127.0.0.1:52703 | Status: 200 | Latency: 1.1223ms
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:52764 | Status: 400 | Latency: 541µs
+
+error: strconv.Atoi: parsing "1r": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:52902 | Status: 400 | Latency: 538.5µs
+
+error: strconv.Atoi: parsing "1r": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:52974 | Status: 400 | Latency: 628µs
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49481 | Status: 400 | Latency: 542µs
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49483 | Status: 400 | Latency: 538.8µs
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49485 | Status: 400 | Latency: 399.3µs
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49487 | Status: 400 | Latency: 572.4µs
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49489 | Status: 400 | Latency: 564.7µs
+
+error: strconv.Atoi: parsing "": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49515 | Status: 400 | Latency: 536.4µs
+
+error: strconv.Atoi: parsing "1r": invalid syntax
+error: Request: GET /ebooks/category/1r 127.0.0.1:49919 | Status: 400 | Latency: 1.0017ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: GET /ebooks/category/100 127.0.0.1:49949 | Status: 200 | Latency: 18.535ms
+
+error: no ebook found with ID 100
+error: Request: GET /ebooks/category/100 127.0.0.1:58299 | Status: 404 | Latency: 4.0038ms
+
+error: no ebook found with ID 100
+error: Request: GET /ebooks/category/100 127.0.0.1:58346 | Status: 404 | Latency: 1.0808ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: GET /ebooks/category/56 127.0.0.1:58366 | Status: 200 | Latency: 13.7584ms
+
+error: no ebook found with ID 560
+error: Request: GET /ebooks/category/560 127.0.0.1:58409 | Status: 404 | Latency: 693.6µs
+
+error: no ebook found with ID 560
+error: Request: GET /ebooks/category/560 127.0.0.1:56693 | Status: 404 | Latency: 1.0605ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: strconv.Atoi: parsing "5w": invalid syntax
+error: Request: GET /ebooks/category/5w 127.0.0.1:55770 | Status: 400 | Latency: 545.6µs
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: GET /ebooks/category/2 127.0.0.1:51897 | Status: 404 | Latency: 14.6136ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: GET /ebooks/category/200 127.0.0.1:51933 | Status: 404 | Latency: 5.9827ms
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: GET /ebooks/category/2 127.0.0.1:51966 | Status: 404 | Latency: 4.929ms
+
+error: strconv.Atoi: parsing "2u": invalid syntax
+error: Request: GET /ebooks/category/2u 127.0.0.1:51968 | Status: 400 | Latency: 535.4µs
+
+error: pq: syntax error at end of input
+error: pq: syntax error at end of input
+error: Request: GET /ebooks/category/2 127.0.0.1:51992 | Status: 404 | Latency: 6.8951ms
+
+error: Request: GET /categories 127.0.0.1:51994 | Status: 200 | Latency: 2.5119ms
+
+error: Request: GET /ebooks/category/2 127.0.0.1:57218 | Status: 200 | Latency: 2.9136ms
+
+error: Request: GET /ebooks/category/200 127.0.0.1:57232 | Status: 404 | Latency: 546.1µs
+
+error: strconv.Atoi: parsing "200u": invalid syntax
+error: Request: GET /ebooks/category/200u 127.0.0.1:57235 | Status: 400 | Latency: 506.2µs
+
