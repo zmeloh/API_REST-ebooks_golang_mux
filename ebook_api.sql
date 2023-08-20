@@ -51,10 +51,10 @@ ALTER TABLE public.users
 
 CREATE TABLE IF NOT EXISTS public.ebooks
 (
-    id integer NOT NULL DEFAULT nextval('ebooks_id_seq'::regclass),
+    id serial NOT NULL DEFAULT nextval('ebooks_id_seq'::regclass),
     title character varying(255) COLLATE pg_catalog."default" NOT NULL,
     author character varying(255) COLLATE pg_catalog."default",
-    categorie_id integer NOT NULL,
+    category_id integer NOT NULL,
     CONSTRAINT ebooks_pkey PRIMARY KEY (id),
     CONSTRAINT ebooks_categorie_id_fkey FOREIGN KEY (categorie_id)
         REFERENCES public.categories (id) MATCH SIMPLE

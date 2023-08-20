@@ -16,6 +16,7 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 	var newEbook models.Ebook
 	err := json.NewDecoder(r.Body).Decode(&newEbook)
 	if err != nil {
+		utils.Logger(err)
 		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}

@@ -1399,3 +1399,203 @@ error: Request: GET /ebooks 127.0.0.1:59686 | Status: 404 | Latency: 642.8µs
 
 error: Request: GET /ebooks 127.0.0.1:49947 | Status: 404 | Latency: 1.0668ms
 
+error: Request: POST /categories 127.0.0.1:65524 | Status: 201 | Latency: 524.1533ms
+
+error: Request: POST /categories 127.0.0.1:49155 | Status: 201 | Latency: 700.6µs
+
+error: Request: POST /categories 127.0.0.1:59388 | Status: 201 | Latency: 1.3434ms
+
+error: Request: POST /categories 127.0.0.1:59420 | Status: 201 | Latency: 512.5µs
+
+error: no category found with ID 8
+error: Request: GET /categories/8 127.0.0.1:59942 | Status: 404 | Latency: 161.7594ms
+
+error: strconv.Atoi: parsing "8z": invalid syntax
+error: Request: GET /categories/8z 127.0.0.1:59946 | Status: 400 | Latency: 1.0487ms
+
+error: Request: GET /categories/1 127.0.0.1:59950 | Status: 200 | Latency: 1.4071ms
+
+error: Request: GET /categories 127.0.0.1:56821 | Status: 200 | Latency: 102.1396ms
+
+error: Request: POST /categories 127.0.0.1:56827 | Status: 201 | Latency: 4.176ms
+
+error: no category found with ID 9
+error: Request: PUT /categories/9 127.0.0.1:49734 | Status: 404 | Latency: 1.726ms
+
+error: strconv.Atoi: parsing "9a": invalid syntax
+error: Request: PUT /categories/9a 127.0.0.1:49738 | Status: 400 | Latency: 607µs
+
+error: Request: PUT /categories/5 127.0.0.1:49742 | Status: 200 | Latency: 95.1766ms
+
+error: Request: GET /categories 127.0.0.1:49744 | Status: 200 | Latency: 1.118ms
+
+error: Request: POST /categories 127.0.0.1:57141 | Status: 201 | Latency: 10.0864ms
+
+error: Request: GET /categories 127.0.0.1:53167 | Status: 200 | Latency: 511.9µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /categories/10 127.0.0.1:57693 | Status: 404 | Latency: 3.8235ms
+
+error: strconv.Atoi: parsing "10z": invalid syntax
+error: Request: DELETE /categories/10z 127.0.0.1:52874 | Status: 400 | Latency: 607.1µs
+
+error: Request: DELETE /categories/6 127.0.0.1:50458 | Status: 200 | Latency: 28.0579ms
+
+error: Request: GET /categories 127.0.0.1:53505 | Status: 200 | Latency: 191.9µs
+
+error: Request: GET /users 127.0.0.1:53923 | Status: 404 | Latency: 63.9041ms
+
+error: Request: POST /users 127.0.0.1:51381 | Status: 201 | Latency: 92.7645ms
+
+error: Request: POST /users 127.0.0.1:56510 | Status: 201 | Latency: 2.3449ms
+
+error: Request: POST /users 127.0.0.1:60773 | Status: 201 | Latency: 1.0585ms
+
+error: Request: POST /users 127.0.0.1:60779 | Status: 201 | Latency: 1.1141ms
+
+error: Request: POST /users 127.0.0.1:60783 | Status: 201 | Latency: 2.8005ms
+
+error: Request: GET /users 127.0.0.1:60787 | Status: 200 | Latency: 512µs
+
+error: no user found with ID 17
+error: Request: PUT /users/17 127.0.0.1:60791 | Status: 404 | Latency: 2.305ms
+
+error: strconv.Atoi: parsing "17w": invalid syntax
+error: Request: PUT /users/17w 127.0.0.1:60794 | Status: 400 | Latency: 2.0216ms
+
+error: Request: PUT /users/5 127.0.0.1:60803 | Status: 200 | Latency: 6.4192ms
+
+error: strconv.Atoi: parsing "5w": invalid syntax
+error: Request: PUT /users/5w 127.0.0.1:60809 | Status: 400 | Latency: 594µs
+
+error: no user found with ID 55
+error: Request: PUT /users/55 127.0.0.1:60813 | Status: 404 | Latency: 2.6394ms
+
+error: Request: GET /users 127.0.0.1:60817 | Status: 200 | Latency: 511.6µs
+
+error: strconv.Atoi: parsing "1e": invalid syntax
+error: Request: DELETE /users/1e 127.0.0.1:60821 | Status: 400 | Latency: 508.3µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /users/16 127.0.0.1:60825 | Status: 404 | Latency: 2.3242ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /users/6 127.0.0.1:60829 | Status: 404 | Latency: 2.4552ms
+
+error: Request: DELETE /users/5 127.0.0.1:60835 | Status: 200 | Latency: 300.0749ms
+
+error: Request: GET /users 127.0.0.1:60840 | Status: 200 | Latency: 512.5µs
+
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: Request: POST /ebooks 127.0.0.1:60914 | Status: 201 | Latency: 12.7181ms
+
+error: Request: GET /ebooks 127.0.0.1:60919 | Status: 404 | Latency: 594µs
+
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: Request: POST /ebooks 127.0.0.1:60931 | Status: 201 | Latency: 2.7176ms
+
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: Request: POST /ebooks 127.0.0.1:60933 | Status: 201 | Latency: 2.8364ms
+
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: Request: POST /ebooks 127.0.0.1:56113 | Status: 201 | Latency: 3.1455ms
+
+error: Request: GET /ebooks 127.0.0.1:56140 | Status: 404 | Latency: 513µs
+
+error: Request: GET /ebooks 127.0.0.1:65175 | Status: 404 | Latency: 1.0678ms
+
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: pq: tableau litéral mal formé : « Julien Paradis »
+error: Request: POST /ebooks 127.0.0.1:56213 | Status: 201 | Latency: 11.434ms
+
+error: Request: GET /ebooks 127.0.0.1:56215 | Status: 404 | Latency: 2.5216ms
+
+error: Request: POST /ebooks 127.0.0.1:54333 | Status: 201 | Latency: 14.9034ms
+
+error: Request: POST /ebooks 127.0.0.1:61988 | Status: 201 | Latency: 6.0512ms
+
+error: invalid character '&' after object key:value pair
+error: Request: POST /ebooks 127.0.0.1:61993 | Status: 400 | Latency: 1.0873ms
+
+error: no category found with ID 11
+error: Request: POST /ebooks 127.0.0.1:61995 | Status: 201 | Latency: 1.9404ms
+
+error: no category found with ID 11
+error: Request: POST /ebooks 127.0.0.1:57117 | Status: 201 | Latency: 1.9993ms
+
+error: Request: GET /ebooks 127.0.0.1:57396 | Status: 200 | Latency: 513.5µs
+
+error: Request: POST /ebooks 127.0.0.1:56654 | Status: 201 | Latency: 5.8829ms
+
+error: Request: POST /ebooks 127.0.0.1:56658 | Status: 201 | Latency: 5.8526ms
+
+error: Request: POST /ebooks 127.0.0.1:55759 | Status: 201 | Latency: 6.1043ms
+
+error: Request: GET /ebooks 127.0.0.1:55763 | Status: 200 | Latency: 583.7µs
+
+error: Request: GET /ebooks/1 127.0.0.1:51721 | Status: 200 | Latency: 2.8762ms
+
+error: strconv.Atoi: parsing "1a": invalid syntax
+error: Request: GET /ebooks/1a 127.0.0.1:53269 | Status: 400 | Latency: 1.2144ms
+
+error: no ebook found with ID 19
+error: Request: GET /ebooks/19 127.0.0.1:49371 | Status: 404 | Latency: 1.7247ms
+
+error: Request: GET /ebooks/5 127.0.0.1:49375 | Status: 200 | Latency: 510µs
+
+error: strconv.Atoi: parsing "2z": invalid syntax
+error: Request: PUT /ebooks/2z 127.0.0.1:55206 | Status: 400 | Latency: 515.5µs
+
+error: no ebook found with ID 20
+error: Request: PUT /ebooks/20 127.0.0.1:53362 | Status: 404 | Latency: 1.7146ms
+
+error: Request: PUT /ebooks/2 127.0.0.1:60444 | Status: 400 | Latency: 0s
+
+error: Request: PUT /ebooks/2 127.0.0.1:61125 | Status: 400 | Latency: 0s
+
+error: Request: PUT /ebooks/2 127.0.0.1:64701 | Status: 200 | Latency: 5.8967ms
+
+error: Request: GET /ebooks 127.0.0.1:64705 | Status: 200 | Latency: 514.3µs
+
+error: Request: PUT /ebooks/2 127.0.0.1:49465 | Status: 200 | Latency: 5.3913ms
+
+error: Request: GET /ebooks 127.0.0.1:61428 | Status: 200 | Latency: 559µs
+
+error: Request: GET /ebooks/category/1 127.0.0.1:57166 | Status: 200 | Latency: 1.078ms
+
+error: Request: GET /ebooks/category/2 127.0.0.1:57170 | Status: 200 | Latency: 510.5µs
+
+error: strconv.Atoi: parsing "2Z": invalid syntax
+error: Request: GET /ebooks/category/2Z 127.0.0.1:57174 | Status: 400 | Latency: 1.0876ms
+
+error: Request: GET /ebooks/category/20 127.0.0.1:57313 | Status: 404 | Latency: 1.1104ms
+
+error: Request: GET /ebooks/category/2 127.0.0.1:65213 | Status: 200 | Latency: 515.4µs
+
+error: Request: PUT /ebooks/2 127.0.0.1:64189 | Status: 200 | Latency: 5.8436ms
+
+error: Request: GET /ebooks 127.0.0.1:64193 | Status: 200 | Latency: 559.3µs
+
+error: strconv.Atoi: parsing "1é": invalid syntax
+error: Request: DELETE /ebooks/1é 127.0.0.1:64198 | Status: 400 | Latency: 1.079ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/10 127.0.0.1:58939 | Status: 404 | Latency: 3.0827ms
+
+error: Request: DELETE /ebooks/5 127.0.0.1:58945 | Status: 200 | Latency: 4.2079ms
+
+error: Request: GET /ebooks 127.0.0.1:58947 | Status: 200 | Latency: 584µs
+
+error: no category found with ID 22
+error: Request: POST /ebooks 127.0.0.1:49252 | Status: 201 | Latency: 3.721ms
+
+error: Request: GET /favorites 127.0.0.1:64239 | Status: 200 | Latency: 1.0664ms
+

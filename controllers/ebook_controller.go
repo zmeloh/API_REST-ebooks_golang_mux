@@ -21,7 +21,7 @@ func InsertEbook(e *models.Ebook) error {
 		utils.Logger(err)
 		return err
 	}
-	return err
+	return nil
 }
 
 // Get all ebooks
