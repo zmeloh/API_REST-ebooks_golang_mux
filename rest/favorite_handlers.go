@@ -22,7 +22,7 @@ func CreateFavorite(w http.ResponseWriter, r *http.Request) {
 		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
-
+	services.InsertFavorite(&favorite)
 	// Répond avec le favori créé et le code de statut 201 (Created)
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(favorite)
@@ -31,9 +31,12 @@ func CreateFavorite(w http.ResponseWriter, r *http.Request) {
 // GetAllFavorites récupère tous les favoris.
 func GetAllFavorites(w http.ResponseWriter, r *http.Request) {
 	favorites := services.GetAllFavorites()
-	if favorites != nil {
+	if favorites == nil {
 		ServerResponse(w, http.StatusNotFound, "No data found")
+		return
 	}
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(favorites)
 }
 
 // GetFavoriteByID récupère un favori par son ID.
@@ -47,7 +50,7 @@ func GetFavoriteByID(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Appeler le service pour récupérer un livre électronique par son ID
+
 	favorite := services.GetFavoriteByID(result)
 	if favorite.ID == 0 {
 		ServerResponse(w, http.StatusNotFound, "Favorite not found")

@@ -1,17 +1,18 @@
 package routers
 
 import (
-	"github.com/gorilla/mux"
-	"example/api/rest"
 	"example/api/middleware"
+	"example/api/rest"
+
+	"github.com/gorilla/mux"
 )
 
 func SetupRouter() *mux.Router {
 	router := mux.NewRouter()
 
-	// Serveur listener 
+	// Serveur listener
 	router.Use(middleware.LoggingMiddleware)
-	
+
 	// Users routers
 	router.HandleFunc("/users", rest.GetAllUsers).Methods("GET")
 	router.HandleFunc("/users/{id}", rest.GetUserByID).Methods("GET")
@@ -25,7 +26,6 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/categories", rest.CreateCategory).Methods("POST")
 	router.HandleFunc("/categories/{id}", rest.DeleteCategory).Methods("DELETE")
 	router.HandleFunc("/categories/{id}", rest.UpdateCategory).Methods("PUT")
-	
 
 	// Ebooks routers
 	router.HandleFunc("/ebooks", rest.GetAllEbooks).Methods("GET")
@@ -35,7 +35,6 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/ebooks/{id}", rest.DeleteEbook).Methods("DELETE")
 	router.HandleFunc("/ebooks/{id}", rest.UpdateEbook).Methods("PUT")
 
-	
 	// Favorites routers
 	router.HandleFunc("/favorites", rest.GetAllFavorites).Methods("GET")
 	router.HandleFunc("/favorites/{id}", rest.GetFavoriteByID).Methods("GET")
@@ -44,6 +43,6 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/favorites", rest.CreateFavorite).Methods("POST")
 	router.HandleFunc("/favorites/id}", rest.DeleteFavorite).Methods("DELETE")
 	router.HandleFunc("/favorites/id}", rest.UpdateFavorite).Methods("PUT")
-	
+
 	return router
 }

@@ -1599,3 +1599,148 @@ error: Request: POST /ebooks 127.0.0.1:49252 | Status: 201 | Latency: 3.721ms
 
 error: Request: GET /favorites 127.0.0.1:64239 | Status: 200 | Latency: 1.0664ms
 
+error: sql: Scan error on column index 2, name "author": converting NULL to string is unsupported
+error: Request: GET /ebooks 127.0.0.1:52332 | Status: 404 | Latency: 7.4847ms
+
+error: sql: Scan error on column index 2, name "author": converting NULL to string is unsupported
+error: Request: GET /ebooks 127.0.0.1:49890 | Status: 404 | Latency: 1.6425ms
+
+error: no ebook found with ID 5
+error: Request: GET /ebooks/5 127.0.0.1:49895 | Status: 404 | Latency: 2.1884ms
+
+error: no ebook found with ID 5
+error: Request: GET /ebooks/5 127.0.0.1:55643 | Status: 404 | Latency: 1.8938ms
+
+error: sql: Scan error on column index 2, name "author": converting NULL to string is unsupported
+error: Request: GET /ebooks 127.0.0.1:55648 | Status: 404 | Latency: 1.9659ms
+
+error: sql: Scan error on column index 2, name "author": converting NULL to string is unsupported
+error: Request: GET /ebooks 127.0.0.1:64211 | Status: 404 | Latency: 1.6616ms
+
+error: Request: GET /ebooks 127.0.0.1:49821 | Status: 200 | Latency: 1.0749ms
+
+error: no ebook found with ID 5
+error: Request: GET /ebooks/5 127.0.0.1:49825 | Status: 404 | Latency: 4.4284ms
+
+error: Request: GET /ebooks/4 127.0.0.1:63510 | Status: 200 | Latency: 1.2266ms
+
+error: Request: PUT /ebooks/2 127.0.0.1:64958 | Status: 200 | Latency: 1.7833ms
+
+error: Request: GET /ebooks 127.0.0.1:58950 | Status: 200 | Latency: 519.5µs
+
+error: Request: PUT /ebooks/6 127.0.0.1:60439 | Status: 200 | Latency: 6.2606ms
+
+error: Request: GET /ebooks 127.0.0.1:60444 | Status: 200 | Latency: 512.9µs
+
+error: pq: une instruction insert ou update sur la table « ebooks » viole la contrainte de clé
+étrangère « ebooks_categorie_id_fkey »
+error: pq: une instruction insert ou update sur la table « ebooks » viole la contrainte de clé
+étrangère « ebooks_categorie_id_fkey »
+error: Request: PUT /ebooks/6 127.0.0.1:60620 | Status: 404 | Latency: 8.8553ms
+
+error: strconv.Atoi: parsing "6z": invalid syntax
+error: Request: PUT /ebooks/6z 127.0.0.1:60625 | Status: 400 | Latency: 1.5782ms
+
+error: no ebook found with ID 60
+error: Request: PUT /ebooks/60 127.0.0.1:63156 | Status: 404 | Latency: 1.6805ms
+
+error: Request: GET /favorites 127.0.0.1:52085 | Status: 200 | Latency: 1.0808ms
+
+error: Request: GET /favorites 127.0.0.1:59422 | Status: 200 | Latency: 516.6µs
+
+error: no favorite found with ID 1
+error: Request: GET /favorites/1 127.0.0.1:65193 | Status: 404 | Latency: 1.2347ms
+
+error: Request: GET /favorites 127.0.0.1:53303 | Status: 200 | Latency: 8.0712ms
+
+error: Request: GET /favorites 127.0.0.1:59245 | Status: 404 | Latency: 9.1565ms
+
+error: Request: GET /favorites 127.0.0.1:62971 | Status: 404 | Latency: 512.2µs
+
+error: Request: GET /favorites 127.0.0.1:62973 | Status: 404 | Latency: 582.6µs
+
+error: Request: GET /favorites 127.0.0.1:62975 | Status: 404 | Latency: 998.6µs
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:60594 | Status: 404 | Latency: 4.4717ms
+
+error: strconv.Atoi: parsing "1x": invalid syntax
+error: Request: GET /favorites/1x 127.0.0.1:60600 | Status: 400 | Latency: 1.0643ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/2 127.0.0.1:56221 | Status: 404 | Latency: 4.2537ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/2 127.0.0.1:54304 | Status: 404 | Latency: 6.979ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/2 127.0.0.1:60963 | Status: 404 | Latency: 7.1258ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/2 127.0.0.1:60967 | Status: 404 | Latency: 5.113ms
+
+error: Request: GET /favorites 127.0.0.1:54961 | Status: 404 | Latency: 6.1745ms
+
+error: Request: GET /favorites 127.0.0.1:54963 | Status: 404 | Latency: 1.1795ms
+
+error: Request: GET /favorites 127.0.0.1:50509 | Status: 404 | Latency: 513.3µs
+
+error: Request: GET /favorites 127.0.0.1:54823 | Status: 404 | Latency: 578.2µs
+
+error: Request: GET /favorites 127.0.0.1:60219 | Status: 404 | Latency: 550.9µs
+
+error: Request: GET /favorites 127.0.0.1:62770 | Status: 404 | Latency: 514.1µs
+
+error: Request: GET /favorites 127.0.0.1:55550 | Status: 200 | Latency: 6.6915ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:55554 | Status: 404 | Latency: 2.1964ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:51579 | Status: 404 | Latency: 2.3136ms
+
+error: strconv.Atoi: parsing "1w": invalid syntax
+error: Request: GET /favorites/1w 127.0.0.1:51581 | Status: 400 | Latency: 1.076ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/2 127.0.0.1:63038 | Status: 404 | Latency: 4.0722ms
+
+error: no favorite found with ID 20
+error: Request: GET /favorites/20 127.0.0.1:63042 | Status: 404 | Latency: 1.6914ms
+
+error: Request: GET /favorites/user/1 127.0.0.1:55564 | Status: 200 | Latency: 5.7894ms
+
+error: strconv.Atoi: parsing "1s": invalid syntax
+error: Request: GET /favorites/user/1s 127.0.0.1:61279 | Status: 400 | Latency: 1.1534ms
+
+error: Request: GET /favorites/user/10 127.0.0.1:61284 | Status: 404 | Latency: 1.0569ms
+
+error: Request: GET /favorites/user/2 127.0.0.1:64477 | Status: 200 | Latency: 1.2357ms
+
+error: Request: GET /favorites/ebook/2 127.0.0.1:60736 | Status: 200 | Latency: 1.4003ms
+
+error: Request: GET /favorites/ebook/1 127.0.0.1:60738 | Status: 200 | Latency: 1.0648ms
+
+error: Request: GET /favorites/ebook/10 127.0.0.1:64137 | Status: 404 | Latency: 787.8µs
+
+error: Request: GET /favorites/ebook/100 127.0.0.1:64141 | Status: 404 | Latency: 515µs
+
+error: strconv.Atoi: parsing "1s": invalid syntax
+error: Request: GET /favorites/ebook/1s 127.0.0.1:64145 | Status: 400 | Latency: 1.0783ms
+
+error: Request: GET /favorites/ebook/2 127.0.0.1:59851 | Status: 200 | Latency: 1.0716ms
+
+error: Request: GET /favorites 127.0.0.1:50205 | Status: 200 | Latency: 2.5391ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:58772 | Status: 404 | Latency: 3.5543ms
+
