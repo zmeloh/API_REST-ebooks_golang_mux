@@ -2441,3 +2441,343 @@ error: Request: DELETE /ebooks/59 127.0.0.1:54875 | Status: 200 | Latency: 536.1
 
 error: Request: GET /ebooks 127.0.0.1:54878 | Status: 200 | Latency: 503.9µs
 
+error: Request: POST /users 127.0.0.1:60663 | Status: 201 | Latency: 4.4054ms
+
+error: Request: GET /users 127.0.0.1:53678 | Status: 200 | Latency: 1.0593ms
+
+error: Request: POST /users 127.0.0.1:52050 | Status: 201 | Latency: 648.4µs
+
+error: Request: GET /users/20 127.0.0.1:49276 | Status: 200 | Latency: 504.6µs
+
+error: strconv.Atoi: parsing "20h": invalid syntax
+error: Request: GET /users/20h 127.0.0.1:49220 | Status: 400 | Latency: 529.6µs
+
+error: no user found with ID 2000
+error: Request: GET /users/2000 127.0.0.1:63374 | Status: 404 | Latency: 1.1754ms
+
+error: no user found with ID 559
+error: Request: PUT /users/559 127.0.0.1:56304 | Status: 404 | Latency: 851.8µs
+
+error: strconv.Atoi: parsing "2w": invalid syntax
+error: Request: PUT /users/2w 127.0.0.1:59613 | Status: 400 | Latency: 0s
+
+error: Request: PUT /users/20 127.0.0.1:61776 | Status: 200 | Latency: 1.4561ms
+
+error: Request: GET /users 127.0.0.1:65264 | Status: 200 | Latency: 446.2µs
+
+error: strconv.Atoi: parsing "2k": invalid syntax
+error: Request: DELETE /users/2k 127.0.0.1:54962 | Status: 400 | Latency: 0s
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /users/200 127.0.0.1:65203 | Status: 404 | Latency: 1.4352ms
+
+error: Request: DELETE /users/20 127.0.0.1:61018 | Status: 200 | Latency: 2.5386ms
+
+error: Request: GET /users 127.0.0.1:60809 | Status: 200 | Latency: 506.6µs
+
+error: Request: POST /categories 127.0.0.1:55112 | Status: 201 | Latency: 3.352ms
+
+error: Request: GET /categories 127.0.0.1:56335 | Status: 200 | Latency: 510.2µs
+
+error: strconv.Atoi: parsing "!4": invalid syntax
+error: Request: PUT /categories/!4 127.0.0.1:60548 | Status: 400 | Latency: 530.6µs
+
+error: Request: PUT /categories/14 127.0.0.1:55146 | Status: 200 | Latency: 1.6231ms
+
+error: Request: GET /categories 127.0.0.1:49741 | Status: 200 | Latency: 508.1µs
+
+error: strconv.Atoi: parsing "6k": invalid syntax
+error: Request: DELETE /categories/6k 127.0.0.1:54011 | Status: 400 | Latency: 538.6µs
+
+error: Request: DELETE /categories/13 127.0.0.1:57514 | Status: 200 | Latency: 8.5173ms
+
+error: Request: GET /categories 127.0.0.1:55500 | Status: 200 | Latency: 535.8µs
+
+error: Request: POST /categories 127.0.0.1:63925 | Status: 400 | Latency: 0s
+
+error: Request: GET /ebooks 127.0.0.1:63999 | Status: 200 | Latency: 587.3µs
+
+error: Request: GET /ebooks/55 127.0.0.1:64044 | Status: 200 | Latency: 565.3µs
+
+error: Request: POST /ebooks 127.0.0.1:53106 | Status: 201 | Latency: 2.4411ms
+
+error: Request: GET /ebooks 127.0.0.1:53130 | Status: 200 | Latency: 0s
+
+error: no category found with ID 2000
+error: Request: POST /ebooks 127.0.0.1:53133 | Status: 404 | Latency: 1.6378ms
+
+error: no category found with ID 1000
+error: Request: PUT /ebooks/60 127.0.0.1:52057 | Status: 404 | Latency: 1.1284ms
+
+error: Request: PUT /ebooks/60 127.0.0.1:52085 | Status: 200 | Latency: 1.5597ms
+
+error: Request: GET /ebooks 127.0.0.1:52109 | Status: 200 | Latency: 659.8µs
+
+error: Request: GET /ebooks/category/2 127.0.0.1:63526 | Status: 200 | Latency: 516.2µs
+
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: Request: DELETE /ebooks/55 127.0.0.1:63556 | Status: 404 | Latency: 13.2688ms
+
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: Request: DELETE /ebooks/55 127.0.0.1:63636 | Status: 404 | Latency: 5.1165ms
+
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: Request: DELETE /ebooks/55 127.0.0.1:55900 | Status: 404 | Latency: 15.7253ms
+
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: pq: update or delete on table "ebooks" violates foreign key constraint "favorites_ebook_id_fkey" on table "favorites"
+error: Request: DELETE /ebooks/55 127.0.0.1:55920 | Status: 404 | Latency: 6.9595ms
+
+error: Request: GET /ebooks 127.0.0.1:62976 | Status: 200 | Latency: 507.7µs
+
+error: strconv.Atoi: parsing "55r": invalid syntax
+error: Request: DELETE /ebooks/55r 127.0.0.1:62992 | Status: 400 | Latency: 638.7µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/559 127.0.0.1:63027 | Status: 404 | Latency: 1.8272ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/5 127.0.0.1:63029 | Status: 404 | Latency: 2.3311ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/48 127.0.0.1:57136 | Status: 404 | Latency: 2.4466ms
+
+error: Request: DELETE /favorites/47 127.0.0.1:57144 | Status: 200 | Latency: 1.0056ms
+
+error: Request: PUT /favorites/15 127.0.0.1:52062 | Status: 200 | Latency: 5.1242ms
+
+error: no ebook found with ID 49
+error: Request: PUT /favorites/15 127.0.0.1:52064 | Status: 404 | Latency: 1.8101ms
+
+error: Request: GET /favorites/user/3 127.0.0.1:50109 | Status: 404 | Latency: 505.6µs
+
+error: Request: GET /favorites 127.0.0.1:50172 | Status: 200 | Latency: 532.8µs
+
+error: Request: GET /users 127.0.0.1:50209 | Status: 200 | Latency: 508.5µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:51562 | Status: 404 | Latency: 506.2µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:62180 | Status: 404 | Latency: 505.6µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:62182 | Status: 404 | Latency: 852.1µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54851 | Status: 404 | Latency: 689.9µs
+
+error: Request: PUT /favorites/15 127.0.0.1:59493 | Status: 200 | Latency: 2.7413ms
+
+error: Request: POST /favorites 127.0.0.1:53461 | Status: 201 | Latency: 3.0485ms
+
+error: Request: GET /favorites/1 127.0.0.1:65203 | Status: 200 | Latency: 828.9µs
+
+error: Request: GET /favorites 127.0.0.1:50252 | Status: 200 | Latency: 669.7µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54521 | Status: 404 | Latency: 545.3µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54531 | Status: 404 | Latency: 506.7µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54533 | Status: 404 | Latency: 589µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54535 | Status: 404 | Latency: 507.6µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54537 | Status: 404 | Latency: 505.3µs
+
+error: Request: GET /favorites/user/39 127.0.0.1:54539 | Status: 404 | Latency: 547.3µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:52653 | Status: 404 | Latency: 506.4µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:54237 | Status: 404 | Latency: 521.6µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:54239 | Status: 404 | Latency: 697.3µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:54241 | Status: 404 | Latency: 1.276ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /ebooks/5 127.0.0.1:64684 | Status: 404 | Latency: 1.6999ms
+
+error: Request: GET /ebooks 127.0.0.1:64686 | Status: 200 | Latency: 623.4µs
+
+error: Request: DELETE /ebooks/61 127.0.0.1:64718 | Status: 200 | Latency: 2.2667ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/47 127.0.0.1:64747 | Status: 404 | Latency: 1.3075ms
+
+error: Request: DELETE /favorites/49 127.0.0.1:64785 | Status: 200 | Latency: 1.1757ms
+
+error: Request: PUT /favorites/15 127.0.0.1:56304 | Status: 200 | Latency: 2.5732ms
+
+error: Request: GET /favorites/user/19 127.0.0.1:56306 | Status: 404 | Latency: 629.1µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:56309 | Status: 404 | Latency: 776.1µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:56311 | Status: 404 | Latency: 657.6µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:56313 | Status: 404 | Latency: 507.2µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:56315 | Status: 404 | Latency: 505.5µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:56317 | Status: 404 | Latency: 506.6µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:58782 | Status: 404 | Latency: 508µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:58784 | Status: 404 | Latency: 657.6µs
+
+error: Request: GET /favorites/user/19 127.0.0.1:58805 | Status: 404 | Latency: 1.0101ms
+
+error: Request: GET /favorites/user/19 127.0.0.1:58812 | Status: 404 | Latency: 1.0014ms
+
+error: Request: GET /favorites/user/18 127.0.0.1:57648 | Status: 404 | Latency: 1.045ms
+
+error: Request: GET /favorites/user/18 127.0.0.1:62230 | Status: 404 | Latency: 506.6µs
+
+error: Request: GET /favorites/user/18 127.0.0.1:62232 | Status: 404 | Latency: 518.8µs
+
+error: Request: GET /favorites/user/18 127.0.0.1:62234 | Status: 404 | Latency: 505.6µs
+
+error: Request: GET /favorites/user/1 127.0.0.1:49827 | Status: 200 | Latency: 546.5µs
+
+error: Request: GET /favorites/user/4 127.0.0.1:49893 | Status: 200 | Latency: 1.0463ms
+
+error: Request: GET /favorites/ebook/55 127.0.0.1:60108 | Status: 200 | Latency: 505.9µs
+
+error: no user found with ID 20
+error: Request: PUT /users/20 127.0.0.1:63873 | Status: 404 | Latency: 4.2813ms
+
+error: no user found with ID 20
+error: Request: PUT /users/20 127.0.0.1:55852 | Status: 404 | Latency: 1.7097ms
+
+error: no user found with ID 20
+error: Request: PUT /users/20 127.0.0.1:51640 | Status: 404 | Latency: 986.8µs
+
+error: Request: POST /users 127.0.0.1:53541 | Status: 201 | Latency: 30.2571ms
+
+error: Request: GET /users 127.0.0.1:59173 | Status: 200 | Latency: 599.5µs
+
+error: Request: POST /users 127.0.0.1:52647 | Status: 201 | Latency: 14.4688ms
+
+error: Request: POST /users 127.0.0.1:52649 | Status: 201 | Latency: 9.1015ms
+
+error: Request: POST /users 127.0.0.1:57558 | Status: 201 | Latency: 507.4µs
+
+error: Request: POST /users 127.0.0.1:57560 | Status: 201 | Latency: 25.5444ms
+
+error: Request: GET /users 127.0.0.1:56913 | Status: 200 | Latency: 540.6µs
+
+error: Request: POST /users 127.0.0.1:56302 | Status: 201 | Latency: 0s
+
+error: Request: GET /users 127.0.0.1:56311 | Status: 200 | Latency: 2.7272ms
+
+error: Request: POST /users 127.0.0.1:51260 | Status: 201 | Latency: 38.3µs
+
+error: Request: POST /users 127.0.0.1:51262 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:51296 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:51298 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:51300 | Status: 201 | Latency: 506.8µs
+
+error: Request: POST /users 127.0.0.1:51302 | Status: 201 | Latency: 0s
+
+error: Request: GET /users 127.0.0.1:51304 | Status: 200 | Latency: 557.3µs
+
+error: Request: POST /users 127.0.0.1:51044 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:51074 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:51076 | Status: 201 | Latency: 0s
+
+error: Request: GET /users 127.0.0.1:51104 | Status: 200 | Latency: 18.3365ms
+
+error: Request: GET /users 127.0.0.1:51107 | Status: 200 | Latency: 540.7µs
+
+error: Request: POST /users 127.0.0.1:62163 | Status: 201 | Latency: 7.5852ms
+
+error: Request: POST /users 127.0.0.1:62196 | Status: 201 | Latency: 31.2816ms
+
+error: Request: POST /users 127.0.0.1:60577 | Status: 201 | Latency: 1.203ms
+
+error: Request: GET /users 127.0.0.1:60610 | Status: 200 | Latency: 506.1µs
+
+error: Request: GET /users 127.0.0.1:64752 | Status: 200 | Latency: 3.1066ms
+
+error: Request: POST /users 127.0.0.1:50615 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:50665 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:54049 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:60031 | Status: 201 | Latency: 0s
+
+error: Request: POST /users 127.0.0.1:60593 | Status: 201 | Latency: 11.5088ms
+
+error: Request: POST /users 127.0.0.1:60616 | Status: 201 | Latency: 566µs
+
+error: Request: POST /users 127.0.0.1:58475 | Status: 201 | Latency: 3.1003ms
+
+error: Request: POST /users 127.0.0.1:58526 | Status: 201 | Latency: 47.6578ms
+
+error: Request: POST /users 127.0.0.1:58564 | Status: 201 | Latency: 1.3992ms
+
+error: Request: POST /users 127.0.0.1:58591 | Status: 201 | Latency: 1.6781ms
+
+error: Request: GET /users 127.0.0.1:58593 | Status: 200 | Latency: 1.0681ms
+
+error: Request: POST /users 127.0.0.1:54718 | Status: 201 | Latency: 3.6039ms
+
+error: Request: POST /users 127.0.0.1:54798 | Status: 201 | Latency: 4.7351ms
+
+error: Request: POST /users 127.0.0.1:54800 | Status: 201 | Latency: 1.0552ms
+
+error: Request: POST /users 127.0.0.1:65250 | Status: 201 | Latency: 3.4255ms
+
+error: Request: POST /users 127.0.0.1:65252 | Status: 201 | Latency: 1.2354ms
+
+error: Request: POST /users 127.0.0.1:65298 | Status: 201 | Latency: 5.9443ms
+
+error: Request: POST /users 127.0.0.1:53146 | Status: 201 | Latency: 5.4858ms
+
+error: Request: POST /users 127.0.0.1:63848 | Status: 201 | Latency: 6.2011ms
+
+error: Request: POST /users 127.0.0.1:63850 | Status: 201 | Latency: 1.261ms
+
+error: Request: POST /users 127.0.0.1:63914 | Status: 201 | Latency: 5.1506ms
+
+error: Request: POST /users 127.0.0.1:55691 | Status: 201 | Latency: 3.4093ms
+
+error: Request: POST /users 127.0.0.1:55784 | Status: 201 | Latency: 5.6634ms
+
+error: Request: POST /users 127.0.0.1:59168 | Status: 201 | Latency: 5.8595ms
+
+error: Request: POST /users 127.0.0.1:52772 | Status: 201 | Latency: 2.9798ms
+
+error: Request: POST /users 127.0.0.1:52774 | Status: 201 | Latency: 1.2192ms
+
+error: Request: POST /users 127.0.0.1:56874 | Status: 201 | Latency: 4.6583ms
+
+error: Request: POST /users 127.0.0.1:57010 | Status: 201 | Latency: 5.7127ms
+
+error: Request: POST /users 127.0.0.1:57030 | Status: 201 | Latency: 1.7031ms
+
+error: Request: POST /users 127.0.0.1:59646 | Status: 201 | Latency: 5.9576ms
+
+error: Request: POST /users 127.0.0.1:61254 | Status: 201 | Latency: 4.9978ms
+
+error: Request: POST /users 127.0.0.1:51918 | Status: 201 | Latency: 1.6204ms
+
+error: Request: POST /users 127.0.0.1:60057 | Status: 201 | Latency: 4.5201ms
+
+error: Request: POST /users 127.0.0.1:59975 | Status: 201 | Latency: 6.6007ms
+
+error: Request: POST /users 127.0.0.1:60009 | Status: 201 | Latency: 1.4295ms
+

@@ -4,14 +4,28 @@ import (
 	"example/api/dao"
 	"example/api/models"
 	"example/api/utils"
+	"fmt"
 )
 
 func InsertUser(u *models.User) error {
+
+	// user, _ := dao.SelectUserByID(u.ID)
+	// fmt.Print(user)
+
+	// if u.Email == user.Email {
+	// 	fmt.Println("email already exist")
+	// }
+
+	// if u.ID == user.ID {
+	// 	fmt.Println("username already exist")
+	// }
+
 	err := dao.InsertUser(u)
 	if err != nil {
 		utils.Logger(err)
 		return err
 	}
+
 	return nil
 }
 
@@ -34,6 +48,7 @@ func GetUserByID(id int) (models.User, error) {
 }
 
 func UpdateUser(id int, updatedUser *models.User) error {
+
 	existingUser, err := dao.SelectUserByID(id)
 	if err != nil {
 		utils.Logger(err)
