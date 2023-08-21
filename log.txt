@@ -1744,3 +1744,139 @@ error: sql: expected 3 destination arguments in Scan, not 2
 error: sql: expected 3 destination arguments in Scan, not 2
 error: Request: GET /favorites/1 127.0.0.1:58772 | Status: 404 | Latency: 3.5543ms
 
+error: Request: GET /favorites 127.0.0.1:54807 | Status: 200 | Latency: 2.4386ms
+
+error: strconv.Atoi: parsing "1y": invalid syntax
+error: Request: GET /favorites/1y 127.0.0.1:54848 | Status: 400 | Latency: 571µs
+
+error: no favorite found with ID 18
+error: Request: GET /favorites/18 127.0.0.1:54872 | Status: 404 | Latency: 932.7µs
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:54874 | Status: 404 | Latency: 1.916ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:54876 | Status: 404 | Latency: 1.9641ms
+
+error: Request: GET /favorites 127.0.0.1:54908 | Status: 200 | Latency: 0s
+
+error: Request: GET /favorites/user/3 127.0.0.1:54931 | Status: 200 | Latency: 793.4µs
+
+error: Request: GET /favorites/user/3 127.0.0.1:54933 | Status: 200 | Latency: 647.8µs
+
+error: strconv.Atoi: parsing "$$": invalid syntax
+error: Request: GET /favorites/ebook/$$ 127.0.0.1:54936 | Status: 400 | Latency: 0s
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:54958 | Status: 404 | Latency: 628.1µs
+
+error: Request: GET /favorites/ebook/44 127.0.0.1:54960 | Status: 404 | Latency: 563.2µs
+
+error: Request: GET /favorites/ebook/44 127.0.0.1:54963 | Status: 404 | Latency: 546.6µs
+
+error: Request: GET /favorites/ebook/44 127.0.0.1:55049 | Status: 404 | Latency: 550.8µs
+
+error: Request: GET /favorites/ebook/44 127.0.0.1:55051 | Status: 404 | Latency: 518µs
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:55054 | Status: 404 | Latency: 1.7722ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:55230 | Status: 404 | Latency: 1.3977ms
+
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:55258 | Status: 404 | Latency: 1.552ms
+
+error: strconv.Atoi: parsing "1q": invalid syntax
+error: Request: GET /favorites/1q 127.0.0.1:55262 | Status: 400 | Latency: 642.2µs
+
+error: no favorite found with ID 10
+error: Request: GET /favorites/10 127.0.0.1:55264 | Status: 404 | Latency: 1.146ms
+
+error: no favorite found with ID 10
+error: sql: expected 3 destination arguments in Scan, not 2
+error: sql: expected 3 destination arguments in Scan, not 2
+error: Request: GET /favorites/1 127.0.0.1:55756 | Status: 404 | Latency: 1.1254ms
+
+error: Request: GET /favorites/10 127.0.0.1:55640 | Status: 404 | Latency: 1m17.4790849s
+
+error: Request: GET /favorites/1 127.0.0.1:56165 | Status: 200 | Latency: 2.5816ms
+
+error: strconv.Atoi: parsing "1w": invalid syntax
+error: Request: GET /favorites/1w 127.0.0.1:56199 | Status: 400 | Latency: 567.9µs
+
+error: no favorite found with ID 16
+error: Request: GET /favorites/16 127.0.0.1:56201 | Status: 404 | Latency: 860.1µs
+
+error: Request: GET /favorites 127.0.0.1:56234 | Status: 200 | Latency: 508.8µs
+
+error: Request: GET /favorites/ebook/44 127.0.0.1:56236 | Status: 404 | Latency: 821.9µs
+
+error: Request: GET /favorites/ebook/1 127.0.0.1:56265 | Status: 404 | Latency: 520.6µs
+
+error: Request: GET /favorites/ebook/1 127.0.0.1:56280 | Status: 404 | Latency: 531.6µs
+
+error: Request: GET /favorites 127.0.0.1:56302 | Status: 200 | Latency: 510.5µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:56331 | Status: 404 | Latency: 775.2µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:57637 | Status: 404 | Latency: 2.9541ms
+
+error: pq: syntax error at or near "$"
+error: pq: syntax error at or near "$"
+error: Request: POST /favorites 127.0.0.1:57704 | Status: 201 | Latency: 21.2702ms
+
+error: Request: GET /favorites 127.0.0.1:57855 | Status: 200 | Latency: 2.0657ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:57879 | Status: 201 | Latency: 15.9914ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:57919 | Status: 201 | Latency: 8.2717ms
+
+error: Request: GET /favorites 127.0.0.1:57969 | Status: 200 | Latency: 505.8µs
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:58072 | Status: 201 | Latency: 4.8615ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:58168 | Status: 201 | Latency: 5.3266ms
+
+error: no favorite found with ID 16
+error: Request: GET /favorites/16 127.0.0.1:58571 | Status: 404 | Latency: 1.1329ms
+
+error: Request: GET /favorites/1 127.0.0.1:58573 | Status: 200 | Latency: 597.1µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:58575 | Status: 404 | Latency: 557.4µs
+
+error: Request: GET /favorites/ebook/4 127.0.0.1:58608 | Status: 404 | Latency: 925.3µs
+
+error: Request: GET /favorites/ebook/4 127.0.0.1:58610 | Status: 404 | Latency: 521.6µs
+
+error: Request: GET /favorites/ebook/1 127.0.0.1:58612 | Status: 404 | Latency: 509.6µs
+
+error: Request: GET /favorites/ebook/1 127.0.0.1:58941 | Status: 404 | Latency: 3.2288ms
+
+error: Request: GET /favorites 127.0.0.1:58943 | Status: 200 | Latency: 535.4µs
+
+error: Request: GET /favorites/ebook/12 127.0.0.1:58959 | Status: 404 | Latency: 537.7µs
+
+error: strconv.Atoi: parsing "12a": invalid syntax
+error: Request: GET /favorites/ebook/12a 127.0.0.1:58961 | Status: 400 | Latency: 0s
+
+error: Request: GET /favorites/ebook/120 127.0.0.1:58966 | Status: 404 | Latency: 642.6µs
+
+error: Request: GET /favorites/ebook/43 127.0.0.1:58999 | Status: 200 | Latency: 505.6µs
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:59730 | Status: 201 | Latency: 18.2646ms
+

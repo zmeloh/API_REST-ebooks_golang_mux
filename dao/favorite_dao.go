@@ -11,7 +11,7 @@ import (
 func InsertFavorite(f *models.Favorite) error {
 	var favorite models.Favorite
 	// Insère le favori dans la base de données
-	err := DB.QueryRow("INSERT INTO favorites (user_id, ebook_id) VALUES ($!, $2) RETURNING id", favorite.UserID, favorite.EbookID).Scan(f.ID)
+	err := DB.QueryRow("INSERT INTO favorites (user_id, ebook_id) VALUES ($1, $2) RETURNING id", favorite.UserID, favorite.EbookID).Scan(f.ID)
 	if err != nil {
 		utils.Logger(err)
 		return err
@@ -47,7 +47,7 @@ func SelectFavoriteByID(id int) (models.Favorite, error) {
 	var favorite models.Favorite
 
 	// Interroge la base de données pour obtenir le favori correspondant à l'ID
-	err := DB.QueryRow("SELECT id, user_id, ebook_id FROM favorites WHERE id = $1", id).Scan(&favorite.UserID, &favorite.EbookID)
+	err := DB.QueryRow("SELECT id, user_id, ebook_id FROM favorites WHERE id = $1", id).Scan(&favorite.ID, &favorite.UserID, &favorite.EbookID)
 	if errors.Is(err, sql.ErrNoRows) {
 		return models.Favorite{}, fmt.Errorf("no favorite found with ID %d", id)
 	}
@@ -94,6 +94,7 @@ func SelectFavoriteByUserID(userID int) ([]models.Favorite, error) {
 		var favorite models.Favorite
 		err := rows.Scan(&favorite.ID, &favorite.UserID, &favorite.EbookID)
 		if err != nil {
+			utils.Logger(err)
 			return nil, err
 		}
 		favorites = append(favorites, favorite)
@@ -117,7 +118,6 @@ func SelectFavoriteByEbookID(ebookID int) ([]models.Favorite, error) {
 		err := rows.Scan(&favorite.ID, &favorite.UserID, &favorite.EbookID)
 		if err != nil {
 			utils.Logger(err)
-
 			return nil, err
 		}
 		favorites = append(favorites, favorite)

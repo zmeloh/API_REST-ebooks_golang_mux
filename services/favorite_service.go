@@ -43,6 +43,6 @@ func GetFavoriteByUserID(id int) (e []models.Favorite) {
 
 // GetFavoriteByEbookID
 func GetFavoriteByEbookID(id int) (e []models.Favorite) {
-	e, _ = controllers.GetFavoritesByUserID(id)
+	e, _ = controllers.GetFavoritesByEbookID(id)
 	return
 }

@@ -50,7 +50,6 @@ func GetFavoriteByID(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-
 	favorite := services.GetFavoriteByID(result)
 	if favorite.ID == 0 {
 		ServerResponse(w, http.StatusNotFound, "Favorite not found")
@@ -147,6 +146,7 @@ func DeleteFavorite(w http.ResponseWriter, r *http.Request) {
 	// Appeler le service pour supprimer l'ebook
 	err = services.DeleteFavorite(favoriteID)
 	if err != nil {
+		utils.Logger(err)
 		ServerResponse(w, http.StatusNotFound, "Favorite not found")
 		return
 	}
