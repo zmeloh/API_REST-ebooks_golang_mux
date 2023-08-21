@@ -9,9 +9,8 @@ import (
 )
 
 func InsertFavorite(f *models.Favorite) error {
-	var favorite models.Favorite
 	// Insère le favori dans la base de données
-	err := DB.QueryRow("INSERT INTO favorites (user_id, ebook_id) VALUES ($1, $2) RETURNING id", favorite.UserID, favorite.EbookID).Scan(f.ID)
+	err := DB.QueryRow("INSERT INTO favorites (user_id, ebook_id) VALUES ($1, $2) RETURNING id", f.UserID, f.EbookID).Scan(&f.ID)
 	if err != nil {
 		utils.Logger(err)
 		return err

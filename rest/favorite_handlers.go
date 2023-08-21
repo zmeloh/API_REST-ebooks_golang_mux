@@ -15,17 +15,17 @@ import (
 // CreateFavorite crée un nouveau favori.
 func CreateFavorite(w http.ResponseWriter, r *http.Request) {
 	// Décode les données JSON du corps de la requête dans une struct Favorite
-	var favorite models.Favorite
-	err := json.NewDecoder(r.Body).Decode(&favorite)
+	var newFavorite models.Favorite
+	err := json.NewDecoder(r.Body).Decode(&newFavorite)
 	if err != nil {
 		utils.Logger(err)
 		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
-	services.InsertFavorite(&favorite)
+	services.InsertFavorite(&newFavorite)
 	// Répond avec le favori créé et le code de statut 201 (Created)
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(favorite)
+	json.NewEncoder(w).Encode(newFavorite)
 }
 
 // GetAllFavorites récupère tous les favoris.

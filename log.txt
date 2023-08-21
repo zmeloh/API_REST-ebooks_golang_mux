@@ -1981,3 +1981,83 @@ error: Request: PUT /favorites/3 127.0.0.1:55563 | Status: 200 | Latency: 2.532m
 
 error: Request: GET /favorites 127.0.0.1:60062 | Status: 200 | Latency: 179.2µs
 
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:59814 | Status: 201 | Latency: 13.9741ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:57823 | Status: 201 | Latency: 43.4372869s
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:50506 | Status: 201 | Latency: 16.7281ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:50591 | Status: 201 | Latency: 17.1442ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:50615 | Status: 201 | Latency: 5.1005ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:50591 | Status: 201 | Latency: 16.3421ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:50621 | Status: 201 | Latency: 5.4416ms
+
+error: Request: GET /favorites 127.0.0.1:50647 | Status: 200 | Latency: 1.5148ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:54934 | Status: 201 | Latency: 17.2405ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:54936 | Status: 201 | Latency: 5.3263ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:54938 | Status: 201 | Latency: 6.3869ms
+
+error: Request: GET /favorites 127.0.0.1:54980 | Status: 200 | Latency: 1.5112ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:64058 | Status: 201 | Latency: 15.6389ms
+
+error: Request: POST /favorites 127.0.0.1:52952 | Status: 201 | Latency: 10.5367ms
+
+error: invalid character 'o' after object key:value pair
+error: Request: POST /favorites 127.0.0.1:53399 | Status: 400 | Latency: 663.3µs
+
+error: json: cannot unmarshal string into Go struct field Favorite.ebook_id of type int
+error: Request: POST /favorites 127.0.0.1:53421 | Status: 400 | Latency: 799.2µs
+
+error: Request: POST /favorites 127.0.0.1:53423 | Status: 201 | Latency: 1.31ms
+
+error: Request: POST /favorites 127.0.0.1:53425 | Status: 201 | Latency: 1.1843ms
+
+error: Request: POST /favorites 127.0.0.1:53427 | Status: 201 | Latency: 1.2053ms
+
+error: Request: POST /favorites 127.0.0.1:53439 | Status: 201 | Latency: 3.5585ms
+
+error: Request: POST /favorites 127.0.0.1:53451 | Status: 201 | Latency: 5.2186ms
+
+error: Request: POST /favorites 127.0.0.1:53456 | Status: 201 | Latency: 507.7µs
+
+error: Request: POST /favorites 127.0.0.1:53462 | Status: 201 | Latency: 1.0143ms
+
+error: Request: POST /favorites 127.0.0.1:53464 | Status: 201 | Latency: 508.7µs
+
+error: Request: POST /favorites 127.0.0.1:53466 | Status: 201 | Latency: 908.7µs
+
+error: Request: POST /favorites 127.0.0.1:53468 | Status: 201 | Latency: 506.4µs
+
+error: Request: POST /favorites 127.0.0.1:53470 | Status: 201 | Latency: 1.1658ms
+
+error: Request: GET /favorites 127.0.0.1:53472 | Status: 200 | Latency: 1.636ms
+
