@@ -21,8 +21,16 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		ServerResponse(w, http.StatusBadRequest, "Invalid reqquest")
 		return
 	}
-	services.InsertUser(&newUser)
+
+	err = services.InsertUser(&newUser)
+	if err != nil {
+		ServerResponse(w, http.StatusAlreadyReported, err)
+		return
+	}
+
 	w.WriteHeader(http.StatusCreated)
+	//ServerResponse(w, http.StatusCreated, newUser)
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(newUser)
 }
 

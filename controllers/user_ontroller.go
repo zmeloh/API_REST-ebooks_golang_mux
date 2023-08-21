@@ -9,16 +9,15 @@ import (
 
 func InsertUser(u *models.User) error {
 
-	// user, _ := dao.SelectUserByID(u.ID)
-	// fmt.Print(user)
+	result, _ := dao.ExistingUser(u.Email, u.Username)
+	fmt.Print(result)
+	if u.Email == result.Email {
+		return fmt.Errorf("email already exist")
+	}
 
-	// if u.Email == user.Email {
-	// 	fmt.Println("email already exist")
-	// }
-
-	// if u.ID == user.ID {
-	// 	fmt.Println("username already exist")
-	// }
+	if u.Username == result.Username {
+		return fmt.Errorf("username already exist")
+	}
 
 	err := dao.InsertUser(u)
 	if err != nil {
@@ -40,6 +39,15 @@ func GetAllUsers() ([]models.User, error) {
 
 func GetUserByID(id int) (models.User, error) {
 	user, err := dao.SelectUserByID(id)
+	if err != nil {
+		utils.Logger(err)
+		return models.User{}, err
+	}
+	return user, nil
+}
+
+func ExistingUser(email, username string) (models.User, error) {
+	user, err := dao.ExistingUser(email, username)
 	if err != nil {
 		utils.Logger(err)
 		return models.User{}, err

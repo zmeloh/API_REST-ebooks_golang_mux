@@ -57,6 +57,20 @@ func SelectUserByID(id int) (models.User, error) {
 	return user, nil
 }
 
+func ExistingUser(email, username string) (models.User, error) {
+	var user models.User
+	// Exécute la requête pour récupérer les informations de l'utilisateur depuis la base de données
+	err := DB.QueryRow("SELECT id, username, email FROM users WHERE email = $1 OR  username = $2", email, username).Scan(&user.ID, &user.Username, &user.Email)
+	if errors.Is(err, sql.ErrNoRows) {
+		return models.User{}, fmt.Errorf("no user found with email %s", email)
+	}
+	if err != nil {
+		utils.Logger(err)
+		return models.User{}, err
+	}
+	return user, nil
+}
+
 func UpdateUser(updatedUser models.User) (models.User, error) {
 
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données

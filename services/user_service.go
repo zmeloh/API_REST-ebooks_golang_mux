@@ -13,14 +13,14 @@ func GetAllUsers() (u []models.User) {
 
 // GetUserByID récupère un utilisateur par son ID.
 func GetUserByID(id int) (u models.User) {
-	u,_=controllers.GetUserByID(id)
+	u, _ = controllers.GetUserByID(id)
 	return
 }
 
 // InsertUser insère un nouvel utilisateur.
-func InsertUser(u *models.User) {
-	controllers.InsertUser(u)
-	return
+func InsertUser(u *models.User) error {
+	return controllers.InsertUser(u)
+
 }
 
 // UpdateUser met à jour un utilisateur existant.

@@ -2781,3 +2781,196 @@ error: Request: POST /users 127.0.0.1:59975 | Status: 201 | Latency: 6.6007ms
 
 error: Request: POST /users 127.0.0.1:60009 | Status: 201 | Latency: 1.4295ms
 
+error: Request: POST /users 127.0.0.1:57553 | Status: 201 | Latency: 7.7638ms
+
+error: Request: POST /users 127.0.0.1:53122 | Status: 201 | Latency: 2.2587ms
+
+error: Request: POST /users 127.0.0.1:53124 | Status: 201 | Latency: 1.8374ms
+
+error: Request: POST /users 127.0.0.1:53126 | Status: 201 | Latency: 2.2959ms
+
+error: Request: POST /users 127.0.0.1:56545 | Status: 201 | Latency: 5.2877ms
+
+error: Request: POST /users 127.0.0.1:56565 | Status: 201 | Latency: 20.2783ms
+
+error: Request: POST /users 127.0.0.1:56579 | Status: 201 | Latency: 1.0807ms
+
+error: Request: POST /users 127.0.0.1:56643 | Status: 201 | Latency: 4.9734ms
+
+error: Request: POST /users 127.0.0.1:56645 | Status: 201 | Latency: 776.9µs
+
+error: Request: POST /users 127.0.0.1:64187 | Status: 201 | Latency: 4.6046ms
+
+error: Request: POST /users 127.0.0.1:64213 | Status: 201 | Latency: 936µs
+
+error: Request: POST /users 127.0.0.1:64215 | Status: 201 | Latency: 1.7407ms
+
+error: Request: POST /users 127.0.0.1:64217 | Status: 201 | Latency: 1.0655ms
+
+error: Request: POST /users 127.0.0.1:64252 | Status: 201 | Latency: 1.6265ms
+
+error: Request: POST /users 127.0.0.1:64292 | Status: 201 | Latency: 3.4745ms
+
+error: Request: GET /users 127.0.0.1:64315 | Status: 200 | Latency: 536.9µs
+
+error: Request: POST /users 127.0.0.1:53475 | Status: 201 | Latency: 948µs
+
+error: Request: POST /users 127.0.0.1:53503 | Status: 201 | Latency: 1.3392ms
+
+error: Request: POST /users 127.0.0.1:53521 | Status: 201 | Latency: 2.4937ms
+
+error: pq: got 1 parameters but the statement requires 2
+error: Request: POST /users 127.0.0.1:51117 | Status: 201 | Latency: 5.792ms
+
+error: pq: got 1 parameters but the statement requires 2
+error: Request: POST /users 127.0.0.1:51131 | Status: 201 | Latency: 1.7929ms
+
+error: pq: got 1 parameters but the statement requires 2
+error: Request: POST /users 127.0.0.1:51272 | Status: 201 | Latency: 4.7929ms
+
+error: Request: POST /users 127.0.0.1:55716 | Status: 201 | Latency: 2.6579ms
+
+error: Request: POST /users 127.0.0.1:57004 | Status: 201 | Latency: 1.1133ms
+
+error: Request: POST /users 127.0.0.1:57039 | Status: 201 | Latency: 2.0931ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:55349 | Status: 201 | Latency: 6.1397ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:55351 | Status: 201 | Latency: 1.8179ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:55353 | Status: 201 | Latency: 1.8911ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:55355 | Status: 201 | Latency: 2.0707ms
+
+error: Request: POST /users 127.0.0.1:65229 | Status: 201 | Latency: 2.9243ms
+
+error: Request: POST /users 127.0.0.1:65232 | Status: 201 | Latency: 651.5µs
+
+error: Request: POST /users 127.0.0.1:65234 | Status: 201 | Latency: 1.5847ms
+
+error: Request: POST /users 127.0.0.1:53662 | Status: 201 | Latency: 507.3µs
+
+error: Request: POST /users 127.0.0.1:53664 | Status: 201 | Latency: 640.7µs
+
+error: Request: POST /users 127.0.0.1:53666 | Status: 201 | Latency: 627.2µs
+
+error: Request: POST /users 127.0.0.1:53668 | Status: 201 | Latency: 828.4µs
+
+error: Request: POST /users 127.0.0.1:53670 | Status: 201 | Latency: 1.2159ms
+
+error: Request: POST /users 127.0.0.1:53672 | Status: 201 | Latency: 564µs
+
+error: Request: POST /users 127.0.0.1:53674 | Status: 201 | Latency: 515.8µs
+
+error: Request: POST /users 127.0.0.1:53676 | Status: 201 | Latency: 506.7µs
+
+error: Request: POST /users 127.0.0.1:53678 | Status: 201 | Latency: 1.0951ms
+
+error: Request: POST /users 127.0.0.1:53680 | Status: 201 | Latency: 513.2µs
+
+error: Request: POST /users 127.0.0.1:53682 | Status: 201 | Latency: 643.8µs
+
+error: Request: POST /users 127.0.0.1:60832 | Status: 201 | Latency: 2.493ms
+
+error: Request: POST /users 127.0.0.1:60834 | Status: 201 | Latency: 750.2µs
+
+error: Request: POST /users 127.0.0.1:60855 | Status: 201 | Latency: 680.7µs
+
+error: no user found with email hhphreerrerefff@.com
+error: Request: POST /users 127.0.0.1:60858 | Status: 201 | Latency: 2.613ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51500 | Status: 201 | Latency: 5.0646ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51502 | Status: 201 | Latency: 1.8813ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51504 | Status: 201 | Latency: 2.4374ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51506 | Status: 201 | Latency: 2.5813ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51508 | Status: 201 | Latency: 2.1796ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63432 | Status: 201 | Latency: 3.9283ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63434 | Status: 201 | Latency: 1.1639ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63460 | Status: 201 | Latency: 1.1222ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63462 | Status: 201 | Latency: 1.1114ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63588 | Status: 201 | Latency: 10.9046ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63602 | Status: 201 | Latency: 1.7387ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:63604 | Status: 201 | Latency: 1.1379ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:55974 | Status: 201 | Latency: 1.0653ms
+
+error: email already exist
+error: Request: POST /users 127.0.0.1:55976 | Status: 201 | Latency: 827.1µs
+
+error: Request: POST /users 127.0.0.1:52878 | Status: 400 | Latency: 3.4924ms
+
+error: Request: POST /users 127.0.0.1:52916 | Status: 400 | Latency: 769.4µs
+
+error: Request: POST /users 127.0.0.1:52918 | Status: 201 | Latency: 3.4341ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51773 | Status: 201 | Latency: 8.098ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51807 | Status: 201 | Latency: 1.7955ms
+
+error: email already exist
+error: username already exist
+error: Request: POST /users 127.0.0.1:51809 | Status: 201 | Latency: 2.1928ms
+
+error: Request: POST /users 127.0.0.1:60340 | Status: 201 | Latency: 6.3431ms
+
+error: Request: POST /users 127.0.0.1:60342 | Status: 201 | Latency: 1.8144ms
+
+error: Request: POST /users 127.0.0.1:60344 | Status: 201 | Latency: 1.6626ms
+
+error: Request: POST /users 127.0.0.1:60346 | Status: 201 | Latency: 1.6458ms
+
+error: Request: POST /users 127.0.0.1:60348 | Status: 201 | Latency: 2.1411ms
+
+error: Request: POST /users 127.0.0.1:60350 | Status: 201 | Latency: 1.3288ms
+
+error: Request: POST /users 127.0.0.1:60439 | Status: 208 | Latency: 3.9843ms
+
+error: Request: POST /users 127.0.0.1:60441 | Status: 208 | Latency: 505.8µs
+
+error: Request: POST /users 127.0.0.1:54397 | Status: 201 | Latency: 3.7256ms
+
+error: Request: POST /users 127.0.0.1:53894 | Status: 208 | Latency: 5.3251ms
+
+error: Request: POST /users 127.0.0.1:53920 | Status: 200 | Latency: 2.8741ms
+
