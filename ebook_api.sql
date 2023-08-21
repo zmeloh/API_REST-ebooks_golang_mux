@@ -11,8 +11,68 @@ CREATE DATABASE "ebook_appDB"
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 
--- Create tables: users, categories, favorites, ebooks
 
+-- Create sequences
+-- SEQUENCE: public.categorie_id_seq
+
+-- DROP SEQUENCE public.categorie_id_seq;
+
+CREATE SEQUENCE public.categorie_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.categorie_id_seq
+    OWNER TO postgres;
+
+
+-- SEQUENCE: public.ebooks_id_seq
+
+-- DROP SEQUENCE public.ebooks_id_seq;
+
+CREATE SEQUENCE public.ebooks_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.ebooks_id_seq
+    OWNER TO postgres;
+
+
+-- SEQUENCE: public.favorites_id_seq
+
+-- DROP SEQUENCE public.favorites_id_seq;
+
+CREATE SEQUENCE public.favorites_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.favorites_id_seq
+    OWNER TO postgres;
+
+
+-- SEQUENCE: public.users_id_seq
+
+-- DROP SEQUENCE public.users_id_seq;
+
+CREATE SEQUENCE public.users_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.users_id_seq
+    OWNER TO postgres;
+
+-- Create tables: users, categories, favorites, ebooks
 -- Table: public.categories
 
 -- DROP TABLE public.categories;
@@ -29,34 +89,18 @@ TABLESPACE pg_default;
 ALTER TABLE public.categories
     OWNER to postgres;
 
-    --  users   ->
--- Table: public.users
-CREATE TABLE IF NOT EXISTS public.users
-(
-    id integer NOT NULL,
-    username "char",
-    email "char",
-    CONSTRAINT users_pkey PRIMARY KEY (id)
-)
-
-TABLESPACE pg_default;
-
-ALTER TABLE public.users
-    OWNER to postgres;
-
-
 -- Table: public.ebooks
 
 -- DROP TABLE public.ebooks;
 
 CREATE TABLE IF NOT EXISTS public.ebooks
 (
-    id serial NOT NULL DEFAULT nextval('ebooks_id_seq'::regclass),
+    id integer NOT NULL DEFAULT nextval('ebooks_id_seq'::regclass),
     title character varying(255) COLLATE pg_catalog."default" NOT NULL,
     author character varying(255) COLLATE pg_catalog."default",
     category_id integer NOT NULL,
     CONSTRAINT ebooks_pkey PRIMARY KEY (id),
-    CONSTRAINT ebooks_categorie_id_fkey FOREIGN KEY (categorie_id)
+    CONSTRAINT ebooks_category_id_fkey FOREIGN KEY (category_id)
         REFERENCES public.categories (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
@@ -66,7 +110,6 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.ebooks
     OWNER to postgres;
-
 
 -- Table: public.favorites
 
