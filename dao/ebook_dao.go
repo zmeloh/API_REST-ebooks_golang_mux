@@ -60,9 +60,9 @@ func SelectEbookByID(id int) (models.Ebook, error) {
 }
 
 // Update Ebook
-func UpdateEbook(updatedEbook models.Ebook) (models.Ebook, error) {
+func UpdateEbook(id int, updatedEbook models.Ebook) (models.Ebook, error) {
 	// Requête pour mettre à jour les informations du livre électronique dans la base de données
-	_, err := DB.Exec("UPDATE ebooks SET title = $1, author = $2, category_id = $3 WHERE id = $4", updatedEbook.Title, updatedEbook.Author,updatedEbook.CategoryID, updatedEbook.ID)
+	_, err := DB.Exec("UPDATE ebooks SET title = $1, author = $2, category_id = $3 WHERE id = $4", updatedEbook.Title, updatedEbook.Author, updatedEbook.CategoryID, updatedEbook.ID)
 	if err != nil {
 		utils.Logger(err)
 		return models.Ebook{}, err

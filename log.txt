@@ -2061,3 +2061,383 @@ error: Request: POST /favorites 127.0.0.1:53470 | Status: 201 | Latency: 1.1658m
 
 error: Request: GET /favorites 127.0.0.1:53472 | Status: 200 | Latency: 1.636ms
 
+error: no category found with ID 20
+error: no category found with ID 20
+error: no category found with ID 20
+error: Request: POST /ebooks 127.0.0.1:49854 | Status: 201 | Latency: 6.348ms
+
+error: no category found with ID 20
+error: no category found with ID 20
+error: Request: POST /ebooks 127.0.0.1:51366 | Status: 404 | Latency: 3.8386ms
+
+error: Request: POST /ebooks 127.0.0.1:62601 | Status: 201 | Latency: 5.65ms
+
+error: Request: GET /ebooks 127.0.0.1:56930 | Status: 200 | Latency: 2.2082ms
+
+error: no category found with ID 20
+error: no category found with ID 20
+error: Request: POST /ebooks 127.0.0.1:54348 | Status: 404 | Latency: 1.0467ms
+
+error: invalid character 'j' after object key:value pair
+error: Request: POST /ebooks 127.0.0.1:58819 | Status: 400 | Latency: 559.9µs
+
+error: no ebook found with ID 60
+error: Request: PUT /ebooks/60 127.0.0.1:63760 | Status: 404 | Latency: 1.9524ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:50135 | Status: 404 | Latency: 11.9161ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:65219 | Status: 404 | Latency: 5.5362ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:58771 | Status: 404 | Latency: 6.885ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:59815 | Status: 404 | Latency: 7.4311ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54374 | Status: 404 | Latency: 16.5238ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54376 | Status: 404 | Latency: 7.4939ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54378 | Status: 404 | Latency: 6.8279ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54380 | Status: 404 | Latency: 6.5992ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54382 | Status: 404 | Latency: 6.628ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54384 | Status: 404 | Latency: 6.0654ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54386 | Status: 404 | Latency: 5.7652ms
+
+error: no ebook found with ID 9
+error: Request: PUT /ebooks/9 127.0.0.1:54416 | Status: 404 | Latency: 1.2329ms
+
+error: no ebook found with ID 9
+error: Request: PUT /ebooks/9 127.0.0.1:54418 | Status: 404 | Latency: 1.7577ms
+
+error: no ebook found with ID 9
+error: Request: PUT /ebooks/9 127.0.0.1:54420 | Status: 404 | Latency: 1.7668ms
+
+error: strconv.Atoi: parsing "%)": invalid syntax
+error: Request: PUT /ebooks/%) 127.0.0.1:54443 | Status: 400 | Latency: 506.1µs
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:54445 | Status: 404 | Latency: 5.6182ms
+
+error: Request: GET /ebooks 127.0.0.1:54476 | Status: 200 | Latency: 507.1µs
+
+error: Request: PUT /ebooks/59 127.0.0.1:54519 | Status: 200 | Latency: 2.2025ms
+
+error: Request: GET /ebooks 127.0.0.1:54545 | Status: 200 | Latency: 539.9µs
+
+error: no category found with ID 20
+error: Request: POST /ebooks 127.0.0.1:58681 | Status: 404 | Latency: 4.238ms
+
+error: Request: POST /ebooks 127.0.0.1:58683 | Status: 201 | Latency: 3.8625ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:64044 | Status: 404 | Latency: 13.4364ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/59 127.0.0.1:57301 | Status: 404 | Latency: 16.4571ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:57325 | Status: 404 | Latency: 5.9694ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54455 | Status: 404 | Latency: 18.6902ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54477 | Status: 404 | Latency: 7.3524ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54480 | Status: 404 | Latency: 5.5733ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54482 | Status: 404 | Latency: 5.4884ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54484 | Status: 404 | Latency: 5.8903ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63127 | Status: 404 | Latency: 7.0313ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63144 | Status: 404 | Latency: 10.3044ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63149 | Status: 404 | Latency: 8.5833ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63153 | Status: 404 | Latency: 7.6294ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63155 | Status: 404 | Latency: 6.9238ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63157 | Status: 404 | Latency: 6.2616ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63159 | Status: 404 | Latency: 5.6272ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63161 | Status: 404 | Latency: 7.91ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63163 | Status: 404 | Latency: 5.6052ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63165 | Status: 404 | Latency: 6.6054ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63167 | Status: 404 | Latency: 5.636ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:63169 | Status: 404 | Latency: 5.7248ms
+
+error: no ebook found with ID 6
+error: Request: PUT /ebooks/6 127.0.0.1:63171 | Status: 404 | Latency: 593.9µs
+
+error: no ebook found with ID 6
+error: Request: PUT /ebooks/6 127.0.0.1:63173 | Status: 404 | Latency: 946.6µs
+
+error: no ebook found with ID 6
+error: Request: PUT /ebooks/6 127.0.0.1:63175 | Status: 404 | Latency: 846.2µs
+
+error: no ebook found with ID 600
+error: Request: PUT /ebooks/600 127.0.0.1:63203 | Status: 404 | Latency: 1.4992ms
+
+error: no ebook found with ID 600
+error: Request: PUT /ebooks/600 127.0.0.1:63205 | Status: 404 | Latency: 1.3965ms
+
+error: no ebook found with ID 600
+error: Request: PUT /ebooks/600 127.0.0.1:63207 | Status: 404 | Latency: 1.1784ms
+
+error: no ebook found with ID 600
+error: Request: PUT /ebooks/600 127.0.0.1:63209 | Status: 404 | Latency: 791.2µs
+
+error: strconv.Atoi: parsing "60k": invalid syntax
+error: Request: PUT /ebooks/60k 127.0.0.1:63212 | Status: 400 | Latency: 610.5µs
+
+error: strconv.Atoi: parsing "60k": invalid syntax
+error: Request: PUT /ebooks/60k 127.0.0.1:50277 | Status: 400 | Latency: 617.6µs
+
+error: Request: POST /favorites 127.0.0.1:62095 | Status: 201 | Latency: 4.2221ms
+
+error: Request: POST /favorites 127.0.0.1:62097 | Status: 201 | Latency: 1.0952ms
+
+error: Request: PUT /favorites/3 127.0.0.1:62099 | Status: 200 | Latency: 2.1931ms
+
+error: Request: PUT /favorites/3 127.0.0.1:62134 | Status: 200 | Latency: 1.0613ms
+
+error: no favorite found with ID 4
+error: Request: PUT /favorites/4 127.0.0.1:62137 | Status: 404 | Latency: 899µs
+
+error: Request: GET /favorites 127.0.0.1:62178 | Status: 200 | Latency: 506µs
+
+error: Request: PUT /favorites/15 127.0.0.1:62192 | Status: 200 | Latency: 1.0471ms
+
+error: no user found with ID 19
+error: Request: POST /favorites 127.0.0.1:53574 | Status: 404 | Latency: 3.3135ms
+
+error: no user found with ID 19
+error: Request: POST /favorites 127.0.0.1:57148 | Status: 404 | Latency: 755.2µs
+
+error: no ebook found with ID 1
+error: Request: POST /favorites 127.0.0.1:64627 | Status: 404 | Latency: 4.9788ms
+
+error: Request: POST /favorites 127.0.0.1:53777 | Status: 201 | Latency: 186.8575ms
+
+error: Request: GET /favorites 127.0.0.1:49600 | Status: 200 | Latency: 1.5524ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/15 127.0.0.1:49991 | Status: 404 | Latency: 17.7904ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/15 127.0.0.1:53998 | Status: 404 | Latency: 5.7494ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/15 127.0.0.1:52815 | Status: 404 | Latency: 5.6311ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/15 127.0.0.1:52817 | Status: 404 | Latency: 6.7281ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/15 127.0.0.1:61576 | Status: 404 | Latency: 7.2946ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/15 127.0.0.1:61578 | Status: 404 | Latency: 7.5326ms
+
+error: Request: PUT /favorites/15 127.0.0.1:63506 | Status: 200 | Latency: 3.2982ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:65485 | Status: 404 | Latency: 7.907ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:65487 | Status: 404 | Latency: 6.4367ms
+
+error: Request: PUT /ebooks/60 127.0.0.1:53061 | Status: 200 | Latency: 2.2104ms
+
+error: Request: PUT /ebooks/60 127.0.0.1:62990 | Status: 200 | Latency: 7.1198ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:60402 | Status: 404 | Latency: 12.2545ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:55501 | Status: 404 | Latency: 5.6054ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:60067 | Status: 404 | Latency: 7.0892ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:52111 | Status: 404 | Latency: 7.5054ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:64177 | Status: 404 | Latency: 8.1343ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54139 | Status: 404 | Latency: 7.475ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54148 | Status: 404 | Latency: 16.6449ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:54165 | Status: 404 | Latency: 7.277ms
+
+error: Request: PUT /ebooks/60 127.0.0.1:62372 | Status: 200 | Latency: 2.4877ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:56039 | Status: 404 | Latency: 5.6841ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:50645 | Status: 404 | Latency: 7.8489ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:50652 | Status: 404 | Latency: 8.8405ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:50669 | Status: 404 | Latency: 6.8322ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:50671 | Status: 404 | Latency: 5.5931ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:62140 | Status: 404 | Latency: 6.7093ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:62142 | Status: 404 | Latency: 8.3787ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:62144 | Status: 404 | Latency: 5.5724ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:64391 | Status: 404 | Latency: 7.2256ms
+
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: pq: insert or update on table "ebooks" violates foreign key constraint "ebooks_category_id_fkey"
+error: Request: PUT /ebooks/60 127.0.0.1:64394 | Status: 404 | Latency: 6.7123ms
+
+error: no category found with ID 100
+error: Request: PUT /ebooks/60 127.0.0.1:58274 | Status: 404 | Latency: 3.9187ms
+
+error: Request: PUT /ebooks/60 127.0.0.1:58403 | Status: 200 | Latency: 4.1046ms
+
+error: Request: GET /ebooks 127.0.0.1:58420 | Status: 200 | Latency: 536.2µs
+
+error: no user found with ID 400
+error: Request: POST /favorites 127.0.0.1:62210 | Status: 404 | Latency: 3.5478ms
+
+error: Request: POST /favorites 127.0.0.1:62212 | Status: 201 | Latency: 4.217ms
+
+error: no ebook found with ID 609
+error: Request: POST /favorites 127.0.0.1:62244 | Status: 404 | Latency: 1.4076ms
+
+error: Request: POST /favorites 127.0.0.1:62263 | Status: 201 | Latency: 1.2256ms
+
+error: Request: PUT /favorites/15 127.0.0.1:62289 | Status: 200 | Latency: 2.7437ms
+
+error: no ebook found with ID 40
+error: Request: PUT /favorites/15 127.0.0.1:62292 | Status: 404 | Latency: 1.3456ms
+
+error: Request: PUT /favorites/15 127.0.0.1:61171 | Status: 200 | Latency: 1.9092ms
+
+error: no favorite found with ID 159
+error: Request: PUT /favorites/159 127.0.0.1:61177 | Status: 404 | Latency: 2.1903ms
+
+error: Request: GET /favorites 127.0.0.1:61213 | Status: 200 | Latency: 506.3µs
+
+error: Request: DELETE /favorites/48 127.0.0.1:61256 | Status: 200 | Latency: 604.2µs
+
+error: Request: GET /favorites 127.0.0.1:61259 | Status: 200 | Latency: 564.8µs
+
+error: Request: GET /ebooks 127.0.0.1:61336 | Status: 200 | Latency: 554.8µs
+
+error: Request: DELETE /ebooks/59 127.0.0.1:54875 | Status: 200 | Latency: 536.1µs
+
+error: Request: GET /ebooks 127.0.0.1:54878 | Status: 200 | Latency: 503.9µs
+

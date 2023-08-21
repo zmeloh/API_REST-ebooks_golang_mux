@@ -70,7 +70,7 @@ func UpdateEbook(id int, updatedEbook *models.Ebook) error {
 	updatedEbook.ID = existingEbook.ID
 
 	// Mettre à jour l'ebook dans la base de données
-	_, err = dao.UpdateEbook(existingEbook)
+	_, err = dao.UpdateEbook(id, existingEbook)
 	if err != nil {
 		utils.Logger(err)
 		return err

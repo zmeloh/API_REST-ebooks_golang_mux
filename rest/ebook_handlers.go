@@ -21,6 +21,12 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	category := services.GetCategoryByID(newEbook.CategoryID)
+
+	if category.ID == 0 {
+		ServerResponse(w, http.StatusNotFound, "Category id not exist")
+		return
+	}
 	// Appeler le service pour insérer le nouvel ebook
 	services.InsertEbook(&newEbook)
 
@@ -76,7 +82,7 @@ func GetEbookByCategoryID(w http.ResponseWriter, r *http.Request) {
 
 	// Appeler le service pour récupérer les livres électroniques de la catégorie
 	ebooks := services.GetEbookByCategoryID(categoryID)
-	if  len(ebooks)==0{
+	if len(ebooks) == 0 {
 		ServerResponse(w, http.StatusNotFound, "Category ID not found")
 		return
 	}
@@ -104,11 +110,18 @@ func UpdateEbook(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	category := services.GetCategoryByID(updatedEbook.CategoryID)
+	if category.ID == 0 {
+		ServerResponse(w, http.StatusNotFound, "Category id not exist")
+		return
+	}
+
 	err = services.UpdateEbook(ebookID, &updatedEbook)
 	if err != nil {
 		ServerResponse(w, http.StatusNotFound, "Ebook not found")
 		return
 	}
+
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(updatedEbook)
 }
