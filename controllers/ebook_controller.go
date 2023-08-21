@@ -4,18 +4,10 @@ import (
 	"example/api/dao"
 	"example/api/models"
 	"example/api/utils"
-	"fmt"
 )
 
 // Create Ebook controller
 func InsertEbook(e *models.Ebook) error {
-
-	category, _ := GetCategoryByID(e.CategoryID)
-
-	if category.ID == 0 {
-		return fmt.Errorf("category ID not exist")
-	}
-
 	err := dao.InsertEbook(e)
 	if err != nil {
 		utils.Logger(err)
