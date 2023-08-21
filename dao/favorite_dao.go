@@ -72,7 +72,7 @@ func UpdateFavorite(id int, updatedFavorite models.Favorite) (models.Favorite, e
 }
 
 func DeleteFavorite(id int) error {
-	err := DB.QueryRow("DELETE FROM favorites WHERE id = $1", id).Scan(&id)
+	err := DB.QueryRow("DELETE FROM favorites WHERE id = $1 RETURNING id", id).Scan(&id)
 	if err != nil {
 		utils.Logger(err)
 	}

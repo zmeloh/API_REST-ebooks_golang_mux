@@ -20,6 +20,7 @@ func CreateEbook(w http.ResponseWriter, r *http.Request) {
 		ServerResponse(w, http.StatusBadRequest, "Invalid request")
 		return
 	}
+
 	// Appeler le service pour insérer le nouvel ebook
 	services.InsertEbook(&newEbook)
 

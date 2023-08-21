@@ -1880,3 +1880,104 @@ error: pq: insert or update on table "favorites" violates foreign key constraint
 error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
 error: Request: POST /favorites 127.0.0.1:59730 | Status: 201 | Latency: 18.2646ms
 
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:60191 | Status: 201 | Latency: 15.4182ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:61589 | Status: 201 | Latency: 15.3562ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:61845 | Status: 201 | Latency: 6.6536ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:53214 | Status: 201 | Latency: 5.7605ms
+
+error: Request: GET /favorites 127.0.0.1:52787 | Status: 200 | Latency: 1.555ms
+
+error: Request: GET /favorites 127.0.0.1:53491 | Status: 200 | Latency: 3.1356ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/199 127.0.0.1:55318 | Status: 404 | Latency: 1.7925ms
+
+error: strconv.Atoi: parsing "199h": invalid syntax
+error: Request: DELETE /favorites/199h 127.0.0.1:54609 | Status: 400 | Latency: 599µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/14 127.0.0.1:49562 | Status: 404 | Latency: 3.4769ms
+
+error: Request: GET /favorites 127.0.0.1:59209 | Status: 200 | Latency: 505.8µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/11 127.0.0.1:65202 | Status: 404 | Latency: 2.385ms
+
+error: Request: GET /favorites 127.0.0.1:63136 | Status: 200 | Latency: 506.3µs
+
+error: Request: GET /favorites 127.0.0.1:50543 | Status: 200 | Latency: 589.1µs
+
+error: Request: GET /ebooks 127.0.0.1:65480 | Status: 200 | Latency: 1.52ms
+
+error: Request: DELETE /ebooks/58 127.0.0.1:61833 | Status: 200 | Latency: 510.2µs
+
+error: Request: GET /favorites 127.0.0.1:62776 | Status: 200 | Latency: 4.1003ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/11 127.0.0.1:64210 | Status: 404 | Latency: 2.9841ms
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/18 127.0.0.1:59923 | Status: 404 | Latency: 2.702ms
+
+error: Request: GET /favorites 127.0.0.1:50760 | Status: 200 | Latency: 129.7µs
+
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: sql: no rows in result set
+error: Request: DELETE /favorites/18 127.0.0.1:51781 | Status: 404 | Latency: 7.8007ms
+
+error: Request: DELETE /favorites/17 127.0.0.1:65358 | Status: 200 | Latency: 1.5157ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:58467 | Status: 201 | Latency: 16.3649ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: POST /favorites 127.0.0.1:59143 | Status: 201 | Latency: 5.4491ms
+
+error: Request: PUT /favorites/2 127.0.0.1:60432 | Status: 200 | Latency: 2.1821ms
+
+error: Request: PUT /favorites/2 127.0.0.1:60439 | Status: 200 | Latency: 1.2767ms
+
+error: Request: GET /favorites 127.0.0.1:60459 | Status: 200 | Latency: 508.5µs
+
+error: no favorite found with ID 20
+error: Request: PUT /favorites/20 127.0.0.1:65203 | Status: 404 | Latency: 817.4µs
+
+error: strconv.Atoi: parsing "20j": invalid syntax
+error: Request: PUT /favorites/20j 127.0.0.1:56722 | Status: 400 | Latency: 513.3µs
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/2 127.0.0.1:52110 | Status: 404 | Latency: 5.8318ms
+
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: pq: insert or update on table "favorites" violates foreign key constraint "favorites_user_id_fkey"
+error: Request: PUT /favorites/2 127.0.0.1:65220 | Status: 404 | Latency: 5.6233ms
+
+error: Request: PUT /favorites/3 127.0.0.1:55563 | Status: 200 | Latency: 2.532ms
+
+error: Request: GET /favorites 127.0.0.1:60062 | Status: 200 | Latency: 179.2µs
+

@@ -41,8 +41,8 @@ func SetupRouter() *mux.Router {
 	router.HandleFunc("/favorites/user/{id}", rest.GetFavoritesByUserID).Methods("GET")
 	router.HandleFunc("/favorites/ebook/{id}", rest.GetFavoritesByEbookID).Methods("GET")
 	router.HandleFunc("/favorites", rest.CreateFavorite).Methods("POST")
-	router.HandleFunc("/favorites/id}", rest.DeleteFavorite).Methods("DELETE")
-	router.HandleFunc("/favorites/id}", rest.UpdateFavorite).Methods("PUT")
+	router.HandleFunc("/favorites/{id}", rest.DeleteFavorite).Methods("DELETE")
+	router.HandleFunc("/favorites/{id}", rest.UpdateFavorite).Methods("PUT")
 
 	return router
 }
