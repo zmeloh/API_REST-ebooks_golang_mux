@@ -1,0 +1,84 @@
+error: Request: POST /users 127.0.0.1:58518 | Status: 208 | Latency: 6.5373ms
+
+time.Date(2023, time.August, 22, 12, 34, 10, 639866900, time.Local)Request: POST /users 127.0.0.1:54420 | Status: 208 | Latency: 4.9123ms
+
+time.Date(2023, time.August, 22, 12, 34, 11, 524626800, time.Local)Request: POST /users 127.0.0.1:54422 | Status: 208 | Latency: 766.2µs
+
+time.Date(2023, time.August, 22, 12, 34, 11, 937622000, time.Local)Request: POST /users 127.0.0.1:54424 | Status: 208 | Latency: 819.3µs
+
+time.Date(2023, time.August, 22, 12, 34, 12, 114989600, time.Local)Request: POST /users 127.0.0.1:54426 | Status: 208 | Latency: 858.6µs
+
+time.Date(2023, time.August, 22, 12, 34, 12, 277792600, time.Local)Request: POST /users 127.0.0.1:54428 | Status: 208 | Latency: 885.6µs
+
+2023-08-22 4:39:12 pm: Request: POST /users 127.0.0.1:51521 | Status: 208 | Latency: 4.0266ms
+
+2023-08-22 4:39:13 pm: Request: POST /users 127.0.0.1:51524 | Status: 208 | Latency: 666.5µs
+
+2023-08-22 4:39:13 pm: Request: POST /users 127.0.0.1:51526 | Status: 208 | Latency: 618.8µs
+
+2023-08-22 4:39:13 pm: Request: POST /users 127.0.0.1:51528 | Status: 208 | Latency: 594.3µs
+
+2023-08-22 4:39:13 pm: Request: POST /users 127.0.0.1:51531 | Status: 208 | Latency: 508.4µs
+
+2023-08-22 4:39:13 pm: Request: POST /users 127.0.0.1:51535 | Status: 208 | Latency: 506.7µs
+
+2023-08-22 4:39:14 pm: Request: POST /users 127.0.0.1:51543 | Status: 208 | Latency: 1.0624ms
+
+2023-08-22 4:40:1: Request: POST /users 127.0.0.1:57148 | Status: 208 | Latency: 3.05ms
+
+2023-08-22 4:40:2: Request: POST /users 127.0.0.1:57150 | Status: 208 | Latency: 794.3µs
+
+2023-08-22 4:40:2: Request: POST /users 127.0.0.1:57152 | Status: 208 | Latency: 622.7µs
+
+2023-08-22 4:41:10 : Request -> POST /users 127.0.0.1:59600 | Status: 208 | Latency: 4.1864ms
+
+2023-08-22 4:41:10 : Request -> POST /users 127.0.0.1:59602 | Status: 208 | Latency: 650.4µs
+
+2023-08-22 4:41:10 : Request -> POST /users 127.0.0.1:59604 | Status: 208 | Latency: 585.5µs
+
+2023-08-22 4:41:11 : Request -> POST /users 127.0.0.1:59606 | Status: 208 | Latency: 534.4µs
+
+2023-08-22 4:41:11 : Request -> POST /users 127.0.0.1:59608 | Status: 208 | Latency: 505.6µs
+
+2023-08-22 4:41:11 : Request -> POST /users 127.0.0.1:59610 | Status: 208 | Latency: 676.7µs
+
+2023-08-22 4:41:11 : Request -> POST /users 127.0.0.1:59612 | Status: 208 | Latency: 785.9µs
+
+2023-08-22 4:41:11 : Request -> POST /users 127.0.0.1:59614 | Status: 208 | Latency: 509µs
+
+2023-08-22 4:41:11 : Request -> POST /users 127.0.0.1:59626 | Status: 208 | Latency: 4.2066ms
+
+2023-08-22 4:41:12 : Request -> POST /users 127.0.0.1:59635 | Status: 208 | Latency: 5.4355ms
+
+2023-08-22 4:41:12 : Request -> POST /users 127.0.0.1:59640 | Status: 208 | Latency: 644µs
+
+2023-08-22 4:44:30 : Request -> POST url : /users 127.0.0.1:61403 | Status: 208 | Latency: 3.6411ms
+
+2023-08-22 4:44:41 : Request -> POST url : /users 127.0.0.1:61445 | Status: 208 | Latency: 526.4µs
+
+2023-08-22 4:44:41 : Request -> POST url : /users 127.0.0.1:61447 | Status: 208 | Latency: 549.5µs
+
+2023-08-22 4:44:42 : Request -> POST url : /users 127.0.0.1:61449 | Status: 208 | Latency: 515.2µs
+
+2023-08-22 4:44:42 : Request -> POST url : /users 127.0.0.1:61451 | Status: 208 | Latency: 517.7µs
+
+2023-08-22 4:46:38 : Request -> POST | url: /users 127.0.0.1:51505 | Status: 208 | Latency: 3.5864ms
+
+2023-08-22 4:46:38 : Request -> POST | url: /users 127.0.0.1:51507 | Status: 208 | Latency: 1.1825ms
+
+2023-08-22 4:46:39 : Request -> POST | url: /users 127.0.0.1:51509 | Status: 208 | Latency: 863.8µs
+
+2023-08-22 4:46:39 : Request -> POST | url: /users 127.0.0.1:51512 | Status: 208 | Latency: 0s
+
+2023-08-22 4:46:39 : Request -> POST | url: /users 127.0.0.1:51514 | Status: 208 | Latency: 811.9µs
+
+2023-08-22 4:46:39 : Request -> POST | url: /users 127.0.0.1:51516 | Status: 208 | Latency: 1.2954ms
+
+2023-08-22 4:46:39 : Request -> POST | url: /users 127.0.0.1:51518 | Status: 208 | Latency: 572µs
+
+2023-08-22 4:46:39 : Request -> POST | url: /users 127.0.0.1:51522 | Status: 208 | Latency: 1.0129ms
+
+2023-08-22 4:46:40 : Request -> POST | url: /users 127.0.0.1:51526 | Status: 208 | Latency: 535.9µs
+
+2023-08-22 4:49:12 : Request -> POST | 127.0.0.1:63688/users | Status: 208 | Latency: 4.1208ms
+
