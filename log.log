@@ -82,3 +82,23 @@ time.Date(2023, time.August, 22, 12, 34, 12, 277792600, time.Local)Request: POST
 
 2023-08-22 4:49:12 : Request -> POST | 127.0.0.1:63688/users | Status: 208 | Latency: 4.1208ms
 
+2023-08-22 5:8:21 : Request -> POST | url:http://127.0.0.1:60376/users | Status: 208 | Latency: 18.1612ms
+
+2023-08-22 5:8:22 : Request -> POST | url:http://127.0.0.1:60378/users | Status: 208 | Latency: 505.8µs
+
+2023-08-22 5:8:22 : Request -> POST | url:http://127.0.0.1:60380/users | Status: 208 | Latency: 670.6µs
+
+2023-08-22 5:8:22 : Request -> POST | url:http://127.0.0.1:60382/users | Status: 208 | Latency: 616µs
+
+2023-08-22 5:8:22 : Request -> POST | url:http://127.0.0.1:60384/users | Status: 208 | Latency: 506.6µs
+
+2023-08-22 5:9:22 : Request -> POST | url -> http://127.0.0.1:55339/users | Status: 208 | Latency: 4.7776ms
+
+2023-08-22 5:9:22 : Request -> POST | url -> http://127.0.0.1:55344/users | Status: 208 | Latency: 576.2µs
+
+2023-08-22 5:9:22 : Request -> POST | url -> http://127.0.0.1:55346/users | Status: 208 | Latency: 505.2µs
+
+2023-08-22 5:9:23 : Request -> POST | url -> http://127.0.0.1:55348/users | Status: 208 | Latency: 734.6µs
+
+2023-08-22 5:9:29 : Request -> POST | url -> http://127.0.0.1:55350/users | Status: 208 | Latency: 654.9µs
+

@@ -22,12 +22,12 @@ func LoggingMiddleware(next http.Handler) http.Handler {
 		latency := endTime.Sub(startTime)
 
 		log.Printf(
-			"Request -> %s | %s%s | Status: %d | Latency: %v\n",
+			"Request -> %s | url -> http://%s%s | Status: %d | Latency: %v\n",
 			r.Method, r.RemoteAddr,r. URL.Path,
 			recorder.Status, latency,
 		)
 		msg := fmt.Errorf(
-			"Request -> %s | %s%s | Status: %d | Latency: %v\n",
+			"Request -> %s | url -> http://%s%s | Status: %d | Latency: %v\n",
 			r.Method, r.RemoteAddr, r.URL.Path,
 			recorder.Status, latency,
 		)
